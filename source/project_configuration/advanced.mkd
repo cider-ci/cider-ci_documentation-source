@@ -1,0 +1,120 @@
+---
+title: Advanced Project Configuration 
+---
+# Advanced Topics
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+This page describes advanced features and techniques to keep the build
+specification maintainable and non repetitive.
+
+
+
+
+## Including Files 
+
+One or more  _YAML_ files can be included via the `_cider-ci_include` key. The
+value of `_cider-ci_include` is a string or an array of strings. 
+
+The `_cider-ci_include` key may not appear anywhere else than in the Cider-CI
+dotfile other than in the specification of an build. It may however appear at
+any level. The value must equal the absolute path of the file to be included.
+The absolut reference is the top level directory according to git.
+
+    builds:
+      "Submodule-Demo":
+        specification: 
+          _cider-ci_include: /.cider-ci/shared/submodule_context.yml
+  {: .language-yaml}
+
+The top level element of the included file must be map. This map is merged into
+the current context with the [Deep-Merge](#deep-merge) strategy: `deep_merge(
+current-map, file-map)`.
+
+    _cider-ci_include: 
+      - '/.cider-ci/partials/code-check_defaults.yml'
+      - '/.cider-ci/tasks/code-check.yml'
+  {: .language-yaml}
+
+If multiple files are included by specifying an array the map corresponding to
+the map of the first file is merged in the current context, then the map of the
+second file and so forth.
+
+It is legal to use the `_cider-ci_include` statement in files which are
+themselves to be included. The merging strategy will by applied recursively
+until all includes are satisfied. It is illegal to define circular references. 
+
+
+## Subcontexts {#subcontexts}
+
+The main context, i.e. the map `specification` in the dot-file may contain the
+`subcontexts` directive. A subcontext can have exactly the same keys and values
+as the build specification, i.e. the main context. This includes the
+`subcontexts` directive itself. 
+
+Subcontexts provide a way of inheritance which itself provides means to keep
+specification succinct and non repetitive. A task in a subcontext not only
+inherits the directives of the `task_defaults` but also those of the parent
+context. The precise rule is that the defaults from the main context are passed
+down by applying the [Deep-Merge](#deep-merge) strategy recursively:
+`deep_merge( deep_merge( task_defauls parent context, task_defaults current context), task)`.
+
+
+    specification:
+
+      name: Tests
+
+        task_defaults: 
+          traits:
+            ruby: true
+
+        subcontexts:
+
+          standard:
+
+            tasks:
+              _cider-ci_include: /.cider-ci/tasks/rspec-tasks.yml
+
+          integration:
+
+           task_defaults:
+            traits:
+              firefox-esr: true
+
+            tasks:
+              _cider-ci_include: /.cider-ci/tasks/rspec-feature-tasks.yml
+
+  {: .language-yaml}
+
+In the example above, every task in the integration context will have the
+traits `ruby` as well as `firefox-esr`. However, the tasks in the standard
+context will only have the trait `ruby`. 
+
+
+
+## The Deep-Merge Strategy {#deep-merge}
+
+Inclusion and inheritance use a particular merging strategy which we call the
+_Deep-Merge_ strategy. The canonic definition of _Deep-Merge_ is mnemonic and
+easy to understand. The following almost formal definition will help to clarify
+doubts: 
+
+
+Let `m1` and `m2` be a maps, and let `m` be the result of `deep_merge(m1, m2)`
+Then the  following holds true:
+
+1. If the key `k1` with the value `v1` is present in `m1` but not in `m2`, then
+  the key value pair `(k1,v1)` is be present in `m`. 
+
+2. If the key `k2` with the value `v2` is present in `m2` but not in `m1`, then
+  the key value pair `(k2,v2)` is be present in `m`. 
+
+3. If `k` is present in `m1` and `m2`
+
+    1. and  `v1` and `v2` are both maps, then the pair `(k,  deep_merge(v1, v2))` is present in `m`.
+
+    2. otherwise the pair `(k,v2)` is present in `m`. 
+
+

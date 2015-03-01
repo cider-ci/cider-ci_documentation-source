@@ -1,0 +1,136 @@
+---
+title: Dotfile Project Configuration
+---
+
+# The Cider-CI Dotfile {#dotfile}
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+
+This page documents the contents of the Cider-CI dotfile `.cider-ci.yml`. The
+Cider-CI dotfile defines and specifies available _builds_ and possible
+relations between builds for a given project.
+
+The following example is an extract of the Cider-CI dotfile of the
+[Bash Demo Project for Cider-CI][].
+
+
+    # Cider-CI dotfile .cider-ci.yml
+
+    builds:
+
+      "Chain-Prerequisite-Demo": 
+        description: |
+          This one serves as a prerequisite to the "Chain-Dependent-Demo".
+        specification: 
+          _cider-ci_include: /.cider-ci/shared/sleeping_task_context.yml
+
+      "Chain-Dependent-Demo": 
+        description: |
+          This demo can only be started if the "Chain-Prerequisite-Demoe" has
+          passed. There is also a trigger which will start this demo when the
+          prerequisite has finished and the commit is part of the head of
+          a brach matching the given regular expression. 
+        specification: 
+          _cider-ci_include: /.cider-ci/shared/sleeping_task_context.yml
+        depends:
+          builds:
+            "Chain-Prerequisite-Demo": passed
+            "Trigger-Demo": passed
+        trigger: true
+
+
+      "Trigger-Demo": 
+        description: |
+          This execution will be automatically run when a commit containing it
+          becomes the head of a branch. The `trigger` property accepts the same
+          values as the `depends` property.
+        specification:
+          _cider-ci_include: /.cider-ci/shared/sleeping_task_context.yml
+        trigger: 
+          branch: "^master|wip.*$"
+  {: .language-yaml}
+
+
+
+# The _builds_ Map {#builds}
+
+The keys of the _builds_ map name available builds for reference. The values
+describe, specify and relate them.
+
+|-----------------+----------+------------------------------------------------------------------|
+| Key             | Required | Value                                                            |
+|-----------------+----------+------------------------------------------------------------------|
+| `specification` | yes      | Map, see the [Build Specification][] page                        |
+| `description`   | no       | String, describes the build, plain text or markdown              |
+| `depends`       | no       | Map, see the [Declaring Dependencies][] section                  |
+| `trigger`       | no       | Boolean true value or Map, see the [Triggering Builds][] section |
+|-----------------+----------+------------------------------------------------------------------|
+{: .table .table-striped }
+
+
+## Declaring Dependencies {#depends}
+
+The `depends` key declares a build to be dependent on either an other build or
+the belonging to a branch. A build which has unsatisfied dependencies can not
+be started. 
+
+Builds for a given commit (`tree_id` precisely) can depend on each other by
+specifying a build name and the desired state of that build. 
+
+    depends:
+      builds:
+        "Chain-Prerequisite-Demo": passed
+        "Trigger-Demo": passed
+  {: .language-yaml}
+
+
+Builds can depend on their belonging to a certain branch. This is done in the
+very same way as declaring triggers on branches. See the following section. 
+
+
+## Triggering Builds {#trigger}
+
+Builds will be automatically started if the conditions specified by the
+`trigger` directive and their dependencies are satisfied. 
+
+The value of the `trigger` direcative can have one multiple types. 
+A boolean true value is the simplest case: 
+
+    builds:
+      "Chain-Dependent-Demo": 
+        trigger: true
+  {: .language-yaml}
+
+
+The value of `trigger` can be a map where the keys `builds` and `branch` are
+honored. The value of the `builds` key can be exactly the same as described in
+[Declaring Dependencies][], we will not repeat it here. The value of the
+`branch` key is always a string. Names of branches can be matched by either
+case sensitive comparison or by regular expression matching. Regualar
+expression maching will be performed if and only if the string starts with
+a `^` character. 
+
+
+    builds:
+      "Trigger-Demo": 
+        trigger: 
+          branch: "^master|wip.*$"
+  {: .language-yaml}
+
+
+Triggers are evaluated when an event realted to the `tree_id` happens.
+This includes:
+
+* A by the `tree_id` related commit becomes the head of a branch.
+* Some other build with the same `tree_id` changes into a final state.
+
+
+  [Build Properties]: #build
+  [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
+  [Build Specification]: /project_configuration/specification.html
+  [Declaring Dependencies]: #depends
+  [Triggering Builds]: #trigger
+

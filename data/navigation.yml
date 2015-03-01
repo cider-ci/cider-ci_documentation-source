@@ -1,0 +1,36 @@
+items:
+
+#- title: Install
+#  path: /install/index.html
+#  items:
+#  - title: Initial Setup
+#    path:  /install/setup.html
+#  - title: Upgrade
+#    path:  /install/upgrade.html
+#  - title: Executors
+#    path:  /install/executors.html
+#
+
+- title: Project Configuration
+  path: /project_configuration/index.html
+  items: 
+  - title: Dotfile
+    path: /project_configuration/dotfile.html
+  - title: Build Specification
+    path: /project_configuration/specification.html
+  - title: Advanced Topics
+    path: /project_configuration/advanced.html
+
+
+- title: Development
+  items: 
+  - title: Architecture
+    path: /development/architecture/index.html 
+  - title: Setup
+    path: /development/setup/index.html 
+
+#- title: API
+#  items: 
+#  - title: Documentation
+#    path: /api/documentation.html
+#

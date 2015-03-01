@@ -1,0 +1,207 @@
+---
+title: Development Setup
+---
+{::options parse_block_html="true" /}
+
+# Setting up a Cider-CI Development Environment 
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+
+Prerequisites 
+-------------
+
+<div class="row"> <div class="col-md-6">
+-   Postgresql version ≥ 9.4 (≤ 9.3 will not suffice!)
+-   RabbitMQ version ≥ 3.0 (≥ 3.3 recommended)
+-   JDK 7 or later
+-   [Leiningen][] version ≥ 2.0 (≥ 2.5 recommended)
+-   [Ruby][] ≥ 1.9 (≥ 2.1 recommended) with [Bundler][]
+-   [Nodejs][]
+
+The environment will by default require the following ports (in
+addition to the ones used by PostgreSQL and RabbitMQ): 
+
+* 8880 ‥ 8889
+* 7880 ‥ 7889 
+* 8443
+</div> </div>
+
+
+Projects 
+-----------
+
+<div class="row"> <div class="col-md-6">
+A running instance of Cider-CI is composed of the following services. It is
+recommended to check out all of the following projects under a common
+directory. 
+
+1.  [Cider-CI API][]
+2.  [Cider-CI Builder][]
+3.  [Cider-CI Dispatcher][]
+4.  [Cider-CI Executor][]
+5.  [Cider-CI Repository][]
+6.  [Cider-CI Storage][]
+7.  [Cider-CI User-Interface][]
+
+</div> </div>
+
+Message-Queues - RabbitMQ
+------------------------------------
+
+<div class="row"> <div class="col-md-6">
+We set up a vhost, a user and permit the user. 
+
+The RabbitMQ [Management Plugin](https://www.rabbitmq.com/management.html)
+allows us to verify the connection status via the Cider-CI User-Interface. 
+
+</div> <div class="col-md-6">
+    rabbitmqctl add_user cider-ci cider-ci
+    rabbitmqctl add_vhost cider-ci
+    rabbitmqctl set_permissions -p cider-ci cider-ci ".*"  ".*" ".*"
+    rabbitmqctl -p cider-ci list_permissions
+
+    rabbitmq-plugins enable rabbitmq_management
+    rabbitmqctl set_user_tags cider-ci administrator
+</div> </div>
+
+Database - PostgreSQL
+---------------------
+
+<div class="row"> <div class="col-md-6">
+We set up the `cider-ci` role within [psql](http://www.postgresql.org/docs/current/static/app-psql.html): 
+</div> <div class="col-md-6">
+    CREATE ROLE "cider-ci" PASSWORD 'cider-ci' createdb superuser login;
+</div> </div>
+
+<div class="row"> <div class="col-md-6">
+We change into the directory of the Cider-CI User-Interface, 
+configure, create the database and load some initial data to
+work with. 
+</div> <div class="col-md-6">
+~~~ bash
+cp config/database_dev.yml config/database.yml
+bundle 
+bundle exec rake db:create db:migrate
+bundle exec rake db:pg:truncate_tables db:pg:data:restore FILE=db/personas.pgbin
+~~~
+</div> </div>
+
+## Services for Development only
+
+### Reverse Proxy
+
+TODO
+
+### Docs
+
+TODO
+
+## User-Interface Service
+
+
+The [Cider-CI User-Interface][] is a Ruby on Rails application. 
+
+<div class="row"> <div class="col-md-6">
+We start the web-server from within the directory of the Cider-CI User-Interface.
+</div> <div class="col-md-6">
+    RAILS_RELATIVE_URL_ROOT=/cider-ci/ui bundle exec rails s -p 8880
+</div> </div>
+
+<div class="row"> <div class="col-md-6">
+We visit the url <http://localhost:8880/cider-ci/ui/public> in a browser and should see a similar page as shown.
+</div> <div class="col-md-6">
+[![Welcome-Page](/development/setup/welcome-page.png){: .preview}](/development/setup/welcome-page.png) 
+</div> </div>
+
+<div class="row"> <div class="col-md-6">
+We sign in with the user `adam` and password `password` and follow the links
+`Administration` → `Service stati`.
+<http://localhost:8880/cider-ci/ui/admin/status> reveals that the message queue
+is running but non of the services are:
+</div> 
+<div class="col-md-6">
+[![Services-Offline](/development/setup/services-offline.png){: .preview}](/development/setup/services-offline.png) 
+</div> </div>
+
+## Clojure Services 
+
+<div class="row"> <div class="col-md-6">
+All of the remain services 
+[Cider-CI API][],
+[Cider-CI Builder][],
+[Cider-CI Dispatcher][], 
+[Cider-CI Executor][],
+[Cider-CI Repository][], and 
+[Cider-CI Storage][]
+are written in clojure. Hence, the procedure for
+starting any one of them is the same. We start a REPL from inside each
+directory and then start the service therein with `(-main)`. 
+</div> <div class="col-md-6">
+    lein repl
+  {: }
+
+    (-main)
+</div> </div>
+
+All of the services should now be listed `OK` at <http://localhost:8880/cider-ci/ui/admin/status>.
+
+### Optional Configuration 
+
+<div class="row"> <div class="col-md-6">
+The default configuration of a clojure service is defined in
+`./resources/conf-defaults.yml`.  Some JVM memory options, like the `Xmx` value
+e.g., override JVM defaults via `project.clj` and can themself be overridden
+via JVM environment variables. 
+</div> </div>
+
+
+## Executor 
+
+### Status of the Executor-Service 
+
+<div class="row"> <div class="col-md-6">
+The Executor-Services are listed on the `Administration` → `Executors` page
+<http://localhost:8880/cider-ci/ui/admin/executors>. There is only one
+configured in the default data set. It matches the parameters of the default
+development executor and hence it should be up and running.
+
+Note: other parameters, like the `traits` e.g., are taken from the default
+setup when an executor is installed via the [Cider-CI Ansible Setup][] . They
+might not match the given development environment.
+</div> <div class="col-md-6">
+[![Executors](/development/setup/executors.png){: .preview}](/development/setup/executors.png) 
+</div> </div>
+
+
+## Running an Execution 
+
+<div class="row"> <div class="col-md-6">
+Running an execution is the final test for our environment. The dataset comes
+with a predefined repository. It features fairly simple examples. Some of the
+defined tasks purposely fail with a certain probability. Hence, a failed
+execution can be a positive outcome of this test. Note, that a particular
+execution can only exist once for a given tree_id or commit. However, existing
+executions can be deleted.
+
+</div> <div class="col-md-6">
+[![Execution](/development/setup/execution.png){: .preview}](/development/setup/execution.png) 
+</div> </div>
+
+
+  [Cider-CI API]: https://github.com/cider-ci/cider-ci_api
+  [Cider-CI Ansible Setup]: https://github.com/cider-ci/cider-ci_ansible-setup
+  [Cider-CI Builder]: https://github.com/cider-ci/cider-ci_builder
+  [Cider-CI Dispatcher]: https://github.com/cider-ci/cider-ci_dispatcher
+  [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor
+  [Cider-CI Repository]: https://github.com/cider-ci/cider-ci_repository
+  [Cider-CI Storage]: https://github.com/cider-ci/cider-ci_storage
+  [Cider-CI User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
+
+  [Bundler]: http://bundler.io/
+  [Leiningen]: http://leiningen.org/
+  [Nodejs]: http://nodejs.org/
+  [Ruby]: https://www.ruby-lang.org/
+  [rbenv]: https://github.com/sstephenson/rbenv
