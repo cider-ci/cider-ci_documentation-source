@@ -7,7 +7,7 @@
 	<key>ApplicationVersion</key>
 	<array>
 		<string>com.omnigroup.OmniGraffle6</string>
-		<string>159.7.0.224654</string>
+		<string>159.11.0.228015</string>
 	</array>
 	<key>AutoAdjust</key>
 	<true/>
@@ -47,6 +47,394 @@
 	<key>GraphicsList</key>
 	<array>
 		<dict>
+			<key>Bounds</key>
+			<string>{{728.12936307943937, 147.53269659809717}, {54, 45.99998035171032}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Size</key>
+				<real>10</real>
+			</dict>
+			<key>ID</key>
+			<integer>238</integer>
+			<key>Layer</key>
+			<integer>0</integer>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0.4</string>
+						<key>g</key>
+						<string>0.4</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Executor
+\fs18 \
+(
+\fs16 Clojure)\
+(8883,8443/7883)}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{159.69243089313198, 485.76642761124197}, {108.86906776183554, 39.811021551654107}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Size</key>
+				<real>10</real>
+			</dict>
+			<key>ID</key>
+			<integer>237</integer>
+			<key>Layer</key>
+			<integer>0</integer>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0.4</string>
+						<key>g</key>
+						<string>0.4</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Core Service / Component\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\fs16 \cf0 ( http(s)-port / nrepl-port )}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{727.53333324791674, 205.92350730148138}, {54, 45.99998035171032}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Size</key>
+				<real>10</real>
+			</dict>
+			<key>ID</key>
+			<integer>236</integer>
+			<key>Layer</key>
+			<integer>0</integer>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0.4</string>
+						<key>g</key>
+						<string>0.4</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Executor
+\fs18 \
+(
+\fs16 Clojure)\
+(8883,8443/7883)}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Helvetica</string>
+				<key>Size</key>
+				<real>12</real>
+			</dict>
+			<key>Head</key>
+			<dict>
+				<key>ID</key>
+				<integer>226</integer>
+			</dict>
+			<key>ID</key>
+			<integer>233</integer>
+			<key>Layer</key>
+			<integer>0</integer>
+			<key>Points</key>
+			<array>
+				<string>{214.91103364511292, 292.01024327096849}</string>
+				<string>{138.97637912297813, 292.01024327096849}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>Legacy</key>
+					<false/>
+					<key>LineType</key>
+					<integer>1</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+				</dict>
+			</dict>
+			<key>Tail</key>
+			<dict>
+				<key>ID</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{168.66141885312524, 276.01024327096849}, {92.499229583975364, 32}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Size</key>
+				<real>8</real>
+			</dict>
+			<key>ID</key>
+			<integer>5</integer>
+			<key>Layer</key>
+			<integer>0</integer>
+			<key>Shape</key>
+			<string>RoundRect</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0.4</string>
+						<key>g</key>
+						<string>1</string>
+						<key>r</key>
+						<string>0.8</string>
+					</dict>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf0 Filesystem\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+\cf0 Generated HTML }</string>
+				<key>VerticalPad</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Helvetica</string>
+				<key>Size</key>
+				<real>12</real>
+			</dict>
+			<key>Head</key>
+			<dict>
+				<key>ID</key>
+				<integer>226</integer>
+			</dict>
+			<key>ID</key>
+			<integer>227</integer>
+			<key>Layer</key>
+			<integer>2</integer>
+			<key>Points</key>
+			<array>
+				<string>{87.973288321903269, 282.68089744800113}</string>
+				<string>{138.97637912297813, 292.01024327096849}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>HeadArrow</key>
+					<string>FilledArrow</string>
+					<key>Legacy</key>
+					<false/>
+					<key>LineType</key>
+					<integer>1</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+				</dict>
+			</dict>
+			<key>Tail</key>
+			<dict>
+				<key>ID</key>
+				<integer>169</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{118.37180336401687, 282.01024327096849}, {41.209151517922521, 20}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Monaco</string>
+				<key>Size</key>
+				<real>8</real>
+			</dict>
+			<key>HFlip</key>
+			<string>YES</string>
+			<key>ID</key>
+			<integer>226</integer>
+			<key>Layer</key>
+			<integer>2</integer>
+			<key>Rotation</key>
+			<real>270</real>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0.74902</string>
+						<key>g</key>
+						<string>0.74902</string>
+						<key>r</key>
+						<string>0.74902</string>
+					</dict>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs16 \cf0 /docs}</string>
+			</dict>
+			<key>TextPlacement</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{728.12936307943937, 264.31431800486558}, {54, 39.811021551654107}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>225</integer>
+			<key>Layer</key>
+			<integer>2</integer>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0.4</string>
+						<key>g</key>
+						<string>0.4</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs18 \cf0 \'85}</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Class</key>
 			<string>LineGraphic</string>
 			<key>FontInfo</key>
@@ -63,10 +451,12 @@
 			</dict>
 			<key>ID</key>
 			<integer>223</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.1322070853472, 179.46435309322652}</string>
-				<string>{196.48583662754459, 165.83604974678406}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
+				<string>{222.31188386297981, 176.91259226115997}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -100,7 +490,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{293.58039281430496, 241.8273902893223}, {97.482959059233622, 22.191991074359521}}</string>
+					<string>{{305.20954592121001, 249.99842202787119}, {97.482959059233622, 26.213044465762437}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -133,7 +523,7 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -147,7 +537,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{274.96063241601928, 189.68614375950338}, {134.72247985580498, 83.141246529818886}}</string>
+					<string>{{286.58978552292433, 197.85717549805227}, {134.72247985580498, 83.141246529818886}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -182,7 +572,7 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -197,10 +587,12 @@
 			</array>
 			<key>ID</key>
 			<integer>220</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{429.44882279409194, 272.23376085845632}, {68.031496680252189, 64.480931706049944}}</string>
+			<string>{{439.37008272662877, 283.88228736742519}, {72.702893487141978, 60.837108305278377}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -212,6 +604,8 @@
 			</dict>
 			<key>ID</key>
 			<integer>118</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -240,16 +634,15 @@
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs24 \cf0 Message\
 Broker\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs20 \cf0 (AMQP / Rabbitmq)}</string>
+\fs20 (AMQP / Rabbitmq)}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -269,10 +662,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>219</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{90.612701366209251, 96.66031136632499}</string>
-				<string>{144.64567051299912, 103.47919460091919}</string>
+				<string>{88.1077260013206, 100.62992014537642}</string>
+				<string>{138.97637912297813, 108.81376775574107}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -301,7 +696,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{28.684313321023104, 45.354331120168126}, {45.99998035171032, 33.353630950835282}}</string>
+			<string>{{26.044900276717122, 62.362205290231174}, {45.99998035171032, 33.353630950835282}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -311,10 +706,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>218</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -322,12 +719,12 @@ Broker\
 \f0\fs18 \cf0 Client\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs12 \cf0 (JSON/HAL)}</string>
+\fs12 \cf0 (JSON-ROA)}</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{12.755905627547286, 38.267716882641857}, {77.856795738661958, 77.856795738661958}}</string>
+			<string>{{10.250930262658642, 49.606299662683888}, {77.856795738661958, 68.031496680252189}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -339,6 +736,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>217</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Magnets</key>
 			<array>
 				<string>{-0.59628479784302701, -1.1925696134567263}</string>
@@ -392,10 +791,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>216</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{144.64567051299912, 103.47919460091919}</string>
-				<string>{247.73290871440264, 93.705153071451463}</string>
+				<string>{138.97637912297813, 108.81376775574107}</string>
+				<string>{259.16170412875886, 101.87618481000035}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -439,10 +840,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>215</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{90.612701366209279, 220.39370278706693}</string>
-				<string>{144.64567051299912, 103.47919460091919}</string>
+				<string>{68.509091707551093, 167.87773311447356}</string>
+				<string>{138.97637912297813, 108.81376775574107}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -467,11 +870,13 @@ Broker\
 			<dict>
 				<key>ID</key>
 				<integer>169</integer>
+				<key>Info</key>
+				<integer>3</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{121.64568033714394, 93.479194600919186}, {45.99998035171032, 20}}</string>
+			<string>{{115.97638894712296, 98.813767755741068}, {45.99998035171032, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -485,6 +890,8 @@ Broker\
 			<string>YES</string>
 			<key>ID</key>
 			<integer>214</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Rotation</key>
 			<real>270</real>
 			<key>Style</key>
@@ -510,7 +917,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -522,16 +929,18 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{211.38146197083165, 72.941169139912603}, {72.702893487141978, 41.52796786307772}}</string>
+			<string>{{222.8102573851879, 81.112200878461493}, {72.702893487141978, 41.52796786307772}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
 			<dict>
 				<key>Size</key>
-				<real>10</real>
+				<real>8</real>
 			</dict>
 			<key>ID</key>
 			<integer>211</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -555,7 +964,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -563,11 +972,8 @@ Broker\
 \f0\fs24 \cf0 API\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs20 \cf0 (Clojure)
-\fs24 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\fs16 \cf0 (8885/7885)}</string>
+\fs16 \cf0 (Clojure)\
+(8885/7885)}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -587,10 +993,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>213</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{342.32187234392177, 231.25676702441282}</string>
-				<string>{247.73290871440264, 93.705153071451463}</string>
+				<string>{353.95102545082682, 239.42779876296171}</string>
+				<string>{259.16170412875886, 101.87618481000035}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -645,10 +1053,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>212</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{463.46457113421803, 304.47422671148126}</string>
-				<string>{247.73290871440264, 93.705153071451463}</string>
+				<string>{475.72152947019975, 314.30084152006441}</string>
+				<string>{259.16170412875886, 101.87618481000035}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -688,7 +1098,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{199.82816966625546, 428.20192907579178}, {47, 20}}</string>
+			<string>{{209.18307469213875, 378.36474687948356}, {47, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -702,12 +1112,14 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>210</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Line</key>
 			<dict>
 				<key>ID</key>
 				<integer>208</integer>
 				<key>Position</key>
-				<real>0.56770950555801392</real>
+				<real>0.47459951770569775</real>
 				<key>RotationType</key>
 				<integer>0</integer>
 			</dict>
@@ -727,7 +1139,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -754,10 +1166,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>209</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{129.05511919044133, 344.69639671473408}</string>
-				<string>{333.53912985099174, 363.5073629311139}</string>
+				<string>{138.97637912297813, 364.57015908506582}</string>
+				<string>{353.95102545082688, 365.02416655435769}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -801,11 +1215,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>208</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{385.57768841080281, 416.62998358878758}</string>
-				<string>{264.46599561955998, 457.18533283656075}</string>
-				<string>{129.05511919044133, 344.69639671473408}</string>
+				<string>{353.95102545082682, 419.15786025788742}</string>
+				<string>{138.97637912297813, 364.57015908506582}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -849,10 +1264,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>207</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{385.57768841080281, 416.62998358878758}</string>
-				<string>{333.53912985099174, 363.5073629311139}</string>
+				<string>{353.95102545082682, 419.15786025788742}</string>
+				<string>{353.95102545082688, 365.02416655435769}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -881,11 +1298,13 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{335.21259090108532, 403.52346135590636}, {100.73019501943503, 26.213044465762437}}</string>
+			<string>{{303.58592794110928, 406.0513380250062}, {100.73019501943503, 26.213044465762437}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
 			<integer>206</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Shape</key>
 			<string>Cylinder</string>
 			<key>Style</key>
@@ -911,7 +1330,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -936,10 +1355,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>205</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.1322070853472, 179.46435309322652}</string>
-				<string>{391.44052048967495, 98.177165560084063}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
+				<string>{403.06967359658, 118.73149043262805}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -983,10 +1404,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>203</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{670.47244693744835, 98.177165560084077}</string>
-				<string>{544.13220708534709, 92.846679915739657}</string>
+				<string>{660.55118700491153, 106.12879400797223}</string>
+				<string>{555.76136019225214, 101.01771165428855}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1030,10 +1453,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>202</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{733.53447829469792, 136.13500293446484}</string>
-				<string>{670.47244693744835, 98.177165560084077}</string>
+				<string>{730.89506525039201, 141.0206085858342}</string>
+				<string>{660.55118700491153, 106.12879400797223}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1064,7 +1489,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{642.17042772075808, 88.177165560084077}, {56.604038433380538, 20}}</string>
+			<string>{{632.24916778822126, 96.128794007972232}, {56.604038433380538, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1078,6 +1503,8 @@ Broker\
 			<string>YES</string>
 			<key>ID</key>
 			<integer>201</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Rotation</key>
 			<real>270</real>
 			<key>Style</key>
@@ -1103,7 +1530,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1115,16 +1542,18 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{490.44155441444053, 156.46436291737137}, {107.38130534181334, 45.99998035171032}}</string>
+			<string>{{502.07070752134564, 164.63539465592027}, {107.38130534181334, 45.99998035171032}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
 			<dict>
 				<key>Size</key>
-				<real>10</real>
+				<real>8</real>
 			</dict>
 			<key>ID</key>
 			<integer>79</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -1148,7 +1577,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1156,11 +1585,8 @@ Broker\
 \f0\fs24 \cf0 Repository\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs20 \cf0 (Clojure)
-\fs24 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\fs16 \cf0 (8881/7881)}</string>
+\fs16 \cf0 (Clojure)\
+(8881/7881)}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1180,10 +1606,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>200</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{721.41732938017424, 224.0450009781548}</string>
-				<string>{653.46457276738533, 201.92052533243518}</string>
+				<string>{718.77791633586844, 272.88560565136936}</string>
+				<string>{661.35838997993244, 259.00798288713247}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1211,57 +1639,6 @@ Broker\
 			</dict>
 		</dict>
 		<dict>
-			<key>Bounds</key>
-			<string>{{648.41479545196432, 249.05394170059998}, {23, 20}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>FitText</key>
-			<string>YES</string>
-			<key>Flow</key>
-			<string>Resize</string>
-			<key>FontInfo</key>
-			<dict>
-				<key>Size</key>
-				<real>8</real>
-			</dict>
-			<key>ID</key>
-			<integer>199</integer>
-			<key>Line</key>
-			<dict>
-				<key>ID</key>
-				<integer>164</integer>
-				<key>Position</key>
-				<real>0.50238442420959473</real>
-				<key>RotationType</key>
-				<integer>0</integer>
-			</dict>
-			<key>Style</key>
-			<dict>
-				<key>shadow</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>stroke</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-			</dict>
-			<key>Text</key>
-			<dict>
-				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
-{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs16 \cf0 ssh}</string>
-			</dict>
-			<key>Wrap</key>
-			<string>NO</string>
-		</dict>
-		<dict>
 			<key>Class</key>
 			<string>LineGraphic</string>
 			<key>FontInfo</key>
@@ -1278,10 +1655,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>196</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{342.32187234392177, 231.25676702441282}</string>
-				<string>{333.53912985099174, 363.5073629311139}</string>
+				<string>{353.95102545082682, 239.42779876296171}</string>
+				<string>{353.95102545082688, 365.02416655435769}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1336,10 +1715,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>195</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{333.53912985099174, 363.5073629311139}</string>
-				<string>{463.46457113421803, 304.47422671148126}</string>
+				<string>{353.95102545082688, 365.02416655435769}</string>
+				<string>{475.72152947019975, 314.30084152006441}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1394,10 +1775,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>194</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{653.46457276738533, 320.03787708908862}</string>
-				<string>{333.53912985099174, 363.5073629311139}</string>
+				<string>{660.55118700491153, 361.73874046717816}</string>
+				<string>{353.95102545082688, 365.02416655435769}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1441,10 +1824,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>197</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{721.41732938017424, 311.95499902184508}</string>
-				<string>{653.46457276738533, 320.03787708908862}</string>
+				<string>{718.77791633586844, 316.84060467321433}</string>
+				<string>{660.55118700491153, 361.73874046717816}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1475,7 +1860,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{611.89394950247583, 310.03787708908862}, {83.141246529818886, 20}}</string>
+			<string>{{618.98056374000203, 351.73874046717816}, {83.141246529818886, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1489,6 +1874,8 @@ Broker\
 			<string>YES</string>
 			<key>ID</key>
 			<integer>192</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Rotation</key>
 			<real>270</real>
 			<key>Style</key>
@@ -1514,7 +1901,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1526,7 +1913,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{291.9685065860823, 346.83054745569626}, {83.141246529818886, 33.353630950835282}}</string>
+			<string>{{312.38040218591743, 345.11865577853064}, {83.141246529818886, 39.811021551654107}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1536,6 +1923,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>191</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -1559,7 +1948,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1567,7 +1956,7 @@ Broker\
 \f0\fs24 \cf0 Storage\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs16 \cf0 (8883/7883)}</string>
+\fs16 \cf0 (Clojure) (8886/7886)}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1587,10 +1976,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>185</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{90.612701366209279, 335.19684659219149}</string>
-				<string>{129.05511919044133, 344.69639671473408}</string>
+				<string>{87.973288321903254, 340.08245224356085}</string>
+				<string>{138.97637912297813, 364.57015908506582}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1621,7 +2012,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{87.484495925531888, 334.69639671473408}, {83.141246529818886, 20}}</string>
+			<string>{{104.96063078285204, 354.57015908506582}, {68.031496680252189, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1635,6 +2026,8 @@ Broker\
 			<string>YES</string>
 			<key>ID</key>
 			<integer>184</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Rotation</key>
 			<real>270</real>
 			<key>Style</key>
@@ -1660,7 +2053,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1688,10 +2081,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>179</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{129.05511919044133, 257.32739028932224}</string>
-				<string>{196.48583662754459, 165.83604974678406}</string>
+				<string>{138.97637912297813, 206.25577389171036}</string>
+				<string>{222.31188386297981, 176.91259226115997}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1735,10 +2130,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>178</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{90.612701366209237, 277.79529179663177}</string>
-				<string>{129.05511919044133, 257.32739028932224}</string>
+				<string>{87.973288321903254, 225.27930843843632}</string>
+				<string>{138.97637912297813, 206.25577389171036}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1782,10 +2179,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>177</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.1322070853472, 179.46435309322652}</string>
-				<string>{544.13220708534709, 92.846679915739657}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
+				<string>{555.76136019225214, 101.01771165428855}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1814,7 +2213,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{113.55511919044133, 247.32739028932227}, {31, 20}}</string>
+			<string>{{111.97637912297813, 196.25577389171036}, {54, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1828,6 +2227,8 @@ Broker\
 			<string>YES</string>
 			<key>ID</key>
 			<integer>175</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Rotation</key>
 			<real>270</real>
 			<key>Style</key>
@@ -1853,7 +2254,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1865,15 +2266,17 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{29.966123529133171, 230.66575041284651}, {45.99998035171032, 33.353630950835282}}</string>
+			<string>{{27.326710484827174, 235.5513560642159}, {45.99998035171032, 33.353630950835282}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
 			<integer>174</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1883,15 +2286,17 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{29.966123529133171, 286.9613325853519}, {45.99998035171032, 33.353630950835282}}</string>
+			<string>{{27.326710484827174, 291.8469382367212}, {45.99998035171032, 33.353630950835282}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
 			<integer>171</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1901,15 +2306,17 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{29.966137814608011, 174.37016824034097}, {45.99998035171032, 33.353630950835282}}</string>
+			<string>{{27.326724770302015, 179.25577389171036}, {45.99998035171032, 33.353630950835282}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
 			<integer>170</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -1919,7 +2326,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{12.7559056275473, 162.99212746310417}, {77.856795738661958, 229.60630129585115}}</string>
+			<string>{{10.116492583241303, 167.87773311447353}, {77.856795738661958, 229.60630129585115}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1931,6 +2338,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>169</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Magnets</key>
 			<array>
 				<string>{-0.59628479784302701, -1.1925696134567263}</string>
@@ -1984,10 +2393,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>168</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{342.32187234392177, 231.25676702441282}</string>
-				<string>{391.44052048967495, 98.177165560084063}</string>
+				<string>{353.95102545082682, 239.42779876296171}</string>
+				<string>{403.06967359658, 118.73149043262805}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2042,10 +2453,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>167</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{391.44052048967495, 98.177165560084063}</string>
-				<string>{463.46457113421803, 304.47422671148126}</string>
+				<string>{403.06967359658, 118.73149043262805}</string>
+				<string>{475.72152947019975, 314.30084152006441}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2085,16 +2498,18 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{355.08907374610396, 74.073400563825402}, {72.702893487141978, 48.207529992517337}}</string>
+			<string>{{366.71822685300901, 94.627725436369388}, {72.702893487141978, 48.207529992517337}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
 			<dict>
 				<key>Size</key>
-				<real>10</real>
+				<real>8</real>
 			</dict>
 			<key>ID</key>
 			<integer>166</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -2118,7 +2533,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -2126,11 +2541,8 @@ Broker\
 \f0\fs24 \cf0 Builder\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs20 \cf0 (Clojure)
-\fs24 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\fs16 \cf0 (8884/7884)}</string>
+\fs16 \cf0 (Clojure)\
+(8884/7884)}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2150,10 +2562,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>165</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.1322070853472, 179.46435309322652}</string>
-				<string>{653.46457276738533, 201.92052533243518}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
+				<string>{661.35838997993244, 259.00798288713247}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2193,61 +2607,16 @@ Broker\
 			<key>Head</key>
 			<dict>
 				<key>ID</key>
-				<integer>122</integer>
-			</dict>
-			<key>ID</key>
-			<integer>164</integer>
-			<key>Points</key>
-			<array>
-				<string>{544.1322070853472, 242.21239519143924}</string>
-				<string>{721.41732938017435, 268}</string>
-			</array>
-			<key>Style</key>
-			<dict>
-				<key>shadow</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>stroke</key>
-				<dict>
-					<key>HeadArrow</key>
-					<string>0</string>
-					<key>Legacy</key>
-					<false/>
-					<key>LineType</key>
-					<integer>1</integer>
-					<key>TailArrow</key>
-					<string>FilledArrow</string>
-				</dict>
-			</dict>
-			<key>Tail</key>
-			<dict>
-				<key>ID</key>
-				<integer>156</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>Class</key>
-			<string>LineGraphic</string>
-			<key>FontInfo</key>
-			<dict>
-				<key>Font</key>
-				<string>Helvetica</string>
-				<key>Size</key>
-				<real>12</real>
-			</dict>
-			<key>Head</key>
-			<dict>
-				<key>ID</key>
 				<integer>75</integer>
 			</dict>
 			<key>ID</key>
 			<integer>163</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{721.41732938017435, 180.09000195630995}</string>
-				<string>{544.13220708534709, 92.846679915739657}</string>
+				<string>{718.77791633586844, 184.97560760767931}</string>
+				<string>{555.76136019225214, 101.01771165428855}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2278,61 +2647,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{734.17275343496101, 241.82739028932227}, {45.999985714523483, 27.394820293023397}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>161</integer>
-			<key>Text</key>
-			<dict>
-				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 ...}</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{734.17276767434078, 192.15065474703837}, {45.999985714523483, 27.394820293023397}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>154</integer>
-			<key>Text</key>
-			<dict>
-				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 Executor}</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{734.17276772043772, 149.35126022838804}, {45.999985714523483, 27.394820293023397}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>ID</key>
-			<integer>160</integer>
-			<key>Text</key>
-			<dict>
-				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 Executor}</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{721.41732938017435, 136.13500293446481}, {72.702893487141978, 263.72999413107038}}</string>
+			<string>{{718.77791633586833, 141.02060858583417}, {72.702893487141978, 263.72999413107038}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -2344,6 +2659,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>122</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Magnets</key>
 			<array>
 				<string>{-0.73960026163363957, -1.1094003924504576}</string>
@@ -2390,7 +2707,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{614.53617489805436, 191.92052533243518}, {77.856795738661958, 20}}</string>
+			<string>{{622.42999211060146, 249.0079828871325}, {77.856795738661958, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -2404,6 +2721,8 @@ Broker\
 			<string>YES</string>
 			<key>ID</key>
 			<integer>159</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Rotation</key>
 			<real>270</real>
 			<key>Style</key>
@@ -2429,7 +2748,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -2442,7 +2761,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{306.14173506113485, 511.0030066990123}, {107.38130534181334, 20}}</string>
+			<string>{{321.93074145849835, 485.76642761124197}, {216.85039566830392, 39.811021551654107}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -2450,12 +2769,14 @@ Broker\
 				<key>Font</key>
 				<string>Helvetica</string>
 				<key>Size</key>
-				<real>8</real>
+				<real>10</real>
 			</dict>
 			<key>HFlip</key>
 			<string>YES</string>
 			<key>ID</key>
 			<integer>158</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -2479,12 +2800,16 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs16 \cf0 HTTP  Reverse  Proxy}</string>
+\f0\fs20 \cf0 HTTP  Server / Reverse Proxy \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\fs16 \cf0   Apache (80,443 / -) production,  \
+resp Clojure service (8888/7888) dev. and test}</string>
 			</dict>
 			<key>TextPlacement</key>
 			<integer>0</integer>
@@ -2506,10 +2831,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>157</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.1322070853472, 179.46435309322652}</string>
-				<string>{544.1322070853472, 242.21239519143924}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
+				<string>{555.76136019225225, 247.15473162957875}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2538,11 +2865,18 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{490.44155441444047, 222.30688441561219}, {107.38130534181346, 39.811021551654107}}</string>
+			<string>{{502.07070752134553, 230.47791615416111}, {107.38130534181346, 33.353630950835282}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Size</key>
+				<real>8</real>
+			</dict>
 			<key>ID</key>
 			<integer>156</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Shape</key>
 			<string>Cylinder</string>
 			<key>Style</key>
@@ -2568,13 +2902,15 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs18 \cf0 Git Repositories\
-(File System)}</string>
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\fs16 \cf0 (File System)}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2594,10 +2930,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>152</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.1322070853472, 179.46435309322652}</string>
-				<string>{342.32187234392177, 231.25676702441282}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
+				<string>{353.95102545082682, 239.42779876296171}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2637,7 +2975,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{218.36266988410839, 511.9148574337778}, {31, 20}}</string>
+			<string>{{45.290024696425888, 512.38234065601705}, {31, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -2651,6 +2989,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>151</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Line</key>
 			<dict>
 				<key>ID</key>
@@ -2688,7 +3028,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -2710,10 +3050,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>150</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{192.65563441415253, 521.95993836671801}</string>
-				<string>{275.79688094397142, 521.86898096304583}</string>
+				<string>{14.944921043116302, 522.74725274725279}</string>
+				<string>{107.44415062709163, 522.01098901098896}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2739,7 +3081,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{139.55058824559293, 512.02037853966226}, {21, 20}}</string>
+			<string>{{51.254012457650241, 487.42460127633063}, {21, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -2753,6 +3095,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>149</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Line</key>
 			<dict>
 				<key>ID</key>
@@ -2790,7 +3134,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -2812,10 +3156,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>148</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{119.05511919044133, 522.42595205928728}</string>
-				<string>{180.30511919044136, 521.62450014278852}</string>
+				<string>{14.944921043116302, 497.8821173188702}</string>
+				<string>{107.44415062709166, 496.97802197802201}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2841,7 +3187,7 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{32.940322606325978, 512.86898096304583}, {54, 20}}</string>
+			<string>{{31.077847655605588, 464.38189398172329}, {54, 20}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -2855,6 +3201,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>147</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Line</key>
 			<dict>
 				<key>ID</key>
@@ -2892,7 +3240,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -2914,10 +3262,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>146</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{16.807395993836682, 522.86898096304583}</string>
-				<string>{109.30662557781204, 522.86898096304583}</string>
+				<string>{14.944921043116302, 474.38189398172329}</string>
+				<string>{107.44415062709163, 474.38189398172329}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2956,10 +3306,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>143</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{342.32187234392177, 231.25676702441282}</string>
-				<string>{544.13220708534709, 92.846679915739657}</string>
+				<string>{353.95102545082682, 239.42779876296171}</string>
+				<string>{555.76136019225214, 101.01771165428855}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -3014,10 +3366,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>142</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{342.32187234392177, 231.25676702441282}</string>
-				<string>{196.48583662754459, 165.83604974678406}</string>
+				<string>{353.95102545082682, 239.42779876296171}</string>
+				<string>{222.31188386297981, 176.91259226115997}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -3072,10 +3426,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>123</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{463.46457113421803, 304.47422671148126}</string>
-				<string>{196.48583662754459, 165.83604974678406}</string>
+				<string>{475.72152947019975, 314.30084152006441}</string>
+				<string>{222.31188386297981, 176.91259226115997}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -3130,10 +3486,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>120</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{463.46457113421803, 304.47422671148126}</string>
-				<string>{544.1322070853472, 179.46435309322652}</string>
+				<string>{475.72152947019975, 314.30084152006441}</string>
+				<string>{555.76136019225237, 187.63538483177541}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -3188,10 +3546,12 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>119</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Points</key>
 			<array>
-				<string>{544.13220708534709, 92.846679915739657}</string>
-				<string>{463.46457113421803, 304.47422671148126}</string>
+				<string>{555.76136019225214, 101.01771165428855}</string>
+				<string>{475.72152947019975, 314.30084152006441}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -3231,16 +3591,18 @@ Broker\
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{150.2362218355569, 141.73228475052539}, {92.499229583975364, 48.207529992517337}}</string>
+			<string>{{176.06226907099213, 152.80882726490131}, {92.499229583975364, 48.207529992517337}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
 			<dict>
 				<key>Size</key>
-				<real>10</real>
+				<real>8</real>
 			</dict>
 			<key>ID</key>
 			<integer>111</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -3264,7 +3626,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -3272,25 +3634,24 @@ Broker\
 \f0\fs24 \cf0 User-Interface\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs20 \cf0 (Ruby on Rails)
-\fs24 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\fs16 \cf0 (8880)}</string>
+\fs16 \cf0 (Ruby on Rails)\
+(8880/-)}</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{502.5615838204377, 72.941169139912603}, {83.141246529818886, 39.811021551654107}}</string>
+			<string>{{514.19073692734275, 81.112200878461493}, {83.141246529818886, 39.811021551654107}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
 			<dict>
 				<key>Size</key>
-				<real>10</real>
+				<real>8</real>
 			</dict>
 			<key>ID</key>
 			<integer>75</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -3314,7 +3675,7 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
@@ -3322,20 +3683,17 @@ Broker\
 \f0\fs24 \cf0 Dispatcher\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\fs20 \cf0 (Clojure)
-\fs24 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\fs16 \cf0 (8882/7882)}</string>
+\fs16 \cf0 (Clojure)\
+(8882/7882)}</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{518.12022286731633, 512.86898096304583}, {276, 21}}</string>
+			<string>{{600.09737768368814, 489.67193838706902}, {182.03198539575112, 32}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
-			<string>YES</string>
+			<string>Vertical</string>
 			<key>Flow</key>
 			<string>Resize</string>
 			<key>FontInfo</key>
@@ -3347,6 +3705,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>55</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -3368,19 +3728,18 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 Copyright 2014, 2015 Thomas Schank,  AlgoCon LLC Switzerland }</string>
+\f0\fs18 \cf0 Copyright 2014, 2015 Thomas Schank\
+Update 2015-03-07 }</string>
 			</dict>
-			<key>Wrap</key>
-			<string>NO</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{130, 5.6692913900210158}, {546, 34}}</string>
+			<string>{{285.50715552314324, 0}, {236, 58}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -3396,6 +3755,8 @@ Broker\
 			</dict>
 			<key>ID</key>
 			<integer>53</integer>
+			<key>Layer</key>
+			<integer>2</integer>
 			<key>Style</key>
 			<dict>
 				<key>fill</key>
@@ -3417,12 +3778,13 @@ Broker\
 			<key>Text</key>
 			<dict>
 				<key>Text</key>
-				<string>{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs40 \cf0 Cider-CI Architecture - Services and Interaction (Version 2.x)}</string>
+\f0\fs40 \cf0 Cider-CI 2.4 Architecture \
+ Services and Interaction }</string>
 			</dict>
 			<key>Wrap</key>
 			<string>NO</string>
@@ -3442,6 +3804,26 @@ Broker\
 	<false/>
 	<key>Layers</key>
 	<array>
+		<dict>
+			<key>Lock</key>
+			<string>NO</string>
+			<key>Name</key>
+			<string>Layer 3</string>
+			<key>Print</key>
+			<string>YES</string>
+			<key>View</key>
+			<string>YES</string>
+		</dict>
+		<dict>
+			<key>Lock</key>
+			<string>NO</string>
+			<key>Name</key>
+			<string>Layer 2</string>
+			<key>Print</key>
+			<string>YES</string>
+			<key>View</key>
+			<string>YES</string>
+		</dict>
 		<dict>
 			<key>Lock</key>
 			<string>NO</string>
@@ -3477,7 +3859,7 @@ Broker\
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-01-24 11:13:32 +0000</string>
+	<string>2015-03-07 08:46:35 +0000</string>
 	<key>Modifier</key>
 	<string>DrTom</string>
 	<key>NotesVisible</key>
