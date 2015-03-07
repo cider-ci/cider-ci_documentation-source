@@ -1,0 +1,213 @@
+---
+title: Core API Resources
+---
+{::options toc_levels="1,2" /}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+# Core API Resources
+{:.no_toc}
+
+All of the resources in this section are prefixed with `/cider-ci/api/v2`. This
+prefix is omitted for brevity in the following. 
+
+
+## General Properties 
+
+### Content Types 
+
+The core API supports the content types `application/json-roa+json` and
+`application/json` for `GET` requests to all resources. The former
+includes hyperlinks to related resources and to this documentation.
+
+The API evaluates the accept header including the `q` parameter, see [Section
+14 of RFC 2616][] . The content type `application/json-roa+json` as a higher
+quality of service and is thus preferred. If no matching accept header is
+supplied the content-type `application/json-roa+json` will be used.
+
+All data requests containing a body like `PUT`, `PATCH`, and `POST`
+support the content type `application/json`.
+
+
+  [Section 14 of RFC 2616]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+
+
+### Index Resources
+
+Several resources are conceptually indexes, e.g. `/executions/`, which rather
+return several references to the same kind of resource, e.g. `/execution/:id`.
+All of these indexes are paginated an use the `page` parameter with an integer
+value for iteration. 
+
+The content type `application/json-roa+json` includes a `next` link which 
+should be used to iterate index resources.
+
+## Root
+
+### GET `/`
+
+The entry-point.
+
+## Execution
+
+### GET `/execution/:id`
+
+Returns the properties of the corresponding _Execution_.
+
+## Execution-Stats
+
+### GET `/execution/:id/stats`
+
+Returns the aggregated count of the number of tasks belonging to an _Execution_
+with respect to their state. 
+
+
+## Executions 
+
+### GET `/executions/` 
+
+Returns a list of links each pointing to an `Execution`. Order is
+descending by the `created_at` time-stamp.
+
+#### Query Parameters 
+
+##### branch
+
+Filters *Executions* of commits which are directly referenced by the given
+branch with name equal to the given value where the matching is case
+insensitive.
+
+Query string example: `?branch=master` 
+
+Note: this filter is case insensitive with respect to _branch-name_.
+
+##### branchdescendants
+
+Similar as above, however it will also include all descendants
+of the commit referenced by the given branch name.
+
+Examples: 
+
+1.  Descendants of the branch master: `?branch=master`
+
+2.  A combination of `branch` and `branchdescendants` can make sense:
+    `?branchdescendants=next&branch=master`, read: give me the
+    executions of the commit where the branch master points to and which
+    are descendants of the branch next.
+
+##### repository
+
+Filters *Executions* related to commits within repositories with the
+name equal to the value of the parameter.
+
+This filter is also case insensitive. 
+
+Examples: 
+
+1. executions for the _Madek_ repository: `?repository=madek` 
+2. for the _Madek_ repository and for the master branch: `?repository=madek&branch=master`
+3. including descendants: `?repository=madek&branchdescendants=master`
+4. composing even more: `?repository=madek&branchdescendants=next&branch=master`
+
+
+##### state 
+
+Filters _Executions_ with state equal to the value of the parameter.
+
+Query string example: `?branch-name=master&repository-name=leihs&state=success`
+
+
+## Task
+
+### GET `/task/:id` 
+
+Returns the properties of the corresponding `Task`.
+
+
+## Tasks
+
+### GET `/execution/:execution_id/tasks/` 
+
+Returns a list of links each pointing to a `Task` which belongs to
+`Execution` with the id `:execution_id`. Order is ascending with respect
+to the `name` property.
+
+#### Query Parameters 
+
+##### state 
+
+Filters `Tasks` with state equal to the value of the parameter.
+
+Query string example: `?page=0&state=failed`
+
+## Trial
+
+### GET `/trial/:id` 
+
+Returns the properties of the trial with the id `:id`.
+
+## Trials
+
+### GET `/task/:task_id/trials/` 
+
+Returns a list of links each pointing to a trial which belongs to the
+task with the id `:task_id`. Order is descending with respect to the
+`updated_at` property.
+
+#### Query Parameters 
+
+##### state 
+
+Filters trials with state equal to the value of the parameter.
+
+Query string example: `?page=0&state=failed`
+
+
+
+## Tree-Attachment
+
+### GET `/tree-attachment/:id` 
+
+Returns the properties of a _Tree-Attachment_.
+
+This does not return the data-stream of the attachment itself. A
+hyperlink to the latter is included in `application/json-roa+json`
+response types, see [Content Types][].
+
+
+## Tree-Attachments
+
+### GET `/execution/:execution_id/attachments/` 
+
+Returns a list of ids each belonging to a _Tree-Attachment_ which belongs
+to the _Execution_ with the id `:execution_id`. Note, the `tree_id` is a
+inherent property of every _Execution_. Order is ascending with respect to
+the `path` property.
+
+
+## Trial-Attachment
+
+### GET `/trial-attachment/:id`
+
+Returns the properties of a  _Trial-Attachment_.
+
+This does not return the data-stream of the attachment itself. A
+hyperlink to the latter is included in `application/json-roa+json`
+response types, see [Content Types][].
+
+## Trial-Attachments
+
+### GET `/trial/:trial_id/trial-attachments/` 
+
+Returns a list of ids. Each belongs to a _Trial-Attachment_ which belongs to the
+trial with the id `:trial_id`. Order is ascending with respect to the `path`
+property.
+
+
+
+
+  [Content Types]: #content-types
+
+
+

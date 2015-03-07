@@ -21,6 +21,13 @@ items:
   - title: Advanced Topics
     path: /project_configuration/advanced.html
 
+- title: API
+  path: /api/index.html
+  items: 
+  - title: Core API Resources 
+    path: /api/api_resources.html
+  - title: Storage API Resources 
+    path: /api/storage_resources.html
 
 - title: Development
   items: 
