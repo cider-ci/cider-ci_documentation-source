@@ -70,6 +70,9 @@ set :haml, { ugly: true }
 
 # Build-specific configuration
 configure :build do
+
+  ignore '**/*.graffle'
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
