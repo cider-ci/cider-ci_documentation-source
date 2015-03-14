@@ -3,6 +3,12 @@ title: Development Setup
 ---
 {::options parse_block_html="true" /}
 
+<div class="alert alert-warning">
+This page is partially outdated.     
+</div>
+
+
+
 # Setting up a Cider-CI Development Environment 
 {:.no_toc}
 
