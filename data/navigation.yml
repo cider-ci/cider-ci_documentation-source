@@ -1,7 +1,8 @@
 items:
 
-#- title: Install
-#  path: /install/index.html
+- title: Install
+  path: /install/index.html
+  items: []
 #  items:
 #  - title: Initial Setup
 #    path:  /install/setup.html
