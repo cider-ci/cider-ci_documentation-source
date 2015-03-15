@@ -3,11 +3,6 @@ title: Development Setup
 ---
 {::options parse_block_html="true" /}
 
-<div class="alert alert-warning">
-This page is partially outdated.     
-</div>
-
-
 
 # Setting up a Cider-CI Development Environment 
 {:.no_toc}
@@ -36,23 +31,21 @@ addition to the ones used by PostgreSQL and RabbitMQ):
 </div> </div>
 
 
-Projects 
------------
+Project Checkout
+---------------
 
 <div class="row"> <div class="col-md-6">
-A running instance of Cider-CI is composed of the following services. It is
-recommended to check out all of the following projects under a common
-directory. 
 
-1.  [Cider-CI API][]
-2.  [Cider-CI Builder][]
-3.  [Cider-CI Dispatcher][]
-4.  [Cider-CI Executor][]
-5.  [Cider-CI Repository][]
-6.  [Cider-CI Storage][]
-7.  [Cider-CI User-Interface][]
+A running instance of Cider-CI is composed of several services. See the
+[Architecture](/development/architecture/) page for an overview. 
 
+The source code for each service is a git submodule of the main
+[Cider-CI](https://github.com/cider-ci/cider-ci) project. 
+
+</div> <div class="col-md-6">
+    git clone --recursive https://github.com/cider-ci/cider-ci.git
 </div> </div>
+
 
 Message-Queues - RabbitMQ
 ------------------------------------
@@ -95,18 +88,25 @@ bundle exec rake db:pg:truncate_tables db:pg:data:restore FILE=db/personas.pgbin
 ~~~
 </div> </div>
 
-## Services for Development only
 
-### Reverse Proxy
+## Reverse Proxy 
 
-TODO
+<div class="row"> <div class="col-md-6">
+A deployed environment of Cider-CI uses the Apache HTTP server as a reverse
+proxy. A development environment uses the [Cider-CI Reverse Proxy][] instead.
+The code is located in the `cider-ci/reverse-proxy` dictionary and the service
+can be started by running `./bin/run` from within that directory. 
 
-### Docs
 
-TODO
+</div> <div class="col-md-6">
+    cd reverse-proxy
+    ./bin/run
+
+
+</div> </div>
+
 
 ## User-Interface Service
-
 
 The [Cider-CI User-Interface][] is a Ruby on Rails application. 
 
@@ -117,7 +117,7 @@ We start the web-server from within the directory of the Cider-CI User-Interface
 </div> </div>
 
 <div class="row"> <div class="col-md-6">
-We visit the url <http://localhost:8880/cider-ci/ui/public> in a browser and should see a similar page as shown.
+We visit the url <http://localhost:8888/cider-ci/ui/public> in a browser and should see a similar page as shown.
 </div> <div class="col-md-6">
 [![Welcome-Page](/development/setup/welcome-page.png){: .preview}](/development/setup/welcome-page.png) 
 </div> </div>
@@ -125,7 +125,7 @@ We visit the url <http://localhost:8880/cider-ci/ui/public> in a browser and sho
 <div class="row"> <div class="col-md-6">
 We sign in with the user `adam` and password `password` and follow the links
 `Administration` → `Service stati`.
-<http://localhost:8880/cider-ci/ui/admin/status> reveals that the message queue
+<http://localhost:8888/cider-ci/ui/admin/status> reveals that the message queue
 is running but non of the services are:
 </div> 
 <div class="col-md-6">
@@ -142,26 +142,30 @@ All of the remain services
 [Cider-CI Executor][],
 [Cider-CI Repository][], and 
 [Cider-CI Storage][]
-are written in clojure. Hence, the procedure for
-starting any one of them is the same. We start a REPL from inside each
-directory and then start the service therein with `(-main)`. 
-</div> <div class="col-md-6">
-    lein repl
-  {: }
+are written in clojure. Each of them comes with a `./bin/run` script which will
+start a headless server.
 
+We can alternatively start a REPL from inside each directory and then start the
+service therein with `(-main)`. 
+</div> <div class="col-md-6">
+    cd SERVICE_DIRECTORY
+    ./bin/run
+
+or
+
+    cd SERVICE_DIRECTORY
+    lein repl
     (-main)
 </div> </div>
 
-All of the services should now be listed `OK` at <http://localhost:8880/cider-ci/ui/admin/status>.
+<div class="alert alert-warning">
+The services use relative paths to access files. 
+It is crucial that they are started from within their 
+own top level directory!
+</div>
 
-### Optional Configuration 
 
-<div class="row"> <div class="col-md-6">
-The default configuration of a clojure service is defined in
-`./resources/conf-defaults.yml`.  Some JVM memory options, like the `Xmx` value
-e.g., override JVM defaults via `project.clj` and can themself be overridden
-via JVM environment variables. 
-</div> </div>
+All of the services should now be listed `OK` at <http://localhost:8888/cider-ci/ui/admin/status>.
 
 
 ## Executor 
@@ -170,7 +174,7 @@ via JVM environment variables.
 
 <div class="row"> <div class="col-md-6">
 The Executor-Services are listed on the `Administration` → `Executors` page
-<http://localhost:8880/cider-ci/ui/admin/executors>. There is only one
+<http://localhost:8888/cider-ci/ui/admin/executors>. There is only one
 configured in the default data set. It matches the parameters of the default
 development executor and hence it should be up and running.
 
@@ -203,6 +207,7 @@ executions can be deleted.
   [Cider-CI Dispatcher]: https://github.com/cider-ci/cider-ci_dispatcher
   [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor
   [Cider-CI Repository]: https://github.com/cider-ci/cider-ci_repository
+  [Cider-CI Reverse Proxy]: https://github.com/cider-ci/cider-ci_reverse-proxy
   [Cider-CI Storage]: https://github.com/cider-ci/cider-ci_storage
   [Cider-CI User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
 

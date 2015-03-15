@@ -5,8 +5,8 @@ title: Install
 
 # Installing Cider-CI 
 {:.no_toc}
-Cider-CI is open source and can be installed with little effort thanks to the
-[Cider-CI Ansible Setup][] project. 
+Cider-CI is open source and can be installed with little effort. The following
+section guide through the process of installing a Cider-CI environment.
 
 
 ### Table of Contents 
@@ -100,10 +100,11 @@ use case.
 
 The procedure for installing a production environment is exactly the same as
 for the demo environment. However, the parameters for the example environment
-are far from optimal. The [Bash Demo Project for Cider-CI] contains the hosts
+are far from optimal. The [Cider-CI Ansible Setup] contains the hosts
 file `hosts_zhkd` which is more appropriate to be used as a template in this
 case. The directories `host_vars` and `group_vars` contain further files to be
 used as templates and to be customized. 
+
 
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
