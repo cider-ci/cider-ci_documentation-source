@@ -213,6 +213,6 @@ executions can be deleted.
 
   [Bundler]: http://bundler.io/
   [Leiningen]: http://leiningen.org/
-  [Nodejs]: http://nodejs.org/
+  [Nodejs]: https://nodejs.org/
   [Ruby]: https://www.ruby-lang.org/
   [rbenv]: https://github.com/sstephenson/rbenv

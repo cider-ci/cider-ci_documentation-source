@@ -20,3 +20,10 @@ gem 'kramdown'
 
 gem 'bootswatch-sprockets', "~> 1.0"
 
+
+gem 'activesupport', '~> 4.1.9'
+gem 'capybara'
+gem 'rspec'
+gem 'selenium-webdriver'
+gem 'addressable'
+gem 'faraday'
