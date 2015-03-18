@@ -15,7 +15,7 @@ Prerequisites
 -------------
 
 <div class="row"> <div class="col-md-6">
--   Postgresql version ≥ 9.4 (≤ 9.3 will not suffice!)
+-   PostgreSQL version ≥ 9.4 (≤ 9.3 will not suffice!)
 -   RabbitMQ version ≥ 3.0 (≥ 3.3 recommended)
 -   JDK 7 or later
 -   [Leiningen][] version ≥ 2.0 (≥ 2.5 recommended)

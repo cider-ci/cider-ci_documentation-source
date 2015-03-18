@@ -17,8 +17,12 @@ items:
   items: 
   - title: Dotfile
     path: /project_configuration/dotfile.html
-  - title: Build Specification
-    path: /project_configuration/specification.html
+  - title: Job Specification
+    path: /project_configuration/specification/index.html
+  - title: Task Specification
+    path: /project_configuration/task.html
+  - title: Script Specification
+    path: /project_configuration/scripts.html
   - title: Advanced Topics
     path: /project_configuration/advanced.html
 
@@ -37,8 +41,4 @@ items:
   - title: Setup
     path: /development/setup/index.html 
 
-#- title: API
-#  items: 
-#  - title: Documentation
-#    path: /api/documentation.html
-#
+

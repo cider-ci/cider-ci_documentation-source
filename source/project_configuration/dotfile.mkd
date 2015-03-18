@@ -32,7 +32,7 @@ The following example is an extract of the Cider-CI dotfile of the
           This demo can only be started if the "Chain-Prerequisite-Demoe" has
           passed. There is also a trigger which will start this demo when the
           prerequisite has finished and the commit is part of the head of
-          a brach matching the given regular expression. 
+          a branch matching the given regular expression. 
         specification: 
           _cider-ci_include: /.cider-ci/shared/sleeping_task_context.yml
         depends:
@@ -63,7 +63,7 @@ describe, specify and relate them.
 |-----------------+----------+------------------------------------------------------------------|
 | Key             | Required | Value                                                            |
 |-----------------+----------+------------------------------------------------------------------|
-| `specification` | yes      | Map, see the [Build Specification][] page                        |
+| `specification` | yes      | Map, see the [Job Specification][] page                        |
 | `description`   | no       | String, describes the build, plain text or markdown              |
 | `depends`       | no       | Map, see the [Declaring Dependencies][] section                  |
 | `trigger`       | no       | Boolean true value or Map, see the [Triggering Builds][] section |
@@ -96,7 +96,7 @@ very same way as declaring triggers on branches. See the following section.
 Builds will be automatically started if the conditions specified by the
 `trigger` directive and their dependencies are satisfied. 
 
-The value of the `trigger` direcative can have one multiple types. 
+The value of the `trigger` directive can have one multiple types. 
 A boolean true value is the simplest case: 
 
     builds:
@@ -110,7 +110,7 @@ honored. The value of the `builds` key can be exactly the same as described in
 [Declaring Dependencies][], we will not repeat it here. The value of the
 `branch` key is always a string. Names of branches can be matched by either
 case sensitive comparison or by regular expression matching. Regualar
-expression maching will be performed if and only if the string starts with
+expression matching will be performed if and only if the string starts with
 a `^` character. 
 
 
@@ -121,16 +121,16 @@ a `^` character.
   {: .language-yaml}
 
 
-Triggers are evaluated when an event realted to the `tree_id` happens.
+Triggers are evaluated when an event related to the `tree_id` occurs.
 This includes:
 
-* A by the `tree_id` related commit becomes the head of a branch.
-* Some other build with the same `tree_id` changes into a final state.
+* A commit becomes the head of a branch.
+* Some job changes into a final state.
 
 
   [Build Properties]: #build
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
-  [Build Specification]: /project_configuration/specification.html
+  [Job Specification]: /project_configuration/specification/
   [Declaring Dependencies]: #depends
   [Triggering Builds]: #trigger
 

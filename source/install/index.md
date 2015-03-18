@@ -5,8 +5,8 @@ title: Install
 
 # Installing Cider-CI 
 {:.no_toc}
-Cider-CI is open source and can be installed with little effort. The following
-section guide through the process of installing a Cider-CI environment.
+Cider-CI is open source and can be installed with little effort. This page
+guides through the process of installing a Cider-CI environment.
 
 
 ### Table of Contents 
@@ -16,7 +16,7 @@ section guide through the process of installing a Cider-CI environment.
 
 
 
-## Environment Prequisites 
+## Environment Prerequisites 
 
 <div class="row"> <div class="col-md-6">
 
@@ -49,7 +49,8 @@ this documentation.
 
 ## Step by Step Install Procedure for a Demo Environment
 
-1.  We check out the [Cider-CI main project][] including all sub-projects. 
+1.  We check out the [Cider-CI main project][] including all sub-projects inside 
+    the control machine: 
 
     `git clone --recursive https://github.com/cider-ci/cider-ci.git` 
 
@@ -94,7 +95,7 @@ A custom trait can be added by adding a corresponding line to the file
 
 ## Production Environment 
 
-The server for a production environment should have at least 4G of memory.
+The server for a production environment should have at least 4GB of memory.
 A fast disk is also recommended. Requirements for the executors depend on the
 use case. 
 

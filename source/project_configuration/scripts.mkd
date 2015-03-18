@@ -1,0 +1,13 @@
+### Scripts 
+
+### Script 
+
+|---------+----------+---------+-----------------------------------------------------------------|
+| Key     | Required | Default | Value                                                           |
+|---------+----------+---------+-----------------------------------------------------------------|
+| `name`  | yes      |         | string                                                          |
+| `body`  | yes      |         | string, body script of the (shell) script to be executed        |
+| `order` | no       | 0       | integer, determines the order in which the scripts are executed |
+|---------+----------+---------+-----------------------------------------------------------------|
+{: .table .table-striped}
+

@@ -21,7 +21,7 @@ Configuring a project for Cider-CI starts with creating a `.cider-ci.yml`
 dot-file and specifying available _builds_ therein. This is described in the
 [The Cider-CI Dotfile][] page.
 
-The specification of a build itself is covered in the [Build Specification][] page.
+The specification of a build itself is covered in the [Job Specification][] page.
 
 Cider-CI has several features to keep specification files dry and maintainable.
 Using *sub-contexts*, splitting the configuration over multiple files, and the
@@ -32,10 +32,6 @@ related *deep-merge* strategy are discussed in the [Advanced Topics][] page.
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
   [The Cider-CI Dotfile]: /project_configuration/dotfile.html
-  [Build Specification]: /project_configuration/specification.html
+  [Job Specification]: /project_configuration/specification/
   [Advanced Topics]: /project_configuration/advanced.html
-
-
-
-
 

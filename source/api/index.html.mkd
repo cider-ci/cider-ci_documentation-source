@@ -4,7 +4,7 @@ Cider-CI API Documentation
 
 Visit  the [Cider-CI Project](https://github.com/cider-ci/cider-ci) for more information on Cider-CI.
 
-The [entities diagram](/development/architecture#entities) is helpful to understand relations between resources. 
+The [entities diagram](/development/architecture/#entities) is helpful to understand relations between resources. 
 
 
 ## State of the API 

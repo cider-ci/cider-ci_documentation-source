@@ -1,0 +1,60 @@
+## Task {#task}
+
+A task specifies how the project is checked out with git. It declares the
+required _traits_. And it contains the _scripts_ which are the lowest level of
+execution in Cider-CI. 
+
+|---------------+----------+---------------------------------------------|
+| Key           | Required | Value                                       |
+|---------------+----------+---------------------------------------------|
+| `git_options` | no       | see the [Git Options][] section             |
+| `scripts`     | yes      | array or map; see the [Scripts][] page      |
+| `traits`      | no       | map to booleans; see the [Traits][] section |
+|---------------+----------+---------------------------------------------|
+{: .table .table-striped}
+
+
+## Scripts 
+
+## Traits 
+
+The `traits` key can occur in a [Task][] or in the [Task
+Defaults][].  The value is a map to booleans. Every key with
+a true value is taken into account to match a suitable executor. 
+
+    task_defaults:
+      traits:
+        linux: true
+  {: .language-yaml}
+
+
+
+## Git Options  
+
+The key `git_options` specifies behavior when cloning the project and checking
+out submodules.
+
+    git_options: 
+      submodules: 
+        clone: true 
+        timeout: 30
+  {: .language-yaml}
+
+ 
+|------------------------+---------+------------------------------------------------------------|
+| Key                    | Default | Value                                                      |
+|------------------------+---------+------------------------------------------------------------|
+| `submodules`/`clone`   | False   | boolean, submodules are only cloned when this is _truthy_  |
+| `submodules`/`timeout` | 200     | integer, submodule update (i.e. clone)  timeout in seconds |
+|------------------------+---------+------------------------------------------------------------|
+{: .table .table-striped}
+
+See also the following comprehensive [submodule example][] in the [Bash Demo Project][].
+
+
+  [Git Options]: #git-options
+  [Traits]: #traits
+  [Scripts]: scripts.html
+  [Task Defaults]: /project_configuration/specification/#task-defaults
+  [Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
+
