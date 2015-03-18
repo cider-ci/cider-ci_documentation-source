@@ -1,0 +1,33 @@
+# Cider-CI Documentation Source
+
+This project is part of [Cider-CI](https://github.com/cider-ci/cider-ci). It
+contains the source of the documentation. 
+
+## Usage 
+
+### Build 
+
+`bundle exec middleman build`. 
+
+### Test 
+
+1. `bundle exec middleman`  
+2. `bundle exec rspec spec/`
+
+The tests perform: 
+
+* check for existence of internal links including fragments `#...`,  
+* check for existence of external links (requires internet connection), and
+* spell checking. This requires `hunspell` to be in the path and also the
+    `en_US` dictionary to be available.
+
+
+## License and Copyright
+
+Copyright 2015 Thomas Schank and contributors
+
+The Cider-CI Documentation by Thomas Schank and contributors is licensed under
+a Creative Commons Attribution-NoDerivatives 4.0 International License.
+
+
+
