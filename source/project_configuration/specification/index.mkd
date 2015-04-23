@@ -1,12 +1,12 @@
 ---
-title: Job Specification
+title: Build Specification
 ---
 
-# The Job Specification
+# The Build Specification
 {:.no_toc}
 
 This documentation focuses on the properties by which
-Cider-CI composes the _Job Specification_.
+Cider-CI composes the _Build Specification_.
 
 
 #### Table of Contents 
@@ -21,7 +21,7 @@ We call the map underneath a `specification` key in a Cider-CI dotfile the _main
 context_. 
 
     # Cider-CI dotfile .cider-ci.yml
-    jobs:
+    builds:
       Tests: 
         specification: 
           # this is the main context

@@ -14,14 +14,14 @@ Cider-CI.
 
 Every configuration given here is demonstrated and brought in to context in the
 [Bash Demo Project for Cider-CI][]. We recommend to have a look at this project
-first. Running the defined _jobs_ of the [Bash Demo Project for Cider-CI][]
+first. Running the defined _builds_ of the [Bash Demo Project for Cider-CI][]
 provides an easy and feature oriented introduction to the matter.
 
 Configuring a project for Cider-CI starts with creating a `.cider-ci.yml`
-dot-file and specifying available _jobs_ therein. This is described in the
+dot-file and specifying available _builds_ therein. This is described in the
 [The Cider-CI Dotfile][] page.
 
-The specification of a job itself is covered in the [Job Specification][] page.
+The specification of a build itself is covered in the [Job Specification][] page.
 
 Cider-CI has several features to keep specification files dry and maintainable.
 Using *sub-contexts*, splitting the configuration over multiple files, and the
