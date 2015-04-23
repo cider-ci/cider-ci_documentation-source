@@ -72,7 +72,7 @@ this documentation.
 
 4. We invoke ansible-playbook to trigger the install: 
 
-    `ansible-playbook -i hosts_example play_site.yml -e 'system_admin_password=password,system_admin_login=adam'`
+    `ansible-playbook -i hosts_example play_site.yml -e 'system_admin_password=password system_admin_login=adam'`
 
 
 ## Adding Traits 
