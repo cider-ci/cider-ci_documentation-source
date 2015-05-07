@@ -1,12 +1,12 @@
 ---
-title: Build Specification
+title: Execution Specification
 ---
 
-# The Build Specification
+# The Execution Specification
 {:.no_toc}
 
 This documentation focuses on the properties by which
-Cider-CI composes the _Build Specification_.
+Cider-CI composes the _Execution Specification_.
 
 
 #### Table of Contents 
@@ -21,7 +21,7 @@ We call the map underneath a `specification` key in a Cider-CI dotfile the _main
 context_. 
 
     # Cider-CI dotfile .cider-ci.yml
-    builds:
+    executions:
       Tests: 
         specification: 
           # this is the main context

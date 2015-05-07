@@ -10,8 +10,8 @@ title: Dotfile Project Configuration
 
 
 This page documents the contents of the Cider-CI dotfile `.cider-ci.yml`. The
-Cider-CI dotfile defines and specifies available _builds_ and possible
-relations between builds for a given project.
+Cider-CI dotfile defines and specifies available _executions_ and possible
+relations between executions for a given project.
 
 The following example is an extract of the Cider-CI dotfile of the
 [Bash Demo Project for Cider-CI][].
@@ -19,7 +19,7 @@ The following example is an extract of the Cider-CI dotfile of the
 
     # Cider-CI dotfile .cider-ci.yml
 
-    builds:
+    executions:
 
       "Chain-Prerequisite-Demo": 
         description: |
@@ -36,7 +36,7 @@ The following example is an extract of the Cider-CI dotfile of the
         specification: 
           _cider-ci_include: /.cider-ci/shared/sleeping_task_context.yml
         depends:
-          builds:
+          executions:
             "Chain-Prerequisite-Demo": passed
             "Trigger-Demo": passed
         trigger: true
@@ -55,58 +55,58 @@ The following example is an extract of the Cider-CI dotfile of the
 
 
 
-# The _builds_ Map {#builds}
+# The _executions_ Map {#executions}
 
-The keys of the _builds_ map name available builds for reference. The values
+The keys of the _executions_ map name available executions for reference. The values
 describe, specify and relate them.
 
 |-----------------+----------+------------------------------------------------------------------|
 | Key             | Required | Value                                                            |
 |-----------------+----------+------------------------------------------------------------------|
 | `specification` | yes      | Map, see the [Job Specification][] page                        |
-| `description`   | no       | String, describes the build, plain text or markdown              |
+| `description`   | no       | String, describes the execution, plain text or markdown              |
 | `depends`       | no       | Map, see the [Declaring Dependencies][] section                  |
-| `trigger`       | no       | Boolean true value or Map, see the [Triggering Builds][] section |
+| `trigger`       | no       | Boolean true value or Map, see the [Triggering Executions][] section |
 |-----------------+----------+------------------------------------------------------------------|
 {: .table .table-striped }
 
 
 ## Declaring Dependencies {#depends}
 
-The `depends` key declares a build to be dependent on either an other build or
-the belonging to a branch. A build which has unsatisfied dependencies can not
+The `depends` key declares a execution to be dependent on either an other execution or
+the belonging to a branch. A execution which has unsatisfied dependencies can not
 be started. 
 
-Builds for a given commit (`tree_id` precisely) can depend on each other by
-specifying a build name and the desired state of that build. 
+Executions for a given commit (`tree_id` precisely) can depend on each other by
+specifying a execution name and the desired state of that execution. 
 
     depends:
-      builds:
+      executions:
         "Chain-Prerequisite-Demo": passed
         "Trigger-Demo": passed
   {: .language-yaml}
 
 
-Builds can depend on their belonging to a certain branch. This is done in the
+Executions can depend on their belonging to a certain branch. This is done in the
 very same way as declaring triggers on branches. See the following section. 
 
 
-## Triggering Builds {#trigger}
+## Triggering Executions {#trigger}
 
-Builds will be automatically started if the conditions specified by the
+Executions will be automatically started if the conditions specified by the
 `trigger` directive and their dependencies are satisfied. 
 
 The value of the `trigger` directive can have one multiple types. 
 A boolean true value is the simplest case: 
 
-    builds:
+    executions:
       "Chain-Dependent-Demo": 
         trigger: true
   {: .language-yaml}
 
 
-The value of `trigger` can be a map where the keys `builds` and `branch` are
-honored. The value of the `builds` key can be exactly the same as described in
+The value of `trigger` can be a map where the keys `executions` and `branch` are
+honored. The value of the `executions` key can be exactly the same as described in
 [Declaring Dependencies][], we will not repeat it here. The value of the
 `branch` key is always a string. Names of branches can be matched by either
 case sensitive comparison or by regular expression matching. Regualar
@@ -114,7 +114,7 @@ expression matching will be performed if and only if the string starts with
 a `^` character. 
 
 
-    builds:
+    executions:
       "Trigger-Demo": 
         trigger: 
           branch: "^master|wip.*$"
@@ -128,9 +128,9 @@ This includes:
 * Some job changes into a final state.
 
 
-  [Build Properties]: #build
+  [Execution Properties]: #execution
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
   [Job Specification]: /project_configuration/specification/
   [Declaring Dependencies]: #depends
-  [Triggering Builds]: #trigger
+  [Triggering Executions]: #trigger
 

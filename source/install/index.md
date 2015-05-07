@@ -78,7 +78,7 @@ this documentation.
 ## Adding Traits 
 
 The example installation will provide the traits `linux` and `bash` for each
-executor. They suffice to run the builds of the [Bash Demo Project for
+executor. They suffice to run the executions of the [Bash Demo Project for
 Cider-CI][]. 
 
 ### Adding Traits provided by the Ansible Setup 
