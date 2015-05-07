@@ -9,7 +9,7 @@ title: Core API Resources
 # Core API Resources
 {:.no_toc}
 
-All of the resources in this section are prefixed with `/cider-ci/api/v2`. This
+All of the resources in this section are prefixed with `/cider-ci/api`. This
 prefix is omitted for brevity in the following. 
 
 
