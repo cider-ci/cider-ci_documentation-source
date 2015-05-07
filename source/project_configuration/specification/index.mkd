@@ -1,12 +1,12 @@
 ---
-title: Execution Specification
+title: Job Specification
 ---
 
-# The Execution Specification
+# The Job Specification
 {:.no_toc}
 
 This documentation focuses on the properties by which
-Cider-CI composes the _Execution Specification_.
+Cider-CI composes the _Job Specification_.
 
 
 #### Table of Contents 
@@ -21,7 +21,7 @@ We call the map underneath a `specification` key in a Cider-CI dotfile the _main
 context_. 
 
     # Cider-CI dotfile .cider-ci.yml
-    executions:
+    jobs:
       Tests: 
         specification: 
           # this is the main context
@@ -69,7 +69,7 @@ the [Deep-Merge][] section of the [Advanced Topics][] page for details.
   [Advanced Topics]: ../advanced.html
   [Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
   [Deep-Merge]: ../advanced.html#deep-merge
-  [Execution properties]: #execution-properties
+  [Job properties]: #job-properties
   [Subcontexts]: #subcontexts
   [Subcontexts]: ../advanced.html#subcontexts
   [Task Defaults]: #task-defaults

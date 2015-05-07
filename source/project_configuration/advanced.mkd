@@ -7,7 +7,7 @@ title: Advanced Project Configuration
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-This page describes advanced features and techniques to keep the execution
+This page describes advanced features and techniques to keep the job
 specification maintainable and non repetitive.
 
 
@@ -19,11 +19,11 @@ One or more  _YAML_ files can be included via the `_cider-ci_include` key. The
 value of `_cider-ci_include` is a string or an array of strings. 
 
 The `_cider-ci_include` key may not appear anywhere else than in the Cider-CI
-dotfile other than in the specification of an execution. It may however appear at
+dotfile other than in the specification of a job. It may however appear at
 any level. The value must equal the absolute path of the file to be included.
 The absolute reference is the top level directory according to git.
 
-    executions:
+    jobs:
       "Submodule-Demo":
         specification: 
           _cider-ci_include: /.cider-ci/shared/submodule_context.yml
@@ -51,7 +51,7 @@ until all includes are satisfied. It is illegal to define circular references.
 
 The main context, i.e. the map `specification` in the dot-file may contain the
 `subcontexts` directive. A subcontext can have exactly the same keys and values
-as the execution specification, i.e. the main context. This includes the
+as the job specification, i.e. the main context. This includes the
 `subcontexts` directive itself. 
 
 Subcontexts provide a way of inheritance which itself provides means to keep

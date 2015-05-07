@@ -2,7 +2,7 @@
 
 A task specifies how the project is checked out with git. It declares the
 required _traits_. And it contains the _scripts_ which are the lowest level of
-execution in Cider-CI. 
+job in Cider-CI. 
 
 |---------------+----------+---------------------------------------------|
 | Key           | Required | Value                                       |

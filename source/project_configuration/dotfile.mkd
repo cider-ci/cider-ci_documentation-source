@@ -10,8 +10,8 @@ title: Dotfile Project Configuration
 
 
 This page documents the contents of the Cider-CI dotfile `.cider-ci.yml`. The
-Cider-CI dotfile defines and specifies available _executions_ and possible
-relations between executions for a given project.
+Cider-CI dotfile defines and specifies available _jobs_ and possible
+relations between jobs for a given project.
 
 The following example is an extract of the Cider-CI dotfile of the
 [Bash Demo Project for Cider-CI][].
@@ -19,7 +19,7 @@ The following example is an extract of the Cider-CI dotfile of the
 
     # Cider-CI dotfile .cider-ci.yml
 
-    executions:
+    jobs:
 
       "Chain-Prerequisite-Demo": 
         description: |
@@ -36,7 +36,7 @@ The following example is an extract of the Cider-CI dotfile of the
         specification: 
           _cider-ci_include: /.cider-ci/shared/sleeping_task_context.yml
         depends:
-          executions:
+          jobs:
             "Chain-Prerequisite-Demo": passed
             "Trigger-Demo": passed
         trigger: true
@@ -44,7 +44,7 @@ The following example is an extract of the Cider-CI dotfile of the
 
       "Trigger-Demo": 
         description: |
-          This execution will be automatically run when a commit containing it
+          This job will be automatically run when a commit containing it
           becomes the head of a branch. The `trigger` property accepts the same
           values as the `depends` property.
         specification:
@@ -55,58 +55,58 @@ The following example is an extract of the Cider-CI dotfile of the
 
 
 
-# The _executions_ Map {#executions}
+# The _jobs_ Map {#jobs}
 
-The keys of the _executions_ map name available executions for reference. The values
+The keys of the _jobs_ map name available jobs for reference. The values
 describe, specify and relate them.
 
 |-----------------+----------+------------------------------------------------------------------|
 | Key             | Required | Value                                                            |
 |-----------------+----------+------------------------------------------------------------------|
 | `specification` | yes      | Map, see the [Job Specification][] page                        |
-| `description`   | no       | String, describes the execution, plain text or markdown              |
+| `description`   | no       | String, describes the job, plain text or markdown              |
 | `depends`       | no       | Map, see the [Declaring Dependencies][] section                  |
-| `trigger`       | no       | Boolean true value or Map, see the [Triggering Executions][] section |
+| `trigger`       | no       | Boolean true value or Map, see the [Triggering Jobs][] section |
 |-----------------+----------+------------------------------------------------------------------|
 {: .table .table-striped }
 
 
 ## Declaring Dependencies {#depends}
 
-The `depends` key declares a execution to be dependent on either an other execution or
-the belonging to a branch. A execution which has unsatisfied dependencies can not
+The `depends` key declares a job to be dependent on either an other job or
+the belonging to a branch. A job which has unsatisfied dependencies can not
 be started. 
 
-Executions for a given commit (`tree_id` precisely) can depend on each other by
-specifying a execution name and the desired state of that execution. 
+Jobs for a given commit (`tree_id` precisely) can depend on each other by
+specifying a job name and the desired state of that job. 
 
     depends:
-      executions:
+      jobs:
         "Chain-Prerequisite-Demo": passed
         "Trigger-Demo": passed
   {: .language-yaml}
 
 
-Executions can depend on their belonging to a certain branch. This is done in the
+Jobs can depend on their belonging to a certain branch. This is done in the
 very same way as declaring triggers on branches. See the following section. 
 
 
-## Triggering Executions {#trigger}
+## Triggering Jobs {#trigger}
 
-Executions will be automatically started if the conditions specified by the
+Jobs will be automatically started if the conditions specified by the
 `trigger` directive and their dependencies are satisfied. 
 
 The value of the `trigger` directive can have one multiple types. 
 A boolean true value is the simplest case: 
 
-    executions:
+    jobs:
       "Chain-Dependent-Demo": 
         trigger: true
   {: .language-yaml}
 
 
-The value of `trigger` can be a map where the keys `executions` and `branch` are
-honored. The value of the `executions` key can be exactly the same as described in
+The value of `trigger` can be a map where the keys `jobs` and `branch` are
+honored. The value of the `jobs` key can be exactly the same as described in
 [Declaring Dependencies][], we will not repeat it here. The value of the
 `branch` key is always a string. Names of branches can be matched by either
 case sensitive comparison or by regular expression matching. Regualar
@@ -114,7 +114,7 @@ expression matching will be performed if and only if the string starts with
 a `^` character. 
 
 
-    executions:
+    jobs:
       "Trigger-Demo": 
         trigger: 
           branch: "^master|wip.*$"
@@ -128,9 +128,9 @@ This includes:
 * Some job changes into a final state.
 
 
-  [Execution Properties]: #execution
+  [Job Properties]: #job
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
   [Job Specification]: /project_configuration/specification/
   [Declaring Dependencies]: #depends
-  [Triggering Executions]: #trigger
+  [Triggering Jobs]: #trigger
 

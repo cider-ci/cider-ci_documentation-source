@@ -53,7 +53,7 @@ be ignored.
 ## Tree-Attachments
 
 Tree-Attachments will be listed in the user-interface with the matching
-execution. The default retention time is 90 days.
+job. The default retention time is 90 days.
 
 Similar restrictions as with the Trial-Attachments apply. 
 

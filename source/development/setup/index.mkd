@@ -186,18 +186,18 @@ might not match the given development environment.
 </div> </div>
 
 
-## Running an Execution 
+## Running a Job 
 
 <div class="row"> <div class="col-md-6">
-Running an execution is the final test for our environment. The dataset comes
+Running a job is the final test for our environment. The dataset comes
 with a predefined repository. It features fairly simple examples. Some of the
 defined tasks purposely fail with a certain probability. Hence, a failed
-execution can be a positive outcome of this test. Note, that a particular
-execution can only exist once for a given tree_id or commit. However, existing
-executions can be deleted.
+job can be a positive outcome of this test. Note, that a particular
+job can only exist once for a given tree_id or commit. However, existing
+jobs can be deleted.
 
 </div> <div class="col-md-6">
-[![Execution](/development/setup/execution.png){: .preview}](/development/setup/execution.png) 
+[![Job](/development/setup/job.png){: .preview}](/development/setup/job.png) 
 </div> </div>
 
 
