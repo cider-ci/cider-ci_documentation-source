@@ -1,8 +1,0 @@
-# Changelog
-
-## [Version 2.2](./2.2/)
-
-Version 2.2 improves the UI for multi execution workflows. *Executions*, *Tasks*,
-and *Trials* can have structured *result* data which is also shown in
-the new summaries. [...](./2.2/)
-
