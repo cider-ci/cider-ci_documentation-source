@@ -4,6 +4,9 @@ title: Development Setup
 {::options parse_block_html="true" /}
 
 
+TODO: nodejs and bundle
+{:.alert.alert-warning} 
+
 # Setting up a Cider-CI Development Environment 
 {:.no_toc}
 
@@ -84,7 +87,7 @@ work with.
 cp config/database_dev.yml config/database.yml
 bundle 
 bundle exec rake db:create db:migrate
-bundle exec rake db:pg:truncate_tables db:pg:data:restore FILE=db/personas.pgbin
+bundle exec rake db:seed 
 ~~~
 </div> </div>
 
@@ -113,7 +116,7 @@ The [Cider-CI User-Interface][] is a Ruby on Rails application.
 <div class="row"> <div class="col-md-6">
 We start the web-server from within the directory of the Cider-CI User-Interface.
 </div> <div class="col-md-6">
-    RAILS_RELATIVE_URL_ROOT=/cider-ci/ui bundle exec rails s -p 8880
+    bundle exec rails s -p 8880
 </div> </div>
 
 <div class="row"> <div class="col-md-6">
@@ -123,7 +126,8 @@ We visit the url <http://localhost:8888/cider-ci/ui/public> in a browser and sho
 </div> </div>
 
 <div class="row"> <div class="col-md-6">
-We sign in with the user `adam` and password `password` and follow the links
+
+We sign in with the user `admin` and password `secret` and follow the links
 `Administration` → `Service stati`.
 <http://localhost:8888/cider-ci/ui/admin/status> reveals that the message queue
 is running but non of the services are:
