@@ -57,7 +57,7 @@ The RabbitMQ [Management Plugin](https://www.rabbitmq.com/management.html)
 allows us to verify the connection status via the Cider-CI User-Interface. 
 
 </div> <div class="col-md-6">
-    rabbitmqctl add_user cider-ci cider-ci
+    rabbitmqctl add_user cider-ci secret
     rabbitmqctl add_vhost cider-ci
     rabbitmqctl set_permissions -p cider-ci cider-ci ".*"  ".*" ".*"
     rabbitmqctl -p cider-ci list_permissions
@@ -72,7 +72,7 @@ Database - PostgreSQL
 <div class="row"> <div class="col-md-6">
 We set up the `cider-ci` role within [psql](http://www.postgresql.org/docs/current/static/app-psql.html): 
 </div> <div class="col-md-6">
-    CREATE ROLE "cider-ci" PASSWORD 'cider-ci' createdb superuser login;
+    CREATE ROLE "cider-ci" PASSWORD 'secret' createdb superuser login;
 </div> </div>
 
 <div class="row"> <div class="col-md-6">
