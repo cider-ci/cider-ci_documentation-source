@@ -12,7 +12,7 @@ gem "middleman-syntax"
 
 gem 'rack-rewrite'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', ">= 3.3.4.1"
 gem 'execjs'
 gem 'font-awesome-sass', ">= 4.2.0"
 gem 'haml_coffee_assets'
