@@ -4,9 +4,6 @@ title: Development Setup
 {::options parse_block_html="true" /}
 
 
-TODO: nodejs and bundle
-{:.alert.alert-warning} 
-
 # Setting up a Cider-CI Development Environment 
 {:.no_toc}
 
@@ -23,7 +20,7 @@ Prerequisites
 -   JDK 7 or later
 -   [Leiningen][] version ≥ 2.0 (≥ 2.5 recommended)
 -   [Ruby][] ≥ 1.9 (≥ 2.1 recommended) with [Bundler][]
--   [Nodejs][]
+-   [Nodejs][] with npm
 
 The environment will by default require the following ports (in
 addition to the ones used by PostgreSQL and RabbitMQ): 
@@ -112,6 +109,12 @@ can be started by running `./bin/run` from within that directory.
 ## User-Interface Service
 
 The [Cider-CI User-Interface][] is a Ruby on Rails application. 
+
+<div class="row"> <div class="col-md-6">
+The Javascript dependencies are managed via npm and we need to build them. 
+</div> <div class="col-md-6">
+    npm run build
+</div> </div>
 
 <div class="row"> <div class="col-md-6">
 We start the web-server from within the directory of the Cider-CI User-Interface.
