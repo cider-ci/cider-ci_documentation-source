@@ -33,11 +33,11 @@ The following code shows a complete main context.
 
     # example of a main context 
     name: Tests 
-    task_defaults: 
-      environment_variables: 
+    task-defaults: 
+      environment-variables: 
         ONE: 1
     tasks:
-      "Assignment of ENV vars through task_defaults": 
+      "Assignment of ENV vars through task-defaults": 
         scripts: 
           main:
             body: test 1 == ${ONE}
@@ -48,7 +48,7 @@ The following code shows a complete main context.
 |-----------------+----------+----------------------------------------------------------------------|
 | `name`          | yes      | string                                                               |
 | `tasks`         | no       | map, see the [Tasks][] section                                       |
-| `task_defaults` | no       | map, see the [Task Defaults][] section                               |
+| `task-defaults` | no       | map, see the [Task Defaults][] section                               |
 | `subcontexts`   | no       | map, see the [Subcontexts][] section of the [Advanced Topics][] page |
 |-----------------+----------+----------------------------------------------------------------------|
 {: .table .table-striped}
@@ -61,9 +61,9 @@ A map where key is used as the name for the task (unless the task has a key
 
 ## Task Defaults 
 
-The values of the key `task_defaults` can be exactly the same of those of
+The values of the key `task-defaults` can be exactly the same of those of
 a [task][].  However, non of them are are required.  When a task specification
-is constructed the values of `task_defaults` and `task` are merged. See the see
+is constructed the values of `task-defaults` and `task` are merged. See the see
 the [Deep-Merge][] section of the [Advanced Topics][] page for details.
 
   [Advanced Topics]: ../advanced.html

@@ -22,7 +22,7 @@ The `traits` key can occur in a [Task][] or in the [Task
 Defaults][].  The value is a map to booleans. Every key with
 a true value is taken into account to match a suitable executor. 
 
-    task_defaults:
+    task-defaults:
       traits:
         linux: true
   {: .language-yaml}

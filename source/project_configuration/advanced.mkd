@@ -56,10 +56,10 @@ as the job specification, i.e. the main context. This includes the
 
 Subcontexts provide a way of inheritance which itself provides means to keep
 the specification succinct and non repetitive. A task in a subcontext not only
-inherits the directives of its own `task_defaults` but also those of the parent
+inherits the directives of its own `task-defaults` but also those of the parent
 context. The precise rule is that the defaults from the main context are passed
 down by applying the [Deep-Merge](#deep-merge) strategy recursively:
-`deep_merge( deep_merge( task_defauls parent context, task_defaults current
+`deep_merge( deep_merge( task_defauls parent context, task-defaults current
 context), task)`.
 
 
@@ -67,7 +67,7 @@ context), task)`.
 
       name: Tests
 
-        task_defaults: 
+        task-defaults: 
           traits:
             ruby: true
 
@@ -80,7 +80,7 @@ context), task)`.
 
           integration:
 
-           task_defaults:
+           task-defaults:
             traits:
               firefox-esr: true
 
