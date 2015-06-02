@@ -1,0 +1,88 @@
+---
+title: Introduction
+---
+{::options parse_block_html="true" /}
+
+## Introduction to Cider-CI
+
+Cider-CI is an application and service
+stack for highly parallelized and resilient integration testing. 
+
+
+### The Basic Entities: Jobs, Tasks, Scripts and Trials
+
+<div class="row"> <div class="col-md-6">
+
+_Jobs_ are the outermost and coarsest entities. A typical job is to perform and
+reporting all tests of a project. Another job, in the sense of true continuous
+integration, might be the deployment of an application or service. Jobs can
+depend on each other. In the case of tests and deployment it is for example
+desirable to prevent deployment unless all tests have passed. Further, Cider-CI
+provides full automation via events.
+
+</div> <div class="col-md-6">
+
+[![Job Dependencies](/introduction/job-dependencies.svg){: .docu-image.maxh12em}](/introduction/job-dependencies.svg)
+
+</div> </div>
+<div class="row"> <div class="col-md-6">
+
+
+A job consist of _tasks_. Every job has at least one task. Typically,
+a deployment job will have exactly one task. Also typically, a test job will
+consist of many tasks. A certain feature to be tested is a good candidate for
+a task. Tasks are independent from each other. Therefore, tasks can be run in
+**parallel** and even be **retried**.  These properties provide efficiency and
+resilience which are hallmarks of Cider-CI. A tasks is conceptually a blueprint
+for a trial. Much in the same way as in many programming languages a class is
+the blueprint for it's instances. There is an entity called _trial_ which
+embodies this. 
+
+</div> <div class="col-md-6">
+[![Job - Task - Script](/introduction/job-task-script.svg){: .docu-image.maxh12em}](/introduction/job-task-script.svg)
+</div> </div>
+
+<div class="row"> <div class="col-md-6">
+
+A task contains of one or many _scripts_. Scripts are the actual entities of
+execution. A unit test might be modelled with just a single and rather trivial 
+script. More complex scenarios, e.g. integration tests, benefit highly from the
+possibility to run multiple scripts. Further, the scripts executing in the
+context of a trial can depend on each other in several ways.
+
+</div> <div class="col-md-6">
+[![Try and Retry](/introduction/trial-retry.svg){: .docu-image.maxh12em}](/introduction/trial-retry.svg)
+</div> </div>
+
+### The Service Stack
+
+<div class="row"> <div class="col-md-6">
+
+A running instance of a Cider-CI stack consists of a _Cider-CI Server_ and
+any number of _Cider-CI Executors_. 
+
+Executors execute the scripts of a trial. They aggregate and evaluate the all
+scripts to a result which is the outcome of the trial. An executor in Cider-CI
+has much more build-in intelligence compared to similar components of many
+other CI systems. It can thus act more autonomously which provides resilience
+on an other level. 
+
+The server builds the tasks of a job. It instantiates trials, and dispatches
+them to matching executors. It receives the results from the executors,
+aggregates, and evaluates them. The result of this process is finally reflected
+in the corresponding job. 
+
+</div> </div>
+
+### Git Integration 
+
+<div class="row"> <div class="col-md-6">
+
+Cider-CI is highly _git_ aware. It knows and interacts with the concepts of
+a _commit_ and in particular with the _git tree_ in many ways. As
+a consequence, Cider-CI requires that the source is managed with or at least
+convertible to git. This is a mild restriction since many legacy SCMs can be
+converted to git. 
+
+</div> </div>
+

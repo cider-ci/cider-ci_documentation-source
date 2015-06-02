@@ -1,5 +1,9 @@
 items:
 
+- title: Introduction
+  path: /introduction/index.html
+  items: []
+
 - title: Install
   path: /install/index.html
   items: []

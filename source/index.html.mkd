@@ -1,8 +1,6 @@
 # Cider-CI Documentation
 
-This is the documentation for Cider-CI. Cider-CI is an application and service
-stack for highly parallelized and resilient integration testing. Visit the
-[Cider-CI Organization][] on Github for further information.
+This is the documentation for Cider-CI. 
 
 ## License and Copyright
 

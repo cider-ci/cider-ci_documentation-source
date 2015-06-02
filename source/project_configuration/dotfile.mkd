@@ -10,8 +10,16 @@ title: Dotfile Project Configuration
 
 
 This page documents the contents of the Cider-CI dotfile `.cider-ci.yml`. The
-Cider-CI dotfile defines and specifies available _jobs_ and possible
-relations between jobs for a given project.
+Cider-CI dotfile defines and specifies available _jobs_, relations between
+them, and all other properties which are available to build tasks, scripts and
+run respectively execute them. 
+
+The section [Getting Started](#getting-started) on this pages features
+a complete and self contained example. 
+
+
+## The Dotfile - Getting Started 
+{: #getting-started}
 
 The following example is an extract of the Cider-CI dotfile of the
 [Bash Demo Project for Cider-CI][].
