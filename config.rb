@@ -53,7 +53,6 @@ require 'pry'
 # activate :syntax, :line_numbers => false
 #
 
- 
 set :relative_links, true
 
 set :css_dir, 'assets/stylesheets'

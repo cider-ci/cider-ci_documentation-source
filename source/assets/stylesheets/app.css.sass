@@ -26,9 +26,14 @@ pre
 @import pygments/github.css
 
 
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, 
   padding: 1em 0 0.25em
   border-bottom: 0.125em solid #F9F9F9
+
+.footnotes 
+  margin-top: 1em
+  padding: 1em 0 0.25em
+  border-top: 0.25em solid #F9F9F9
 
 h3
   font-size: 22px
@@ -134,8 +139,12 @@ body
   margin: 0 auto
   text-align: center
   display: table-cell
+  &.w25em
+    width: 35em
   &.maxh12em
     max-height: 12em
+  &.maxh20em
+    max-height: 20em
 
 
 /*
