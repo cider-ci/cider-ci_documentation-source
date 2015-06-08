@@ -21,17 +21,14 @@ guides through the process of installing a Cider-CI environment.
 <div class="row"> <div class="col-md-6">
 
 Ansible must be present on the *control* machine. See the [Install][] page of
-the Ansible Documentation. We use a fairly recent version (≥ 1.8 at the time of
+the Ansible Documentation. We use a fairly recent version (≥ 1.9 at the time of
 writing) of Ansible. The operating system on the controller is not relevant. We
-use MacOS and various Linux variants. 
+use Mac OS X and various Linux variants. 
 
-We use **two Ubuntu 14.04**  machines in this example. One acts as a sever and
-the other as the executor. The server machine should have at least 1GB of
-memory. 
-
-The working account on the **control machine**  must have **ssh access to the
-server and executors**. A setup with SSH keys and without passwords is the
-most straight forward configuration. 
+The Ansible setup supports Ubuntu 14.04 or Debian 8. The working account on the
+**control machine**  must have **ssh access to the server and executors**.
+A setup with SSH keys and without passwords is the most straight forward
+configuration. 
 
 The server and executors must reach each other via the **https** protocol (port
 443) to function properly. The **example setup** assumes that all machines have
@@ -41,13 +38,16 @@ this documentation.
 
 </div> <div class="col-md-6">
 
-[![Environment](/install/environment.svg)](/install/environment.svg)
+[![Environment](/installation/environment.svg)](/installation/environment.svg)
 
 
 </div> </div>
 
 
 ## Step by Step Install Procedure for a Demo Environment
+
+The following example uses one machine in the role of the server and executor.
+
 
 1.  We check out the [Cider-CI main project][] including all sub-projects inside 
     the control machine: 
@@ -58,26 +58,21 @@ this documentation.
 
     `cd cider-ci/ansible-setup` 
 
-3. We adjust the host ip within the `hosts_example` file: 
-
-        [example]
-        example-server ansible_ssh_host=192.168.0.10 ansible_ssh_user=root
-        example-executor1 ansible_ssh_host=192.168.0.11 ansible_ssh_user=root
+3. We adjust the host ip within the `hosts_demo_single` file: 
 
 
-    It is possible to use just one machine for the server and and executor role.
-    This machine must then be added to the `cider-ci-server` and the `cider-ci-executors` 
-    group in the hosts file.
+      [demo]
+      demo-machine ansible_ssh_host=192.168.0.31 ansible_ssh_user=root
 
 
 4. We invoke ansible-playbook to trigger the install: 
 
-    `ansible-playbook -i hosts_example play_site.yml -e 'system_admin_password=password system_admin_login=adam'`
+    `ansible-playbook -i hosts_example play_site.yml -e 'system_admin_password=secret system_admin_login=admin'`
 
 
 ## Adding Traits 
 
-The example installation will provide the traits `linux` and `bash` for each
+The demo installation will provide the traits `linux` and `bash` for each
 executor. They suffice to run the jobs of the [Bash Demo Project for
 Cider-CI][]. 
 
@@ -101,8 +96,8 @@ use case.
 
 The procedure for installing a production environment is exactly the same as
 for the demo environment. However, the parameters for the example environment
-are far from optimal. The [Cider-CI Ansible Setup] contains the hosts
-file `hosts_zhkd` which is more appropriate to be used as a template in this
+are far from optimal. The [Cider-CI Ansible Setup] contains the hosts file
+`hosts_zhkd_ci3` which is more appropriate to be used as a template in this
 case. The directories `host_vars` and `group_vars` contain further files to be
 used as templates and to be customized. 
 
