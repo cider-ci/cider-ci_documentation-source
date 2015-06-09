@@ -51,7 +51,7 @@ The entry-point.
 
 ## Job
 
-### GET `/job/:id`
+### GET `/jobs/:id`
 
 Returns the properties of the corresponding _Job_.
 
@@ -120,14 +120,14 @@ Query string example: `?branch-name=master&repository-name=leihs&state=success`
 
 ## Task
 
-### GET `/task/:id` 
+### GET `/tasks/:id` 
 
 Returns the properties of the corresponding `Task`.
 
 
 ## Tasks
 
-### GET `/job/:job_id/tasks/` 
+### GET `/jobs/:job_id/tasks/` 
 
 Returns a list of links each pointing to a `Task` which belongs to
 `Job` with the id `:job_id`. Order is ascending with respect
@@ -143,13 +143,13 @@ Query string example: `?page=0&state=failed`
 
 ## Trial
 
-### GET `/trial/:id` 
+### GET `/trials/:id` 
 
 Returns the properties of the trial with the id `:id`.
 
 ## Trials
 
-### GET `/task/:task_id/trials/` 
+### GET `/tasks/:task_id/trials/` 
 
 Returns a list of links each pointing to a trial which belongs to the
 task with the id `:task_id`. Order is descending with respect to the
@@ -167,7 +167,7 @@ Query string example: `?page=0&state=failed`
 
 ## Tree-Attachment
 
-### GET `/tree-attachment/:id` 
+### GET `/tree-attachments/:id` 
 
 Returns the properties of a _Tree-Attachment_.
 
@@ -178,7 +178,7 @@ response types, see [Content Types][].
 
 ## Tree-Attachments
 
-### GET `/job/:job_id/attachments/` 
+### GET `/jobs/:job_id/attachments/` 
 
 Returns a list of ids each belonging to a _Tree-Attachment_ which belongs
 to the _Job_ with the id `:job_id`. Note, the `tree_id` is a
@@ -188,7 +188,7 @@ the `path` property.
 
 ## Trial-Attachment
 
-### GET `/trial-attachment/:id`
+### GET `/trial-attachments/:id`
 
 Returns the properties of a  _Trial-Attachment_.
 
@@ -198,7 +198,7 @@ response types, see [Content Types][].
 
 ## Trial-Attachments
 
-### GET `/trial/:trial_id/trial-attachments/` 
+### GET `/trials/:trial_id/trial-attachments/` 
 
 Returns a list of ids. Each belongs to a _Trial-Attachment_ which belongs to the
 trial with the id `:trial_id`. Order is ascending with respect to the `path`

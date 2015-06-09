@@ -4,6 +4,7 @@ API
 Ansible
 Auth
 Clojure
+Debian
 Demoe
 Dotfile
 ENV
@@ -22,6 +23,7 @@ REPL
 ROA
 RabbitMQ
 Regualar
+SCMs
 Schank
 Subcontexts
 Ubuntu
@@ -32,6 +34,7 @@ ansible
 branchdescendants
 cd
 ci
+ci3
 clojure
 config
 cp
@@ -59,6 +62,7 @@ linux
 m1
 m2
 madek
+modelled
 personas
 pgbin
 playbook

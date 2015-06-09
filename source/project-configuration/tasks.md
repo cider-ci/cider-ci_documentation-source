@@ -53,7 +53,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 
 
   [^r]: Defaults to the string that represents the key. 
-  [script]: /project-configuration/scrips.html#script
+  [script]: /project-configuration/scripts.html#script
   [Advanced Topics]: /project-configuration/advanced.html
 
   [attachments]: /demo-project/cider-ci/jobs/attachments.yml

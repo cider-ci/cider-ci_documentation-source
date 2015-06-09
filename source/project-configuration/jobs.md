@@ -45,13 +45,13 @@ and relations between them.
   {: .language-yaml}
 
 The above example has some properties removed from the original
-[job-dependencies.yml](https://github.com/cider-ci/cider-ci_demo-project-bash/blob/master/.cider-ci/jobs/job-dependencies.yml)
+[job-dependencies.yml](/demo-project/cider-ci/jobs/job-dependencies.yml)
 to highlight the essence for this page. 
 
 
 
 
-# The Job
+# The Job {#job}
 
 The keys of the _jobs_ map name available jobs for reference. The values
 describe, specify and relate them.

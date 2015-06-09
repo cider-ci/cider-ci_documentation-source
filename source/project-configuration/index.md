@@ -29,6 +29,6 @@ related *deep-merge* strategy are discussed in the [Advanced Topics][] page.
   [Jobs]: /project-configuration/jobs.html
   [Tasks]: /project-configuration/tasks.html
   [Scripts]: /project-configuration/scripts.html
-  [Advanced Topics]: /project_configuration/advanced.html
+  [Advanced Topics]: /project-configuration/advanced.html
   [Introduction]: /introduction/index.html
 
