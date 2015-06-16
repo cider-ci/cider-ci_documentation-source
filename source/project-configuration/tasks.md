@@ -8,18 +8,18 @@ title: Project Configuration - Tasks
 
 
 The tasks of a job are defined within the `context` structure of
-a [job](/project-configuration/jobs.html#job). 
+a [job](/project-configuration/jobs.html#job).
 The `tasks` key within a context introduces a map of maps,  see [Map of
-Maps] in [Advanced Topics], each mapping to a [Task](#task). 
+Maps] in [Advanced Topics], each mapping to a [Task](#task).
 
 
-## Context 
+## Context
 
 
 |-------------------+--------------+-----------------------------------------------------------------------------------------------------------------------|
 | Key/Property      | Presence     | Value                                                                                                                 |
 |-------------------+--------------+-----------------------------------------------------------------------------------------------------------------------|
-| `script-defaults` | optional     | Map - Every [script][] will inherit these properties. Examples: [execlusive-executor-resource], [script-dependencies] |
+| `script-defaults` | optional     | Map - Every [script][] will inherit these properties. Examples: [exclusive-executor-resource], [script-dependencies] |
 | `subcontexts`     | optional     | Map - An inheritance mechanism, see the also the [Advanced Topics][] page. Example: [contexts]                        |
 | `task-defaults`   | optional     | Map - Every [task](#task) in the scope of this context will inherit these properties. Example: [contexts]             |
 | `tasks`           | optional[^t] | Map of Maps - See the [task](#task).                                                                                  |
@@ -27,7 +27,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 {: .table .table-striped }
 [^t]: The presence of the `tasks` property  and its content is optional from
       the dotfile perspective. However, a job without tasks makes no sense in Cider-CI
-      and will result with the state `failed`. 
+      and will result with the state `failed`.
 
 
 ## Task
@@ -52,7 +52,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 
 
 
-  [^r]: Defaults to the string that represents the key. 
+  [^r]: Defaults to the string that represents the key.
   [script]: /project-configuration/scripts.html#script
   [Advanced Topics]: /project-configuration/advanced.html
 
