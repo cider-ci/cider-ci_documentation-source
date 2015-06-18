@@ -123,7 +123,7 @@ We start the web-server from within the directory of the Cider-CI User-Interface
 </div> </div>
 
 <div class="row"> <div class="col-md-6">
-We visit the url <http://localhost:8888/cider-ci/ui/public> in a browser and should see a similar page as shown.
+We visit the url <http://localhost:8880/cider-ci/ui/public> in a browser and should see a similar page as shown.
 </div> <div class="col-md-6">
 [![Welcome-Page](/development/setup/welcome-page.png){: .preview}](/development/setup/welcome-page.png)
 </div> </div>
