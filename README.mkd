@@ -1,22 +1,22 @@
 # Cider-CI Documentation Source
 
 This project is part of [Cider-CI](https://github.com/cider-ci/cider-ci). It
-contains the source of the documentation. 
+contains the source of the documentation.
 
-## Usage 
+## Usage
 
-### Build 
+### Build
 
-`bundle exec middleman build`. 
+`bundle exec middleman build`.
 
-### Test 
+### Test
 
-1. `bundle exec middleman`  
+1. `bundle exec middleman`
 2. `bundle exec rspec spec/`
 
-The tests perform: 
+The tests perform:
 
-* check for existence of internal links including fragments `#...`,  
+* check for existence of internal links including fragments `#...`,
 * check for existence of external links (requires internet connection), and
 * spell checking. This requires `hunspell` to be in the path and also the
     `en_US` dictionary to be available.

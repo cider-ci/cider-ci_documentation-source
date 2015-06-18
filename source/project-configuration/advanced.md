@@ -1,5 +1,5 @@
 ---
-title: Advanced Project Configuration 
+title: Advanced Project Configuration
 ---
 # Advanced Topics
 {:.no_toc}
@@ -25,28 +25,28 @@ a `name` property it will be set to the name of the key. An existing `name`
 would not be overwritten. The property with the key `key` will be
 added/overridden with the value set to the name of the key.
 
-    jobs: 
+    jobs:
       job-x:
         key: I will be overwridden.
-      job-y: 
+      job-y:
         name: I will persist.
   {: .language-yaml}
 
-    jobs: 
-    - key: job-x 
+    jobs:
+    - key: job-x
       name: job-x
-    - key: job-y 
-      name: I will persist. 
+    - key: job-y
+      name: I will persist.
   {: .language-yaml}
 
 
 [^map-order]: The general downside is that maps, unlike arrays, don't guarantee a stable order (which is irrelevant for our usecase).
 
-## Including Files 
+## Including Files
 {: #including-files}
 
 One or more  _YAML_ files can be included via the `_cider-ci_include` key. The
-value of `_cider-ci_include` is a string or an array of strings. 
+value of `_cider-ci_include` is a string or an array of strings.
 
 The `_cider-ci_include` may appear in any map at any level in the [Cider-CI
 Dotfile].
@@ -76,7 +76,7 @@ circular references.
 The main context, i.e. the map where tasks and related structures are defined,
 may contain the `subcontexts` directive. A subcontext can have exactly the same
 keys and values as the context. This includes the `subcontexts` directive
-itself. 
+itself.
 
 Subcontexts provide a way of inheritance which itself provides means to isolate
 some properties while maintaining shared properties in one place. A task in
@@ -92,22 +92,22 @@ task-defaults current context), task)`.
 Inclusion and inheritance use a particular merging strategy which we call the
 _Deep-Merge_ strategy. The canonic definition of _Deep-Merge_ is mnemonic and
 easy to understand. The following almost formal definition will help to clarify
-doubts: 
+doubts:
 
 Let `m1` and `m2` be a maps, and let `m` be the result of `deep_merge(m1, m2)`
 Then the  following holds true:
 
 1. If the key `k1` with the value `v1` is present in `m1` but not in `m2`, then
-  the key value pair `(k1,v1)` is be present in `m`. 
+  the key value pair `(k1,v1)` is be present in `m`.
 
 2. If the key `k2` with the value `v2` is present in `m2` but not in `m1`, then
-  the key value pair `(k2,v2)` is be present in `m`. 
+  the key value pair `(k2,v2)` is be present in `m`.
 
 3. If `k` is present in `m1` and `m2`
 
     1. and  `v1` and `v2` are both maps, then the pair `(k,  deep_merge(v1, v2))` is present in `m`.
 
-    2. otherwise the pair `(k,v2)` is present in `m`. 
+    2. otherwise the pair `(k,v2)` is present in `m`.
 
 
   [Cider-CI Dotfile]: /project-configuration/dotfile.html

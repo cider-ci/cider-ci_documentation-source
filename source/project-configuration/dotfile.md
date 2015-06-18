@@ -13,13 +13,13 @@ title: Dotfile Project Configuration
 This page documents the contents of the Cider-CI dotfile `.cider-ci.yml`. The
 Cider-CI dotfile defines and specifies available _jobs_, relations between
 them, and all other properties which are available to build tasks, scripts and
-execute them. 
+execute them.
 
 The section [Getting Started](#getting-started) on this pages features
-a complete and self contained example. 
+a complete and self contained example.
 
 
-## The Dotfile - Getting Started 
+## The Dotfile - Getting Started
 {: #getting-started}
 
 The following configuration shows a simple but fully functional Cider-CI
@@ -36,18 +36,18 @@ specified job has been run.
 
         context:
 
-          tasks: 
+          tasks:
 
-            example-task: 
+            example-task:
               name: Example Task
 
-              traits: 
+              traits:
                 linux: true
                 bash: true
 
               scripts:
 
-                equality: 
+                equality:
                   name: Equality Test
 
                   body: |
@@ -64,13 +64,13 @@ specified job has been run.
 The omnipresence of maps and the absence of arrays in the dotfile is apparent.
 Maps are generally favored in Cider-CI because they enable inclusion. This is
 discussed in the [Advanced Topics] page. The above example is
-actually included from the dotfile of the 
+actually included from the dotfile of the
 [Bash Demo Project for Cider-CI]
 which is similar to
-the following example. 
+the following example.
 
 
-    _cider-ci_include: 
+    _cider-ci_include:
       - .cider-ci/jobs/attachments.yml
       - .cider-ci/jobs/introduction.yml
       - .cider-ci/jobs/timeout.yml

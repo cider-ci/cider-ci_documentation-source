@@ -3,10 +3,10 @@ title: Project Configuration - Scripts
 ---
 {::options parse_block_html="true" /}
 
-# Scripts 
+# Scripts
 
 The `scripts` key within a [Task] introduces a map of maps,  see [Map of
-Maps] in [Advanced Topics], each mapping to a [Script](#script). 
+Maps] in [Advanced Topics], each mapping to a [Script](#script).
 
 ## Script
 
@@ -23,7 +23,7 @@ Maps] in [Advanced Topics], each mapping to a [Script](#script).
 {: .table .table-striped }
 
 
-  [^r]: Defaults to the string that represents the key. 
+  [^r]: Defaults to the string that represents the key.
 
   [Task]: /project-configuration/tasks.html#task
   [Map of Maps]: /project-configuration/advanced.html#map-of-maps

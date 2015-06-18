@@ -6,13 +6,13 @@ title: Introduction
 ## Introduction to Cider-CI
 
 Cider-CI is an application and service stack for highly parallelized and
-resilient integration testing and continuous delivery. 
+resilient integration testing and continuous delivery.
 
 This page describes the basic **entities** and **terminology** used in
 Cider-CI. More over, it introduces the **concepts** and **rationale** behind
 those. Cider-CI provides an innovative and powerful approach to continuous
 integration. Many things in Cider-CI are very different from any other CI
-system. 
+system.
 
 
 ### The Basic Entities: Jobs, Tasks, Scripts and Trials
@@ -41,7 +41,7 @@ example. Tasks are independent from each other. Therefore, tasks can be run in
 **parallel** and even be **retried**.  These properties provide **efficiency**
 and **resilience** which are hallmarks of Cider-CI. A task is conceptually
 a blueprint for a trial. Much in the same way as in many programming languages
-a class is the blueprint for it's instances. 
+a class is the blueprint for it's instances.
 
 </div> <div class="col-md-6">
 [![Job - Task - Script](/introduction/job-task-script.svg){: .docu-image.maxh12em}](/introduction/job-task-script.svg)
@@ -50,7 +50,7 @@ a class is the blueprint for it's instances.
 <div class="row"> <div class="col-md-6">
 
 A task contains of one or many _scripts_. Scripts are the actual entities of
-execution. A unit test might be modelled with just a single and rather trivial 
+execution. A unit test might be modelled with just a single and rather trivial
 script. More complex scenarios, e.g. integration tests, benefit highly from the
 possibility to run multiple scripts. Further, the scripts executing in the
 context of a trial can depend on each other in several ways.
@@ -60,7 +60,7 @@ context of a trial can depend on each other in several ways.
 </div> </div>
 
 
-### Git Integration 
+### Git Integration
 
 <div class="row"> <div class="col-md-6">
 
@@ -71,7 +71,7 @@ convertible to git. This is a mild restriction since many legacy SCMs can be
 converted to git. The upside of this tight integration with git easily
 overweight this limitation. The gained **performance**, the possibility to
 **reproduce** results, **track** and link them to source code at **any time**
-after the run of a job stand out. 
+after the run of a job stand out.
 
 </div> <div class="col-md-6">
 [![Job and Git](/introduction/job-and-git.svg){: .docu-image.maxh12em.w25em}](/introduction/job-and-git.svg)
@@ -83,18 +83,18 @@ after the run of a job stand out.
 <div class="row"> <div class="col-md-6">
 
 A running instance of a Cider-CI stack consists of a _Cider-CI Server_ and
-any number of _Cider-CI Executors_. 
+any number of _Cider-CI Executors_.
 
 Executors execute the scripts of a trial. They aggregate and evaluate the all
 scripts to a result which is the outcome of the trial. An executor in Cider-CI
 has much more build-in intelligence compared to similar components of many
 other CI systems. It can thus act more autonomously which provides
-**resilience** and **flexibility** on an other level. 
+**resilience** and **flexibility** on an other level.
 
 The server builds the tasks of a job. It instantiates trials, and dispatches
 them to matching executors. It receives the results from the executors,
 aggregates, and evaluates them. The result of this process is finally reflected
-in the corresponding job. 
+in the corresponding job.
 
 </div> <div class="col-md-6">
 [![Services](/development/architecture/services.svg){: .docu-image.maxh20em}](/development/architecture/services.svg)

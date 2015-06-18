@@ -1,4 +1,4 @@
-# Jobs 
+# Jobs
 
 The `jobs` key introduces a map of maps, see [Map of Maps] in [Advanced
 Topics], each mapping to a [Job](#job). This structure specifies available jobs
@@ -12,13 +12,13 @@ and relations between them.
 
       job-prerequisite:
 
-        name: Jobs - Dependencies and Triggers - Prerequisite 
+        name: Jobs - Dependencies and Triggers - Prerequisite
         description: |
           This one serves as a prerequisite to "job-depends".
           Additionally it will be automatically triggered if a branch matching the
-          regular expression /^trigger-prerequisite$/ is updated. 
+          regular expression /^trigger-prerequisite$/ is updated.
 
-        start-on: 
+        start-on:
         - type: branch.updated
           include-match: ^trigger-prerequisite$
 
@@ -29,14 +29,14 @@ and relations between them.
         name: Jobs - Dependencies and Triggers - Dependent
         description: |
           This demo can only be started if the "job-prerequisite" has passed. There
-          is also a corresponding trigger defined for the sake of demonstration. 
+          is also a corresponding trigger defined for the sake of demonstration.
 
         depends-on:
         - type: job
           job: job-prerequisite
           states: [passed]
 
-        start-on: 
+        start-on:
         - type: job.updated
           job: job-prerequisite
           states: [passed]
@@ -46,7 +46,7 @@ and relations between them.
 
 The above example has some properties removed from the original
 [job-dependencies.yml](/demo-project/cider-ci/jobs/job-dependencies.yml)
-to highlight the essence for this page. 
+to highlight the essence for this page.
 
 
 
@@ -70,7 +70,7 @@ describe, specify and relate them.
 {: .table .table-striped }
 
 
-[^r]: Defaults to the string that represents the key. 
+[^r]: Defaults to the string that represents the key.
 
 [^i]: This is an invisible or virtual property in the dotfile. It is used  during evaluation of the dotfile where any existing value would be overwritten.
 

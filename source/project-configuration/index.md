@@ -1,5 +1,5 @@
 ---
-title: Project Configuration 
+title: Project Configuration
 ---
 {::options parse_block_html="true" /}
 

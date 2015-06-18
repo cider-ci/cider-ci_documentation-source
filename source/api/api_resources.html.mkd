@@ -10,12 +10,12 @@ title: Core API Resources
 {:.no_toc}
 
 All of the resources in this section are prefixed with `/cider-ci/api`. This
-prefix is omitted for brevity in the following. 
+prefix is omitted for brevity in the following.
 
 
-## General Properties 
+## General Properties
 
-### Content Types 
+### Content Types
 
 The core API supports the content types `application/json-roa+json` and
 `application/json` for `GET` requests to all resources. The former
@@ -38,9 +38,9 @@ support the content type `application/json`.
 Several resources are conceptually indexes, e.g. `/jobs/`, which rather
 return several references to the same kind of resource, e.g. `/job/:id`.
 All of these indexes are paginated an use the `page` parameter with an integer
-value for iteration. 
+value for iteration.
 
-The content type `application/json-roa+json` includes a `next` link which 
+The content type `application/json-roa+json` includes a `next` link which
 should be used to iterate index resources.
 
 ## Root
@@ -60,17 +60,17 @@ Returns the properties of the corresponding _Job_.
 ### GET `/job/:id/stats`
 
 Returns the aggregated count of the number of tasks belonging to an _Job_
-with respect to their state. 
+with respect to their state.
 
 
-## Jobs 
+## Jobs
 
-### GET `/jobs/` 
+### GET `/jobs/`
 
 Returns a list of links each pointing to an `Job`. Order is
 descending by the `created_at` time-stamp.
 
-#### Query Parameters 
+#### Query Parameters
 
 ##### branch
 
@@ -78,7 +78,7 @@ Filters *Jobs* of commits which are directly referenced by the given
 branch with name equal to the given value where the matching is case
 insensitive.
 
-Query string example: `?branch=master` 
+Query string example: `?branch=master`
 
 Note: this filter is case insensitive with respect to _branch-name_.
 
@@ -87,7 +87,7 @@ Note: this filter is case insensitive with respect to _branch-name_.
 Similar as above, however it will also include all descendants
 of the commit referenced by the given branch name.
 
-Examples: 
+Examples:
 
 1.  Descendants of the branch master: `?branch=master`
 
@@ -101,17 +101,17 @@ Examples:
 Filters *Jobs* related to commits within repositories with the
 name equal to the value of the parameter.
 
-This filter is also case insensitive. 
+This filter is also case insensitive.
 
-Examples: 
+Examples:
 
-1. jobs for the _Madek_ repository: `?repository=madek` 
+1. jobs for the _Madek_ repository: `?repository=madek`
 2. for the _Madek_ repository and for the master branch: `?repository=madek&branch=master`
 3. including descendants: `?repository=madek&branchdescendants=master`
 4. composing even more: `?repository=madek&branchdescendants=next&branch=master`
 
 
-##### state 
+##### state
 
 Filters _Jobs_ with state equal to the value of the parameter.
 
@@ -120,22 +120,22 @@ Query string example: `?branch-name=master&repository-name=leihs&state=success`
 
 ## Task
 
-### GET `/tasks/:id` 
+### GET `/tasks/:id`
 
 Returns the properties of the corresponding `Task`.
 
 
 ## Tasks
 
-### GET `/jobs/:job_id/tasks/` 
+### GET `/jobs/:job_id/tasks/`
 
 Returns a list of links each pointing to a `Task` which belongs to
 `Job` with the id `:job_id`. Order is ascending with respect
 to the `name` property.
 
-#### Query Parameters 
+#### Query Parameters
 
-##### state 
+##### state
 
 Filters `Tasks` with state equal to the value of the parameter.
 
@@ -143,21 +143,21 @@ Query string example: `?page=0&state=failed`
 
 ## Trial
 
-### GET `/trials/:id` 
+### GET `/trials/:id`
 
 Returns the properties of the trial with the id `:id`.
 
 ## Trials
 
-### GET `/tasks/:task_id/trials/` 
+### GET `/tasks/:task_id/trials/`
 
 Returns a list of links each pointing to a trial which belongs to the
 task with the id `:task_id`. Order is descending with respect to the
 `updated_at` property.
 
-#### Query Parameters 
+#### Query Parameters
 
-##### state 
+##### state
 
 Filters trials with state equal to the value of the parameter.
 
@@ -167,7 +167,7 @@ Query string example: `?page=0&state=failed`
 
 ## Tree-Attachment
 
-### GET `/tree-attachments/:id` 
+### GET `/tree-attachments/:id`
 
 Returns the properties of a _Tree-Attachment_.
 
@@ -178,7 +178,7 @@ response types, see [Content Types][].
 
 ## Tree-Attachments
 
-### GET `/jobs/:job_id/attachments/` 
+### GET `/jobs/:job_id/attachments/`
 
 Returns a list of ids each belonging to a _Tree-Attachment_ which belongs
 to the _Job_ with the id `:job_id`. Note, the `tree_id` is a
@@ -198,7 +198,7 @@ response types, see [Content Types][].
 
 ## Trial-Attachments
 
-### GET `/trials/:trial_id/trial-attachments/` 
+### GET `/trials/:trial_id/trial-attachments/`
 
 Returns a list of ids. Each belongs to a _Trial-Attachment_ which belongs to the
 trial with the id `:trial_id`. Order is ascending with respect to the `path`

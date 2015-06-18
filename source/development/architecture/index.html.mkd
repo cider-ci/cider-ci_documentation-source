@@ -1,14 +1,14 @@
 ---
 title: Architecture
 ---
-# Architecture 
+# Architecture
 
-## Services 
+## Services
 
 
 [![Services](/development/architecture/services.svg)](/development/architecture/services.svg)
 
-## Entities 
+## Entities
 
 [![Entities](/development/architecture/entities.svg)](/development/architecture/entities.svg)
 

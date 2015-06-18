@@ -8,12 +8,12 @@ title: Project Configuration - Tasks
 
 
 The tasks of a job are defined within the `context` structure of
-a [job](/project-configuration/jobs.html#job). 
+a [job](/project-configuration/jobs.html#job).
 The `tasks` key within a context introduces a map of maps,  see [Map of
-Maps] in [Advanced Topics], each mapping to a [Task](#task). 
+Maps] in [Advanced Topics], each mapping to a [Task](#task).
 
 
-## Context 
+## Context
 
 
 |-------------------+--------------+-----------------------------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 {: .table .table-striped }
 [^t]: The presence of the `tasks` property  and its content is optional from
       the dotfile perspective. However, a job without tasks makes no sense in Cider-CI
-      and will result with the state `failed`. 
+      and will result with the state `failed`.
 
 
 ## Task
@@ -52,7 +52,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 
 
 
-  [^r]: Defaults to the string that represents the key. 
+  [^r]: Defaults to the string that represents the key.
   [script]: /project-configuration/scripts.html#script
   [Advanced Topics]: /project-configuration/advanced.html
 

@@ -1,6 +1,6 @@
 # Cider-CI Documentation
 
-This is the documentation for Cider-CI. 
+This is the documentation for Cider-CI.
 
 ## License and Copyright
 
