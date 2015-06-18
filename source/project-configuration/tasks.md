@@ -19,7 +19,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 |-------------------+--------------+-----------------------------------------------------------------------------------------------------------------------|
 | Key/Property      | Presence     | Value                                                                                                                 |
 |-------------------+--------------+-----------------------------------------------------------------------------------------------------------------------|
-| `script-defaults` | optional     | Map - Every [script][] will inherit these properties. Examples: [execlusive-executor-resource], [script-dependencies] |
+| `script-defaults` | optional     | Map - Every [script][] will inherit these properties. Examples: [exclusive-executor-resource], [script-dependencies] |
 | `subcontexts`     | optional     | Map - An inheritance mechanism, see the also the [Advanced Topics][] page. Example: [contexts]                        |
 | `task-defaults`   | optional     | Map - Every [task](#task) in the scope of this context will inherit these properties. Example: [contexts]             |
 | `tasks`           | optional[^t] | Map of Maps - See the [task](#task).                                                                                  |
@@ -60,7 +60,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
   [contexts]: /demo-project/cider-ci/jobs/contexts.yml
   [eager_and_retry]: /demo-project/cider-ci/jobs/eager_and_retry.yml
   [environment-variables]: /demo-project/cider-ci/jobs/environment-variables.yml
-  [execlusive-executor-resource]: /demo-project/cider-ci/jobs/exclusive-executor-resource.yml
+  [exclusive-executor-resource]: /demo-project/cider-ci/jobs/exclusive-executor-resource.yml
   [git-submodules]: /demo-project/cider-ci/jobs/git-submodules.yml
   [introduction]: /demo-project/cider-ci/jobs/introduction.yml
   [script-dependencies]: /demo-project/cider-ci/jobs/script-dependencies.yml
