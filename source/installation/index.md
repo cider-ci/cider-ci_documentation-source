@@ -67,7 +67,32 @@ The following example uses one machine in the role of the server and executor.
 
 4. We invoke ansible-playbook to trigger the install:
 
-    `ansible-playbook -i hosts_example play_site.yml -e 'system_admin_password=secret system_admin_login=admin'`
+    `ansible-playbook -i hosts_demo_single play_site.yml -e 'system_admin_password=secret system_admin_login=admin'`
+
+<div class="alert alert-warning" role="alert">
+Installing Cider-CI from scratch can take a while (45 minutes are typical for
+a virtual machine running on my laptop). It can happen that the
+`ansible-playbook` fails due to network timeouts e.g. The playbook is
+idempotent and thus can be rerun again at any time.
+</div>
+
+
+## Options
+
+### Admin
+
+There needs to be at least one admin user in Cider-CI. Setting an initial admin
+or resetting a password at any time late can be performed as in the following example:
+
+  `ansible-playbook -i hosts_demo_single play_site.yml -e 'system_admin_password=secret system_admin_login=admin'`
+
+### User-Interface Theme
+
+The following themes are available: `bootstrap-plain` (this is the default),
+`bootstrap-theme`, `cider`, and `darkly`. Any of them can be selected as
+shown in the following example:
+
+  `ansible-playbook -i hosts_demo_single play_site.yml -e 'user_interface_theme=darkly'`
 
 
 ## Adding Traits
@@ -80,7 +105,7 @@ Cider-CI][].
 
 A set of additional traits can be automatically installed with
 
-`ansible-playbook -i hosts_example play_traits.yml`
+`ansible-playbook -i hosts_demo_single play_traits.yml`
 
 ### Adding Custom Traits
 

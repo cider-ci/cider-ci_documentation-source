@@ -63,7 +63,7 @@ describe, specify and relate them.
 | `name`        | yes[^r]  | String - The visible name of the job.                                                                                          |
 | `description` | optional | String                                                                                                                         |
 | `context`     | required | Map - Container for Tasks and related properties.                                                                              |
-| `job-key`[^i] | yes[^i]  | String - The stringfied representation of key in the `jobs` map.                                                               |
+| `job-key`[^i] | yes[^i]  | String - The stringified representation of key in the `jobs` map.                                                               |
 | `depends-on`  | optional | Array of Maps - The jobs and their state on which the job depends on (combined with conjunction). Example: [job-dependencies]  |
 | `start-on`    | optional | Array of Maps - Events on which the job will be automatically started (combined with disjunction). Example: [job-dependencies] |
 |---------------+----------+--------------------------------------------------------------------------------------------------------------------------------|

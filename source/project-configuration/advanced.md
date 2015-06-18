@@ -27,7 +27,7 @@ added/overridden with the value set to the name of the key.
 
     jobs:
       job-x:
-        key: I will be overwridden.
+        key: I will be overwritten.
       job-y:
         name: I will persist.
   {: .language-yaml}
@@ -40,7 +40,7 @@ added/overridden with the value set to the name of the key.
   {: .language-yaml}
 
 
-[^map-order]: The general downside is that maps, unlike arrays, don't guarantee a stable order (which is irrelevant for our usecase).
+[^map-order]: The general downside is that maps, unlike arrays, don't guarantee a stable order (which is irrelevant for our use case).
 
 ## Including Files
 {: #including-files}
