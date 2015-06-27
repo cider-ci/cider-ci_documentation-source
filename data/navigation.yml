@@ -6,11 +6,13 @@ items:
 
 - title: Installation
   path: /installation/index.html
-  items: []
+  items:
+  - title: Executor Configuration
+    path: /installation/executor-configuration.html
 
 - title: Project Configuration
   path: /project-configuration/index.html
-  items: 
+  items:
   - title: Dotfile
     path: /project-configuration/dotfile.html
   - title: Jobs
@@ -24,15 +26,15 @@ items:
 
 - title: API
   path: /api/index.html
-  items: 
-  - title: Core API Resources 
+  items:
+  - title: Core API Resources
     path: /api/api_resources.html
-  - title: Storage API Resources 
+  - title: Storage API Resources
     path: /api/storage_resources.html
 
 - title: Development
-  items: 
+  items:
   - title: Architecture
-    path: /development/architecture/index.html 
+    path: /development/architecture/index.html
   - title: Setup
-    path: /development/setup/index.html 
+    path: /development/setup/index.html

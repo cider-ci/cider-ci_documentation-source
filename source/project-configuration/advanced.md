@@ -71,6 +71,49 @@ circular references.
 
   [DFS]: http://en.wikipedia.org/wiki/Depth-first_search
 
+## Generating Tasks
+{: #generating-tasks}
+
+
+~~~yml
+_cider-ci_generate-tasks:
+  include-match: spec/.*_spec.rb
+  exclude-match: spec/features.*_spec.rb
+~~~
+
+The `_cider-ci_generate-tasks` directive within the context or a subcontext can
+be used to generate tasks based on files checked into the repository. This is
+demonstrated in [generate-tasks] example and more comprehensively
+[here](https://github.com/Madek/madek-webapp/blob/madek-v3/.cider-ci/shared/tests-context.yml).
+Conceptually, the result of `git ls-tree` is filtered according to the values
+of `include-match` and `exclude-match` which are interpreted as regular
+expressions.
+
+The result is a map of maps which is structurally equivalent to the value of
+the `tasks` key in the context. The full filename, with respect to the root
+of the repository, is used as `key` and is also set in the environment variable
+`CIDER_CI_TASK_FILE`.
+
+Additionally, an already existing `tasks` directive in the current context
+would be [deep-merged](#deep-merge) with the one generated where values from
+the existing `tasks` directive would override those generated. Thus custom
+directives can be set on a task basis even for generated tasks as shown in the
+following example extracted from
+[here](https://github.com/Madek/madek-webapp/blob/madek-v3/.cider-ci/shared/tests-context.yml).
+
+
+~~~yml
+task-defaults:
+  priority: 2
+
+_cider-ci_generate-tasks:
+  include-match: spec/features.*_spec.rb
+
+tasks:
+  "spec/features/styleguide_spec.rb":
+    priority: 3
+~~~
+
 ## Subcontexts and Inheritance {#subcontexts}
 
 The main context, i.e. the map where tasks and related structures are defined,
@@ -111,4 +154,5 @@ Then the  following holds true:
 
 
   [Cider-CI Dotfile]: /project-configuration/dotfile.html
+  [generate-tasks]: /demo-project/cider-ci/jobs/generate-tasks.yml
 

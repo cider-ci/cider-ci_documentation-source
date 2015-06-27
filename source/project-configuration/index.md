@@ -13,6 +13,11 @@ If is recommended to digest the [Introduction][] before diving into this
 content. Every configuration given here is demonstrated and brought in to
 context in the [Bash Demo Project for Cider-CI][].
 
+There can be configuration directives in the [Bash Demo Project for Cider-CI]
+which are not covered in this documentation. Those are considered unstable and
+can be changed or even removed  in future releases of Cider-CI without
+warranting an increment of the major version number of Cider-CI.
+{: .text .text-warning}
 
 Configuring a project for Cider-CI starts with creating a `.cider-ci.yml`
 dotfile. The basic structure of the dotfile is described in the [Dotfile][]

@@ -97,20 +97,7 @@ shown in the following example:
 
 ## Adding Traits
 
-The demo installation will provide the traits `linux` and `bash` for each
-executor. They suffice to run the jobs of the [Bash Demo Project for
-Cider-CI][].
-
-### Adding Traits provided by the Ansible Setup
-
-A set of additional traits can be automatically installed with
-
-`ansible-playbook -i hosts_demo_single play_traits.yml`
-
-### Adding Custom Traits
-
-A custom trait can be added by adding a corresponding line to the file
-`/etc/cider-ci/traits.txt`.
+See [Adding Traits](./executor-configuration.html#adding-traits) on the [Executor Configuration](./executor-configuration.html) page.
 
 
 ## Production Environment
@@ -125,7 +112,6 @@ are far from optimal. The [Cider-CI Ansible Setup] contains the hosts file
 `hosts_zhkd_ci3` which is more appropriate to be used as a template in this
 case. The directories `host_vars` and `group_vars` contain further files to be
 used as templates and to be customized.
-
 
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash

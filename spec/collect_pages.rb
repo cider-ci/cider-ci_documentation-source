@@ -9,7 +9,7 @@ end
 
 def collect_targets url
 
-  @internal_pages ||= {} 
+  @internal_pages ||= {}
   @external_uris ||= Set.new()
 
   visit url
@@ -26,13 +26,15 @@ def collect_targets url
     .map{|t| current_uri + t } \
     .map(&:normalize)
 
-  local_targets.each do |target| 
+  local_targets.each do |target|
     if Capybara.app_host == target.site
       unless @internal_pages [target.path]
         initialize_path target.path
         collect_targets target
       end
-      @internal_pages[target.path][:fragments].add target.fragment if target.fragment.present?
+      if target.fragment.present? and ! (target.fragment =~ /.+\:.+/)
+        @internal_pages[target.path][:fragments].add target.fragment
+      end
       @internal_pages[target.path][:referer].add current_uri.path
     else
       @external_uris.add(target)

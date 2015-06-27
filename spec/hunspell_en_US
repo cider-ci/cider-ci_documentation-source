@@ -1,17 +1,10 @@
-Javascript
-npm
-DFS
-stringified
-optional1
-yes1
-key2
-yes2
 1GB
 4GB
 API
 Ansible
 Auth
 Clojure
+DFS
 Debian
 Demoe
 Dotfile
@@ -19,6 +12,7 @@ ENV
 Github
 JDK
 JSON
+Javascript
 Leiningen
 MacOS
 Madek
@@ -34,6 +28,7 @@ Regualar
 SCMs
 Schank
 Subcontexts
+URLs
 Ubuntu
 YAML
 adam
@@ -64,6 +59,7 @@ ipv4
 json
 k1
 k2
+key2
 leihs
 lein
 linux
@@ -71,6 +67,8 @@ m1
 m2
 madek
 modelled
+npm
+optional1
 personas
 pgbin
 playbook
@@ -79,11 +77,14 @@ png
 psql
 rabbitmq
 rabbitmqctl
+rb
 repl
 roa
 screenshot
 screenshots
 stati
+stringified
+styleguide
 subcontext
 subcontexts
 truthy
@@ -92,5 +93,7 @@ v1
 v2
 vhost
 wip
+yes1
+yes2
 yml
 zhkd

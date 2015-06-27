@@ -25,9 +25,12 @@ require 'logger'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
+  PORT=8889
+  HOST="http://localhost:#{PORT}"
+
   Capybara.current_driver = :selenium
-  Capybara.app_host = "http://localhost:8887"
-  Capybara.server_port = 4567
+  Capybara.app_host = HOST
+  Capybara.server_port = PORT
 
 
   if ENV['FIREFOX_ESR_PATH'].present?
@@ -41,8 +44,8 @@ RSpec.configure do |config|
 
   config.before(:each) do |example|
     Capybara.current_driver = :selenium
-    Capybara.app_host = "http://localhost:8887"
-    Capybara.server_port = 8887
+    Capybara.app_host = HOST
+    Capybara.server_port = PORT
   end
 
 
