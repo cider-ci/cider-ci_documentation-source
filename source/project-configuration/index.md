@@ -9,24 +9,26 @@ This part of the documentation is about how to configure a project to be
 _tested_, _build_, _deployed_, or in fact perform any conceivable action with
 Cider-CI.
 
+Two steps must be performed to enable a project for Cider-CI:
+
+  1. The repository must to be registered in you instance of Cider-CI, and
+  2. a dotfile `.cider-ci.yml` must be added to the repository.
+
+Registering a repository is a straight forward procedure by following
+`Administration` → `Repositories` → `Add a new repository` in the user
+interface.
+
+The basic structure of the dotfile is described in the [Dotfile][]
+page. More detailed information is available in the [Jobs][], [Tasks][], and
+[Scripts][] pages. Cider-CI has several features to keep specification files
+dry and maintainable. Using *contexts*, splitting the configuration over
+multiple files, and the related *deep-merge* strategy are discussed in the
+[Advanced Topics][] page.
+
+
 If is recommended to digest the [Introduction][] before diving into this
 content. Every configuration given here is demonstrated and brought in to
 context in the [Bash Demo Project for Cider-CI][].
-
-There can be configuration directives in the [Bash Demo Project for Cider-CI]
-which are not covered in this documentation. Those are considered unstable and
-can be changed or even removed  in future releases of Cider-CI without
-warranting an increment of the major version number of Cider-CI.
-{: .text .text-warning}
-
-Configuring a project for Cider-CI starts with creating a `.cider-ci.yml`
-dotfile. The basic structure of the dotfile is described in the [Dotfile][]
-page. More detailed information is available in the [Jobs][], [Tasks][], and
-[Scripts][] pages.
-
-Cider-CI has several features to keep specification files dry and maintainable.
-Using *contexts*, splitting the configuration over multiple files, and the
-related *deep-merge* strategy are discussed in the [Advanced Topics][] page.
 
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
