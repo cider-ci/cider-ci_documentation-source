@@ -18,8 +18,8 @@ and relations between them.
           Additionally it will be automatically triggered if a branch matching the
           regular expression /^trigger-prerequisite$/ is updated.
 
-        start-on:
-        - type: branch.updated
+        run-on:
+        - type: branch
           include-match: ^trigger-prerequisite$
 
         context: {}
@@ -36,8 +36,8 @@ and relations between them.
           job: job-prerequisite
           states: [passed]
 
-        start-on:
-        - type: job.updated
+        run-on:
+        - type: job
           job: job-prerequisite
           states: [passed]
 
@@ -60,12 +60,12 @@ describe, specify and relate them.
 |---------------+----------+--------------------------------------------------------------------------------------------------------------------------------|
 | Key/Property  | Presence | Value                                                                                                                          |
 |---------------+----------+--------------------------------------------------------------------------------------------------------------------------------|
-| `name`        | yes[^r]  | String - The visible name of the job.                                                                                          |
-| `description` | optional | String                                                                                                                         |
 | `context`     | required | Map - Container for Tasks and related properties.                                                                              |
-| `job-key`[^i] | yes[^i]  | String - The stringified representation of key in the `jobs` map.                                                               |
 | `depends-on`  | optional | Array of Maps - The jobs and their state on which the job depends on (combined with conjunction). Example: [job-dependencies]  |
-| `start-on`    | optional | Array of Maps - Events on which the job will be automatically started (combined with disjunction). Example: [job-dependencies] |
+| `description` | optional | String                                                                                                                         |
+| `job-key`[^i] | yes[^i]  | String - The stringified representation of key in the `jobs` map.                                                              |
+| `name`        | yes[^r]  | String - The visible name of the job.                                                                                          |
+| `run-on`      | optional | Array of Maps - Events on which the job will be automatically started (combined with disjunction). Example: [job-dependencies] |
 |---------------+----------+--------------------------------------------------------------------------------------------------------------------------------|
 {: .table .table-striped }
 
