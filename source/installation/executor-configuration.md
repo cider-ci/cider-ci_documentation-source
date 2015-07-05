@@ -36,9 +36,6 @@ are separated by commas.
 
 ## Restricting the Accepted Repositories
 
-This feature is beta.
-{: .text .text-warning}
-
 An executor can be configured to only accept trials for certain repositories.
 This is a security and trust feature. A particular executor might have the
 possibility to perform deploys or commit to the repository for example. When
@@ -55,10 +52,8 @@ Defining accepted repositories is very similar to defining traits. The file
 URLs. In contrast to traits, if no accepted repositories are defined the
 executor will accept any repository.
 
-The URLs must be equal on the string level. The repository
-`https://github.com/cider-ci/cider-ci` is not considered equal to
-`http://github.com/cider-ci/cider-ci` for example.
-
+Heads up: the URLs must be equal by case sensitive string comparison!
+{:.text .text-warning}
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
 
