@@ -5,7 +5,7 @@
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta(name="viewport" content="width=device-width, initial-scale=1")
     -# %link{:href => "../../favicon.ico", :rel => "icon"}/
-    - if current_page.data.title 
+    - if current_page.data.title
       %title Cider-Ci Docs - #{current_page.data.title}
     - else
       %title Cider-CI Docs
@@ -17,42 +17,41 @@
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
         .navbar-header
-          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
           = link_to "/index.html", class: "navbar-brand" do
-            Cider-CI 
+            Cider-CI
             = partial 'semantic_version', locals: { semver: data.target_release }
             Documentation
 
-        #navbar.navbar-collapse.collapse
+        %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
+          .form-group
+            %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
+            %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
+            %input{:style => "visibility: hidden;", :type => "submit", :value => "Google Search"}
 
-          %ul.nav.navbar-nav
-            - data.navigation.items.each do |nav_item| 
-              - is_active=  "/"+current_path == nav_item["path"]
-              - active_class = is_active ? " active " : ""
-              - has_items = nav_item["items"] &&  nav_item["items"].count > 0
-              - dropdown_class = has_items ? " dropdown" : ""
-              %li.dropdown
-                = link_to "#" ,class: "dropdown-toggle", data: {toggle: :dropdown} do
-                  %strong= nav_item["title"]
-                  %span.caret
-                %ul.dropdown-menu
-                  - if nav_item["path"]
-                    %li
-                      = link_to nav_item["path"] do
-                        = nav_item["title"]
-                  - nav_item["items"].each do |nav_item_sub| 
-                    %li
-                      = link_to nav_item_sub["path"] do
-                        = nav_item_sub["title"]
+        %ul.nav.navbar-nav
+          - data.navigation.items.each do |nav_item|
+            - is_active=  "/"+current_path == nav_item["path"]
+            - active_class = is_active ? " active " : ""
+            - has_items = nav_item["items"] &&  nav_item["items"].count > 0
+            - dropdown_class = has_items ? " dropdown" : ""
+            %li.dropdown
+              = link_to "#" ,class: "dropdown-toggle", data: {toggle: :dropdown} do
+                %strong= nav_item["title"]
+                %span.caret
+              %ul.dropdown-menu
+                - if nav_item["path"]
+                  %li
+                    = link_to nav_item["path"] do
+                      = nav_item["title"]
+                - nav_item["items"].each do |nav_item_sub|
+                  %li
+                    = link_to nav_item_sub["path"] do
+                      = nav_item_sub["title"]
 
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
-          - data.navigation.items.each do |nav_item| 
+          - data.navigation.items.each do |nav_item|
             %ul.nav.nav-sidebar
               - is_active=  "/"+current_path == nav_item["path"]
               %li{class: (is_active ? "active" : "")}
@@ -62,7 +61,7 @@
                 - else
                   %span.alike
                     %strong= nav_item["title"]
-              - nav_item["items"].each do |nav_item_sub| 
+              - nav_item["items"].each do |nav_item_sub|
                 %ul.nav.nav-sidebar
                   - is_active_sub= "/"+current_path == nav_item_sub["path"]
                   %li{class: (is_active_sub ? "active" : "")}
