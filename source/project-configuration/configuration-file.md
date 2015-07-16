@@ -1,30 +1,41 @@
 ---
-title: Dotfile Project Configuration
+title: Project Configuration File
 ---
 {::options parse_block_html="true" /}
 
-# The Cider-CI Dotfile {#dotfile}
+# The Cider-CI Configuration File {#configuration-file}
 {:.no_toc}
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
-This page documents the contents of the Cider-CI dotfile `.cider-ci.yml`. The
-Cider-CI dotfile defines and specifies available _jobs_, relations between
-them, and all other properties which are available to build tasks, scripts and
-execute them.
+This page documents the contents of the Cider-CI configuration file. It defines
+and specifies available _jobs_, relations between them, and all other
+properties which are available to build tasks, scripts and execute them.
 
 The section [Getting Started](#getting-started) on this pages features
 a complete and self contained example.
 
+The following locations are valid: `cider-ci.yml`, `.cider-ci.yml`,
+`cider-ci.json`, or `.cider-ci.json`. They are looked up precisely in the order
+given. The first one found will be used and any others ignored. The valid
+syntax is as the name suggests either [YAML](http://www.yaml.org/) or
+[JSON](http://json.org/).
 
-## The Dotfile - Getting Started
+YAML is technically a superset of JSON, by capability and syntax! Note that
+Cider-CI uses only features of YAML which can be presented in JSON. We yet
+prefer YAML for examples in this documentation as we believe it is easier to
+read.
+{: .text-warning}
+
+
+## The Configuration File - Getting Started
 {: #getting-started}
 
-The following configuration shows a simple but fully functional Cider-CI
-dotfile. It specifies one job with one task and inside a very simple script.
-The screenshot shows a corresponding outcome in Cider-CI when after the
+The following example shows a simple but fully functional Cider-CI
+configuration file. It specifies one job with one task and inside a very simple
+script. The screenshot shows a corresponding outcome in Cider-CI when after the
 specified job has been run.
 
 <div class="row"> <div class="col-md-6">
@@ -61,10 +72,10 @@ specified job has been run.
 
 ## Maps and Arrays
 
-The omnipresence of maps and the absence of arrays in the dotfile is apparent.
+The omnipresence of maps and the absence of arrays in the configuration file is apparent.
 Maps are generally favored in Cider-CI because they enable inclusion. This is
 discussed in the [Advanced Topics] page. The above example is
-actually included from the dotfile of the
+actually included from the configuration file of the
 [Bash Demo Project for Cider-CI]
 which is similar to
 the following example.

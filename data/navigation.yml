@@ -13,8 +13,8 @@ items:
 - title: Project Configuration
   path: /project-configuration/index.html
   items:
-  - title: Dotfile
-    path: /project-configuration/dotfile.html
+  - title: Configuration File
+    path: /project-configuration/configuration-file.html
   - title: Jobs
     path: /project-configuration/jobs.html
   - title: Tasks

@@ -72,7 +72,7 @@ describe, specify and relate them.
 
 [^r]: Defaults to the string that represents the key.
 
-[^i]: This is an invisible or virtual property in the dotfile. It is used  during evaluation of the dotfile where any existing value would be overwritten.
+[^i]: This is an invisible or virtual property in the configuration file. It is used  during evaluation of the configuration file where any existing value would be overwritten.
 
   [Task]: /project-configuration/tasks.html#task
   [Map of Maps]: /project-configuration/advanced.html#map-of-maps

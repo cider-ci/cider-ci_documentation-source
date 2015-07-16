@@ -12,14 +12,14 @@ Cider-CI.
 Two steps must be performed to enable a project for Cider-CI:
 
   1. The repository must to be registered in you instance of Cider-CI, and
-  2. a dotfile `.cider-ci.yml` must be added to the repository.
+  2. a _Cider-CI Configuration File_ must be added to the repository.
 
 Registering a repository is a straight forward procedure by following
 `Administration` → `Repositories` → `Add a new repository` in the user
 interface.
 
-The basic structure of the dotfile is described in the [Dotfile][]
-page. More detailed information is available in the [Jobs][], [Tasks][], and
+The basic structure of the configuration file is described in the [Cider-CI Configuration File]
+page. More detailed information is available in the [Jobs], [Tasks], and
 [Scripts][] pages. Cider-CI has several features to keep specification files
 dry and maintainable. Using *contexts*, splitting the configuration over
 multiple files, and the related *deep-merge* strategy are discussed in the
@@ -32,7 +32,7 @@ context in the [Bash Demo Project for Cider-CI][].
 
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
-  [Dotfile]: /project-configuration/dotfile.html
+  [Cider-CI Configuration File]: /project-configuration/configuration-file.html
   [Jobs]: /project-configuration/jobs.html
   [Tasks]: /project-configuration/tasks.html
   [Scripts]: /project-configuration/scripts.html

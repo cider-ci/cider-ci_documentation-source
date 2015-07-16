@@ -7,7 +7,6 @@ Clojure
 DFS
 Debian
 Demoe
-Dotfile
 ENV
 Github
 JDK
@@ -44,7 +43,6 @@ cp
 createdb
 defauls
 dev
-dotfile
 esr
 executedCider
 executor1
@@ -59,6 +57,7 @@ ipv4
 json
 k1
 k2
+key1
 key2
 leihs
 lein

@@ -27,8 +27,8 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 |----------------------------+--------------+----------------------------------------------------------------------------------------------------------------------|
 {: .table .table-striped }
 [^t]: The presence of the `tasks` property  and its content is optional from
-      the dotfile perspective. However, a job without tasks makes no sense in Cider-CI
-      and will result with the state `failed`.
+      the configuration file perspective. However, a job without tasks makes no sense
+      in Cider-CI and will result with the state `failed`.
 
 
 ## Task

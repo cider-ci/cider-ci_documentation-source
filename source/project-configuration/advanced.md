@@ -8,17 +8,17 @@ title: Advanced Project Configuration
 {:toc}
 
 This page describes advanced features and techniques to keep the specification
-of the [Cider-CI Dotfile] maintainable and non repetitive.
+of the [Cider-CI Configuration File] maintainable and non repetitive.
 
 
 ## Map of Maps - Conceptual Mapping to Arrays
 {: #map-of-maps}
 
-Maps are generally favored over arrays in the [Cider-CI Dotfile]. Maps are in
+Maps are generally favored over arrays in the [Cider-CI Configuration File]. Maps are in
 general more flexible and in particular enable inclusion, see the section
 [Including Files](#including-files).[^map-order] The occurrences of  "Map of
 Maps" are most prominently directly underneath `jobs`, `tasks` and `scripts`.
-During the evaluation of the dotfile these  maps can be thought of as if they
+During the evaluation of the configuration these  maps can be thought of as if they
 are transfered to arrays. The keys `name` and `key` on the second level are
 affected by this transformation. If the map on the second level does not have
 a `name` property it will be set to the name of the key. An existing `name`
@@ -49,7 +49,7 @@ One or more  _YAML_ files can be included via the `_cider-ci_include` key. The
 value of `_cider-ci_include` is a string or an array of strings.
 
 The `_cider-ci_include` may appear in any map at any level in the [Cider-CI
-Dotfile].
+Configuration File].
 
 The top level element of the included file must be map. We note that this is
 not a restriction in what can be achieved with inclusion. The only allowed
@@ -153,6 +153,6 @@ Then the  following holds true:
     2. otherwise the pair `(k,v2)` is present in `m`.
 
 
-  [Cider-CI Dotfile]: /project-configuration/dotfile.html
+  [Cider-CI Configuration File]: /project-configuration/configuration-file.html
   [generate-tasks]: /demo-project/cider-ci/jobs/generate-tasks.yml
 
