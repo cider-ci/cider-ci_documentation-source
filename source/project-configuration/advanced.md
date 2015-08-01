@@ -84,7 +84,7 @@ _cider-ci_generate-tasks:
 The `_cider-ci_generate-tasks` directive within the context or a subcontext can
 be used to generate tasks based on files checked into the repository. This is
 demonstrated in [generate-tasks] example and more comprehensively
-[here](https://github.com/Madek/madek-webapp/blob/madek-v3/.cider-ci/shared/tests-context.yml).
+[here](https://github.com/Madek/madek-webapp/blob/madek-v3/cider-ci/shared/tests-context.yml).
 Conceptually, the result of `git ls-tree` is filtered according to the values
 of `include-match` and `exclude-match` which are interpreted as regular
 expressions.
@@ -99,7 +99,7 @@ would be [deep-merged](#deep-merge) with the one generated where values from
 the existing `tasks` directive would override those generated. Thus custom
 directives can be set on a task basis even for generated tasks as shown in the
 following example extracted from
-[here](https://github.com/Madek/madek-webapp/blob/madek-v3/.cider-ci/shared/tests-context.yml).
+[here](https://github.com/Madek/madek-webapp/blob/madek-v3/cider-ci/shared/tests-context.yml).
 
 
 ~~~yml

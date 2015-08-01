@@ -10,6 +10,10 @@ items:
   - title: Executor Configuration
     path: /installation/executor-configuration.html
 
+#- title: Features
+#  path: /features
+#  items: []
+
 - title: Project Configuration
   path: /project-configuration/index.html
   items:
@@ -33,6 +37,7 @@ items:
     path: /api/storage_resources.html
 
 - title: Development
+  path: /development/index.html
   items:
   - title: Architecture
     path: /development/architecture/index.html

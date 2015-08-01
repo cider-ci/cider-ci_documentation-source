@@ -2,6 +2,21 @@
 
 This is the documentation for Cider-CI.
 
+# Contents
+
+The [Introduction] page introduces concepts and rational behind Cider-CI. The
+The [Installation] page describes how to setup a complete Cider-CI environment.
+Configuring a project is described in the [Project Configuration]. This is
+amended by the more feature and how-to oriented content of [Features].
+Programming orient documentation can be found under [Development] and [API].
+
+  [API]: /api/
+  [Development]: /development/
+  [Features]: /features/
+  [Introduction]: /introduction/
+  [Installation]: /installation/
+  [Project Configuration]: /project-configuration/
+
 ## License and Copyright
 
 Copyright 2015 Thomas Schank and contributors
