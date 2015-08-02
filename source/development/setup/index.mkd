@@ -186,7 +186,7 @@ configured in the default data set. It matches the parameters of the default
 development executor and hence it should be up and running.
 
 Note: other parameters, like the `traits` e.g., are taken from the default
-setup when an executor is installed via the [Cider-CI Ansible Setup][] . They
+setup when an executor is installed via the [Cider-CI Deploy]. They
 might not match the given development environment.
 </div> <div class="col-md-6">
 [![Executors](/development/setup/executors.png){: .preview}](/development/setup/executors.png)
@@ -209,7 +209,7 @@ jobs can be deleted.
 
 
   [Cider-CI API]: https://github.com/cider-ci/cider-ci_api
-  [Cider-CI Ansible Setup]: https://github.com/cider-ci/cider-ci_ansible-setup
+  [Cider-CI Deploy]: https://github.com/cider-ci/cider-ci_deploy
   [Cider-CI Builder]: https://github.com/cider-ci/cider-ci_builder
   [Cider-CI Dispatcher]: https://github.com/cider-ci/cider-ci_dispatcher
   [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor

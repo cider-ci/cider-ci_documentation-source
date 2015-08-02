@@ -54,9 +54,9 @@ The following example uses one machine in the role of the server and executor.
 
     `git clone --recursive https://github.com/cider-ci/cider-ci.git`
 
-2. We descend into the ansible-setup directory.
+2. We descend into the deploy directory.
 
-    `cd cider-ci/ansible-setup`
+    `cd cider-ci/deploy`
 
 3. We adjust the host ip within the `hosts_demo_single` file:
 
@@ -108,13 +108,13 @@ use case.
 
 The procedure for installing a production environment is exactly the same as
 for the demo environment. However, the parameters for the example environment
-are far from optimal. The [Cider-CI Ansible Setup] contains the hosts file
+are far from optimal. The [Cider-CI Deploy] contains the hosts file
 `hosts_zhkd_ci3` which is more appropriate to be used as a template in this
 case. The directories `host_vars` and `group_vars` contain further files to be
 used as templates and to be customized.
 
 
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
-  [Cider-CI Ansible Setup]: https://github.com/cider-ci/cider-ci_ansible-setup
+  [Cider-CI Deploy]: https://github.com/cider-ci/cider-ci_deploy
   [Cider-CI main project]: https://github.com/cider-ci/cider-ci
   [Install]: http://docs.ansible.com/intro_installation.html

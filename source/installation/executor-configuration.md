@@ -21,7 +21,7 @@ The demo installation will provide the traits `linux` and `bash` for each
 executor. They suffice to run the jobs of the [Bash Demo Project for
 Cider-CI][].
 
-### Adding Traits provided by the Ansible Setup
+### Adding Traits Provided by the Cider-CI Deploy Project
 
 A set of additional traits can be automatically installed with
 
