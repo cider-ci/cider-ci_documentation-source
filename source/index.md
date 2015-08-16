@@ -10,12 +10,12 @@ Configuring a project is described in the [Project Configuration]. This is
 amended by the more feature and how-to oriented content of [Features].
 Programming orient documentation can be found under [Development] and [API].
 
-  [API]: /api/
-  [Development]: /development/
-  [Features]: /features/
-  [Introduction]: /introduction/
-  [Installation]: /installation/
-  [Project Configuration]: /project-configuration/
+  [API]: /api/index.html
+  [Development]: /development/index.html
+  [Features]: /features/index.html
+  [Introduction]: /introduction/index.html
+  [Installation]: /installation/index.html
+  [Project Configuration]: /project-configuration/index.html
 
 ## License and Copyright
 

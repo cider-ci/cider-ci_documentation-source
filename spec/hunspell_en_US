@@ -10,6 +10,7 @@ Demoe
 ENV
 GitHub
 Github
+IOPS
 JDK
 JSON
 Javascript
@@ -37,6 +38,7 @@ ansible
 branchdescendants
 cd
 ci
+ci2
 ci3
 clojure
 config
@@ -53,6 +55,7 @@ https
 hyperlink
 hyperlinks
 image01
+init
 ip
 ipv4
 json

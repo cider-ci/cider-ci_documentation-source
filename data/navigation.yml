@@ -7,8 +7,10 @@ items:
 - title: Installation
   path: /installation/index.html
   items:
-  - title: Executor Configuration
-    path: /installation/executor-configuration.html
+  - title: Setup and Deploy
+    path: /installation/setup_and_deploy.html
+  - title: Advanced Installation
+    path: /installation/advanced.html
 
 #- title: Features
 #  path: /features
