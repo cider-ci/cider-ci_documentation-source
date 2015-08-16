@@ -65,11 +65,14 @@ key1
 key2
 leihs
 lein
+libcurl
 linux
+logfiles
 m1
 m2
 madek
 modelled
+netrc
 npm
 optional1
 personas
@@ -92,10 +95,12 @@ subcontext
 subcontexts
 truthy
 url
+username
 v1
 v2
 vhost
 wip
+workflow
 yes1
 yes2
 yml
