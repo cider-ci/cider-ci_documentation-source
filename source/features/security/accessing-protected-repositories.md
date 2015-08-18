@@ -28,14 +28,14 @@
 
 Cider-CI uses standard `git` system commands to access remote repositories. On
 the server the user `cider-ci_repository` clones and fetches from remote
-repositories.
+repositories. Therefore the `cider-ci_repository` must have read access
+to the remote repository.
 
 On the executor the executor service runs under `root`. Scripts are executed
-under the `cider-ci_exec-user`.
-
-Therefore to clone and fetch repositories in the normal workflow the `root`
-user must be granted access. If any git integration is to be performed as part
-of a `Cider-CI Job` then the `cider-ci_exec-user` has to be granted access.
+under the `cider-ci_exec-user`. Therefore to clone and fetch repositories in
+the normal workflow the `root` user must be granted read access. If any git
+integration is to be performed as part of a `Cider-CI Job` then the
+`cider-ci_exec-user` has to be granted access.
 
 
 ## Protocols
