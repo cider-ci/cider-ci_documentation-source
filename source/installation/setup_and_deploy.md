@@ -1,11 +1,16 @@
 ---
-title: Setup and Deploy - Installation
+title: Setup and Deploy
 ---
 {::options parse_block_html="true" /}
 
-# Setup and Deploy - Installing Cider-CI
+# Setup and Deploy
 {:.no_toc}
-This page guides through the process of initially installing a Cider-CI environment.
+This page guides through the process of installing a simple Cider-CI
+environment.
+
+This guide is optimized for easiness and providing quick results. After
+providing the prerequisites it will just take **3 easy steps** and about
+**three minutes** your time to kick off the installation process.
 
 
 ### Table of Contents
@@ -14,77 +19,108 @@ This page guides through the process of initially installing a Cider-CI environm
 {:toc}
 
 
+## Introduction
 
-## Environment Prerequisites
+Installing and maintaining a Cider-CI environment is largely an automated
+process thanks to the [Cider-CI Deploy Project][]. It supports any mixture of
+the _Linux_ based Ubuntu 14.04 "Trusty" or Debian 8 "Jessie" operating systems
+for the Cider-CI Server and executors. Since Cider-CI version 3.7 "Redmond"
+executors running on _Windows_ are supported, too. It is also possible to
+install a Cider-CI executor manually on other operating systems.
+
+The remainder of this page focuses on a **simple** setup existing of one
+**single machine**. Advanced installation and installing to Windows is out of
+the scope of this page but covered in other documents of this documentation.
+
+
+## Prerequisites and Preparation
 
 <div class="row"> <div class="col-md-6">
 
-Ansible must be present on the *control* machine. See the [Install][] page of
-the Ansible Documentation. We use a fairly recent version (≥ 1.9 at the time of
-writing) of Ansible. The operating system on the controller is not relevant. We
-use Mac OS X and various Linux variants.
+The [Cider-CI Deploy Project] relies heavily on Ansible which must must be
+present on the *control* machine. See the [Install][] page of the Ansible
+Documentation. We use a fairly recent version (≥ 1.9 at the time of writing) of
+Ansible. The operating system on the controller is not relevant. We use _Mac OS
+X_ and various _Linux_ variants.
 
-The Ansible setup supports Ubuntu 14.04 or Debian 8. The working account on the
-**control machine**  must have **ssh access to the server and executors**.
-A setup with SSH keys and without passwords is the most straight forward
-configuration.
+The working account on the **control machine** must have **ssh access to all
+target machines**. A setup with SSH keys and without passwords to the root
+account is the most straight forward configuration.
 
-The server and executors must reach each other via the **https** protocol (port
-443) to function properly. The **example setup** assumes that all machines have
-**fixed ipv4 addresses**. **Custom configuration** of protocol and port, as
-well as names instead of addresses is **possible** but outside the scope of
-this documentation.
 
 </div> <div class="col-md-6">
 
-[![Environment](/installation/environment.svg)](/installation/environment.svg)
-
+[![Environment](/installation/simple-demo.svg)](/installation/simple-demo.svg)
 
 </div> </div>
 
+<div class="alert alert-info" role="info">
+Accessing machines directly via the root account is now discouraged in many and
+effectively disabled in some Linux distributions. Read [How to enable ssh root
+access on Ubuntu 14.04][] for example.
+</div>
 
-## Step by Step Install Procedure for a Demo Environment
-
-The following example uses one machine in the role of the server and executor.
 
 
-1.  We check out the [Cider-CI main project][] including all sub-projects inside
+
+## Step by Step Instructions
+
+The following example assumes that a single Linux machine
+is ready installed, we call it the `demo-machine`.
+
+
+1.  We check out the [Cider-CI Main Project][] including all sub-projects inside
     the control machine:
 
     `git clone --recursive https://github.com/cider-ci/cider-ci.git`
 
-2. We descend into the deploy directory.
+2. We descend into the deploy directory which is part of the [Cider-CI Deploy Project][]:
 
     `cd cider-ci/deploy`
 
-3. We adjust the host ip within the `hosts_demo_single` file:
+3. We start the setup with the following command where we replace
+    `192.168.0.31` with the IP address of our `demo-machine`:
 
 
-      [demo]
-      demo-machine ansible_ssh_host=192.168.0.31 ansible_ssh_user=root
+    ```DEPLOY_ROOT_DIR=`pwd` ansible-playbook -i inventories/demo/easy/hosts play_site.yml -e 'ansible_ssh_host=192.168.0.31 cider_ci_master_secret=secret admin_password=secret'```
 
+    <div class="alert alert-warning" role="alert">
+    You can leave the value of the `cider_ci_master_secret` and `admin_password`
+    as is if your `demo-machine` cannot be accessed from "the outside". Otherwise
+    you need to change them or virtually everbody has unrestricted access to
+    your machine!
+    </div>
 
-4. We invoke ansible-playbook to trigger the install:
-
-    `ansible-playbook -i hosts_demo_single play_site.yml -e 'system_admin_password=secret system_admin_login=admin cider_ci_master_secret=REPLACE-WITH-YOUR-SECRET'`
-
-
-<div class="alert alert-warning" role="alert">
-Installing Cider-CI from scratch can take a while (45 minutes are typical for
-a virtual machine running on my laptop). It can happen that the
-`ansible-playbook` fails due to network timeouts e.g. The playbook is
+<div class="alert alert-info" role="info">
+Installing Cider-CI from scratch can take a while. 45 minutes are typical for
+a virtual machine running on my laptop. The setup performs many downloads from
+the internet which can be a reason for temporary failures. The playbook is
 idempotent and thus can be rerun again at any time.
 </div>
 
 
-## Adding Traits
+This is it. You can no visit your installation at
+`http://IP-OF-YOUR-DEMO-MACHINE`. The setup will create an `admin` user with
+the password `secret` (unless the parameters have been changed in step 3). The
+setup also configured two projects. Run some of the jobs from the [Cider-CI
+Bash Demo Project][] to learn about the capablities of Cider-CI.
 
-See [Adding Traits](./advanced.html#adding-traits) on the [Advanced
-Installation](./advanced.html) page.
 
 
 
-  [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
-  [Cider-CI Deploy]: https://github.com/cider-ci/cider-ci_deploy
-  [Cider-CI main project]: https://github.com/cider-ci/cider-ci
+## Next
+
+Add your own project to your installation and configure it which is covered in
+[Project Configuration](/project-configuration/). You will probably need a few
+more traits on top of the default ones. Read about adding traits to your
+executor in [Adding Traits](./adding-traits.html). If you want learn about how
+to set up an production like Cider-CI environment read [Advanced
+Installation]().
+
+
+
+  [Cider-CI Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash.git
+  [Cider-CI Deploy Project]: https://github.com/cider-ci/cider-ci_deploy
+  [Cider-CI Main Project]: https://github.com/cider-ci/cider-ci
+  [How to enable ssh root access on Ubuntu 14.04]: http://askubuntu.com/questions/469143/how-to-enable-ssh-root-access-on-ubuntu-14-04
   [Install]: http://docs.ansible.com/intro_installation.html

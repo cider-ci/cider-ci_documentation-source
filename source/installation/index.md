@@ -5,7 +5,7 @@ title: Install
 
 # Installing Cider-CI
 {:.no_toc}
-Cider-CI is open source and can be installed with little effort. The [Setup
+Cider-CI is open source and can be installed with little effort. The [Simple Setup
 and Deploy] page guides through an initial installation with the most simple
 possible setup.
 

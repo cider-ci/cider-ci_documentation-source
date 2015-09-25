@@ -1,6 +1,11 @@
 # Advanced Installation
 {::options parse_block_html="true" /}
 
+<div class="alert alert-danger" role="alert">
+This page is outdated. It will be updated for version 3.7 "Redmond".
+</div>
+
+
 ### Table of Contents
 {:.no_toc}
 * Will be replaced with the ToC, excluding the "Contents" header
