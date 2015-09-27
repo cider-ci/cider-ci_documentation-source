@@ -1,5 +1,5 @@
 ---
-title: Setup and Deploy
+title: Easy Setup and Deploy
 ---
 {::options parse_block_html="true" /}
 
