@@ -1,3 +1,9 @@
+PATH
+  remote: lib/site_map_navigation
+  specs:
+    site_map_navigation (0.0.1)
+      middleman-core (>= 3.3.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -210,3 +216,7 @@ DEPENDENCIES
   rack-rewrite
   rspec
   selenium-webdriver
+  site_map_navigation!
+
+BUNDLED WITH
+   1.10.6

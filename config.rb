@@ -1,4 +1,6 @@
-require 'pry' 
+require 'pry'
+
+activate :my_extension
 
 ###
 # Compass
@@ -51,6 +53,7 @@ require 'pry'
 #
 
 # activate :syntax, :line_numbers => false
+#
 #
 
 set :relative_links, true

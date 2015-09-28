@@ -31,38 +31,46 @@
     .container
 
       :ruby
+        @current_path_items = []
+        @current_node = {}
 
         def find_sitemap_path(parents, current_node)
           path_items = Array.new(parents) << current_node.select{|k,v| %w(path title).include? k}
           path = path_items.map{|n| n['path']}.join('')
+          current_path_with_root= "/" + current_path
           puts "############# find_sitemap_path #######"
           puts({parents: parents, path_items: path_items, path: path,
-            current_path: current_path, current_node: current_node })
+            current_path_with_root: current_path_with_root, current_node: current_node })
           puts "#######################################\n\n"
-          current_path_with_root= "/" + current_path
-          if (path == current_path_with_root) or ((path  + "index.html") == current_path_with_root)
-            path_items
+          if (path == current_path_with_root) || ((path  + "index.html") == current_path_with_root)
+            puts "MATCH"
+            @current_path_items = path_items
+            @current_node  = current_node
           else
             if current_node['items']
               current_node['items'].map do |node|
                 find_sitemap_path(path_items, node)
               end
-            else
-              nil
             end
           end
         end
 
-        site_map_path= find_sitemap_path([], data['site_map'])
+        find_sitemap_path([], data['site_map'])
+        # reduce would be nicer
+        @path_prefix = ""
 
       .row
         .col-md-6
           %ol.breadcrumb
-            %li
-              %a{href: '/'}Home
+            - @current_path_items.each do |path_item|
+              - @path_prefix << path_item['path']
+              %li
+                %a{href: @path_prefix}= path_item['title'] || path_item['path']
         .col-md-6
-          %ol.breadcrumb
-            %li
+          %ol.breadcrumb.with-circle-separator
+            - @current_node['items'].try(:each) do |item|
+              %li
+                %a{href: @path_prefix + item['path']}= item['title'] || item['path']
 
       = yield
 

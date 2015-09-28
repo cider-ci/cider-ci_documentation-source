@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem "pry"
 
-gem "middleman", "~>3.3.7" 
+gem "middleman", "~>3.3.7"
 #gem "middleman" , path: "/Users/thomas/Programming/ROR/middleman"
 gem "middleman-livereload", "~> 3.1.0"
 gem "middleman-minify-html"
@@ -27,3 +27,5 @@ gem 'rspec'
 gem 'selenium-webdriver'
 gem 'addressable'
 gem 'faraday'
+
+gem 'site_map_navigation', path: "lib/site_map_navigation"

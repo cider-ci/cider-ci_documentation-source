@@ -2,7 +2,7 @@ path: /
 title: Home
 items:
 - path: introduction/
-  tile : Introduction
+  title : Introduction
   items:
   - path: quick-start/
     title: Quick Start
