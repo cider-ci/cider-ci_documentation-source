@@ -27,5 +27,3 @@ gem 'rspec'
 gem 'selenium-webdriver'
 gem 'addressable'
 gem 'faraday'
-
-gem 'site_map_navigation', path: "lib/site_map_navigation"

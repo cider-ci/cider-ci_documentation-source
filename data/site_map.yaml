@@ -16,3 +16,16 @@ items:
     items:
     - path: traits/
       title: Traits
+- path: project-configuration/
+  title: Project Configuration
+  items:
+  - path: configuration-file.html
+    title: Configuration File
+  - path: jobs.html
+    title: Jobs
+  - path: tasks.html
+    title: Tasks
+  - path: scripts.html
+    title: Scripts
+  - path: advanced.html
+    title: Advanced Topics

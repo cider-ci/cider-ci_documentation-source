@@ -38,12 +38,11 @@
           path_items = Array.new(parents) << current_node.select{|k,v| %w(path title).include? k}
           path = path_items.map{|n| n['path']}.join('')
           current_path_with_root= "/" + current_path
-          puts "############# find_sitemap_path #######"
-          puts({parents: parents, path_items: path_items, path: path,
-            current_path_with_root: current_path_with_root, current_node: current_node })
-          puts "#######################################\n\n"
+          # puts "############# find_sitemap_path #######"
+          # puts({parents: parents, path_items: path_items, path: path, current_path_with_root: current_path_with_root, current_node: current_node })
+          # puts "#######################################\n\n"
           if (path == current_path_with_root) || ((path  + "index.html") == current_path_with_root)
-            puts "MATCH"
+            # puts "MATCH"
             @current_path_items = path_items
             @current_node  = current_node
           else
@@ -61,16 +60,18 @@
 
       .row
         .col-md-6
-          %ol.breadcrumb
-            - @current_path_items.each do |path_item|
-              - @path_prefix << path_item['path']
-              %li
-                %a{href: @path_prefix}= path_item['title'] || path_item['path']
+          -if @current_path_items.present?
+            %ol.breadcrumb
+              - @current_path_items.each do |path_item|
+                - @path_prefix << path_item['path']
+                %li
+                  %a{href: @path_prefix}= path_item['title'] || path_item['path']
         .col-md-6
-          %ol.breadcrumb.with-circle-separator
-            - @current_node['items'].try(:each) do |item|
-              %li
-                %a{href: @path_prefix + item['path']}= item['title'] || item['path']
+          - if @current_node['items']
+            %ol.breadcrumb.with-circle-separator
+              - @current_node['items'].try(:each) do |item|
+                %li
+                  %a{href: @path_prefix + item['path']}= item['title'] || item['path']
 
       = yield
 
