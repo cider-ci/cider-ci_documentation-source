@@ -28,10 +28,10 @@ multiple files, and the related *deep-merge* strategy are discussed in the
 
 If is recommended to digest the [Introduction][] before diving into this
 content. Every configuration given here is demonstrated and brought in to
-context in the [Bash Demo Project for Cider-CI][].
+context in the [Cider-CI Bash Demo Project].
 
 
-  [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
+  [Cider-CI Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
   [Cider-CI Configuration File]: /project-configuration/configuration-file.html
   [Jobs]: /project-configuration/jobs.html
   [Tasks]: /project-configuration/tasks.html

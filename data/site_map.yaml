@@ -1,0 +1,18 @@
+path: /
+title: Home
+items:
+- path: introduction/
+  tile : Introduction
+  items:
+  - path: quick-start/
+    title: Quick Start
+- path: installation/
+  title: Installation
+  items:
+  - path: setup_and_deploy/
+    title: Setup and Deploy
+  - path: advanced/
+    title: Advanced
+    items:
+    - path: traits/
+      title: Traits

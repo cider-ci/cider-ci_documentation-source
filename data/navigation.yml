@@ -1,14 +1,19 @@
 items:
 
+- title: Home
+  path: /
+  items: []
+
 - title: Introduction
   path: /introduction/index.html
-  items: []
+  items:
+  - title: Quick Start
+    path: /introduction/quick-start/index.html
+
 
 - title: Installation
   path: /installation/index.html
   items:
-  - title: Quick Start
-    path: /installation/quick-start/index.html
   - title: Setup and Deploy
     path: /installation/setup_and_deploy.html
   - title: Advanced Installation

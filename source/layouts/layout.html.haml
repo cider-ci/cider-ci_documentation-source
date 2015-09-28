@@ -28,50 +28,42 @@
             %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
             %input{:style => "visibility: hidden;", :type => "submit", :value => "Google Search"}
 
-        %ul.nav.navbar-nav
-          - data.navigation.items.each do |nav_item|
-            - is_active=  "/"+current_path == nav_item["path"]
-            - active_class = is_active ? " active " : ""
-            - has_items = nav_item["items"] &&  nav_item["items"].count > 0
-            - dropdown_class = has_items ? " dropdown" : ""
-            %li.dropdown
-              = link_to "#" ,class: "dropdown-toggle", data: {toggle: :dropdown} do
-                %strong= nav_item["title"]
-                %span.caret
-              %ul.dropdown-menu
-                - if nav_item["path"]
-                  %li
-                    = link_to nav_item["path"] do
-                      = nav_item["title"]
-                - nav_item["items"].each do |nav_item_sub|
-                  %li
-                    = link_to nav_item_sub["path"] do
-                      = nav_item_sub["title"]
+    .container
 
-    .container-fluid
+      :ruby
+
+        def find_sitemap_path(parents, current_node)
+          path_items = Array.new(parents) << current_node.select{|k,v| %w(path title).include? k}
+          path = path_items.map{|n| n['path']}.join('')
+          puts "############# find_sitemap_path #######"
+          puts({parents: parents, path_items: path_items, path: path,
+            current_path: current_path, current_node: current_node })
+          puts "#######################################\n\n"
+          current_path_with_root= "/" + current_path
+          if (path == current_path_with_root) or ((path  + "index.html") == current_path_with_root)
+            path_items
+          else
+            if current_node['items']
+              current_node['items'].map do |node|
+                find_sitemap_path(path_items, node)
+              end
+            else
+              nil
+            end
+          end
+        end
+
+        site_map_path= find_sitemap_path([], data['site_map'])
+
       .row
-        .col-sm-3.col-md-2.sidebar
-          - data.navigation.items.each do |nav_item|
-            %ul.nav.nav-sidebar
-              - is_active=  "/"+current_path == nav_item["path"]
-              %li{class: (is_active ? "active" : "")}
-                - if nav_item["path"]
-                  = link_to nav_item["path"] ,class: "alike" do
-                    %strong= nav_item["title"]
-                - else
-                  %span.alike
-                    %strong= nav_item["title"]
-              - nav_item["items"].each do |nav_item_sub|
-                %ul.nav.nav-sidebar
-                  - is_active_sub= "/"+current_path == nav_item_sub["path"]
-                  %li{class: (is_active_sub ? "active" : "")}
-                    = link_to nav_item_sub["path"] do
-                      = nav_item_sub["title"]
-                    - if is_active_sub
-                      %ul.toc
+        .col-md-6
+          %ol.breadcrumb
+            %li
+              %a{href: '/'}Home
+        .col-md-6
+          %ol.breadcrumb
+            %li
 
-        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-
-          = yield
+      = yield
 
 

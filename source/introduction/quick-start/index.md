@@ -11,7 +11,7 @@ system with at least 2GB of RAM system and a internet connection.
 
 We recommend that the system is not accessible from the internet as it sets
 a default login with a default password. Skip a few steps down to see how
-to change the password after installation.
+to change the password after introduction.
 
 ## Install
 
@@ -30,16 +30,16 @@ uncommon.
 0. Open the `http://IP-OF-YOUR-MACHINE` and sing in with the login `admin` and
   password `secret`.
 
-    [![Quick Start - Sign-in](/installation/quick-start/sign-in.png){: .quick-start}](/installation/quick-start/sign-in.png)
+    [![Quick Start - Sign-in](/introduction/quick-start/sign-in.png){: .quick-start}](/introduction/quick-start/sign-in.png)
 
 0. You will be redirected to the [My Workspace](http://cider-ci.info/articles/my-workspace/) page. Click on `Run` of the most recent commit of the
 [Cider-CI Bash Demo Project](https://github.com/cider-ci/cider-ci_demo-project-bash).
 
-    [![Quick Start - Workspace](/installation/quick-start/workspace.png){: .quick-start}](/installation/quick-start/workspace.png)
+    [![Quick Start - Workspace](/introduction/quick-start/workspace.png){: .quick-start}](/introduction/quick-start/workspace.png)
 
 0. Run and watch some of the provided jobs.
 
-    [![Quick Start - Job](/installation/quick-start/job.png){: .quick-start}](/installation/quick-start/job.png)
+    [![Quick Start - Job](/introduction/quick-start/job.png){: .quick-start}](/introduction/quick-start/job.png)
 
 ## Change The Password
 
@@ -47,12 +47,20 @@ Go to _Administration_ → _Users_ → _[admin]_ and change the password. Your
 session will **immediately become invalid** - this is a security feature - and
 you will need to sign in again with the new password.
 
-[![Quick Start - Change Password](/installation/quick-start/change-password.png){: .quick-start}](/installation/quick-start/change-password.png)
+[![Quick Start - Change Password](/introduction/quick-start/change-password.png){: .quick-start}](/introduction/quick-start/change-password.png)
 
 
 
 ## Where To Go From Here
 
 If you haven't looked at it yet: the [Introduction](/introduction/) gives
-information about the entities in and the rational behind Cider-CI.
+information about the entities in, and the rational behind Cider-CI.
+
+If you want to configure your project to be tested with Cider-CI read
+the [Project Configuration](/project-configuration/) guide.
+
+If you want to customize you installation read the [Setup and Deploy](/installation/setup_and_deploy.html) guide.
+
+
+
 
