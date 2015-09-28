@@ -1,9 +1,5 @@
 items:
 
-- title: Quick Start
-  path: /quick-start/index.html
-  items: []
-
 - title: Introduction
   path: /introduction/index.html
   items: []
@@ -11,14 +7,12 @@ items:
 - title: Installation
   path: /installation/index.html
   items:
-  - title: Esay Setup and Deploy
-    path: /installation/easy_setup_and_deploy.html
+  - title: Quick Start
+    path: /installation/quick-start/index.html
+  - title: Setup and Deploy
+    path: /installation/setup_and_deploy.html
   - title: Advanced Installation
     path: /installation/advanced.html
-
-#- title: Features
-#  path: /features
-#  items: []
 
 - title: Project Configuration
   path: /project-configuration/index.html

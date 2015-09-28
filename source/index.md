@@ -11,9 +11,12 @@ be used in the traditional sense as a test runner. But Cider-CI can do much more
     over **building** to **deployment**.
 * It has abstractions for **managing** and altogether **avoiding false test negatives**.
 * It supports **running tests in parallel**.
+* **Installation and maintenance** is fully **automatized**.
+* It is **open source**, no vendor lock in.
 
-There is no substitute for experience. Procede to the [Quick Start Guide](/quick-start/)
-and get your Cider-CI environment running with almost no effort.
+There is no substitute for experience. Procede to the [Quick Start
+Guide](/quick-start/) and get your Cider-CI environment running with almost no
+effort.
 
 # Contents
 
