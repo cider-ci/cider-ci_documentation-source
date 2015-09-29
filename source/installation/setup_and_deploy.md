@@ -5,12 +5,7 @@ title: Easy Setup and Deploy
 
 # Setup and Deploy
 {:.no_toc}
-This page guides through the process of installing a simple Cider-CI
-environment.
-
-This guide is optimized for easiness and providing quick results. After
-providing the prerequisites it will just take **3 easy steps** and about
-**three minutes** your time to kick off the installation process.
+This page guides through the process of installing a Cider-CI environment.
 
 
 ### Table of Contents
@@ -26,41 +21,107 @@ process thanks to the [Cider-CI Deploy Project][]. It supports any mixture of
 the _Linux_ based Ubuntu 14.04 "Trusty" or Debian 8 "Jessie" operating systems
 for the Cider-CI Server and executors. Since Cider-CI version 3.7 "Redmond"
 executors running on _Windows_ are supported, too. It is also possible to
-install a Cider-CI executor manually on other operating systems.
+install a Cider-CI executor manually on other operating systems currently not
+supported for automatic setup, e.g. "Mac OS X".
 
-The remainder of this page focuses on a **simple** setup existing of one
-**single machine**. Advanced installation and installing to Windows is out of
-the scope of this page but covered in other documents of this documentation.
+A working Cider-CI environment includes **exactly one _Cider-CI Server_** and
+virtually **any number of _Cider-CI Executors_**. In most most environments
+every component runs in its own machine. It is possible to run the server and
+one executor within the same machine. We **recommend against running an
+executor in the same machine as the server** in **larger environments** and in
+particular when the working efficiency of **several users** depends on the
+system, which is often the case.
+
+However a single machine environment can make sense for light use cases, e.g.
+when a sigle developer wants occasionally to run tests. A single machine setup
+is also easier to set-up and less demanding when it comes to interaction of the
+machines with respect to network configuration and firewalls in particular. It
+gets very simple if this machine also acts as the control machine. More about
+that in the next section.
 
 
 ## Prerequisites and Preparation
 
 <div class="row"> <div class="col-md-6">
 
-The [Cider-CI Deploy Project] relies heavily on Ansible which must must be
-present on the *control* machine. See the [Install][] page of the Ansible
-Documentation. We use a fairly recent version (≥ 1.9 at the time of writing) of
-Ansible. The operating system on the controller is not relevant. We use _Mac OS
-X_ and various _Linux_ variants.
+The [Cider-CI Deploy Project] relies heavily on Ansible which must be present
+on the *control* machine. The control machine orchestrates deployment and
+updates.
+
+See the [Install][] page of the Ansible Documentation to install Ansible.
+Alternatively you might want to have look at the [two Ansible related lines of
+the quick-install script][] to quickly install Ansbile without hassle. We use
+a fairly recent version (≥ 1.9 at the time of writing) of Ansible. The
+operating system on the controller is not relevant. We use *Mac OS X* and
+various *Linux* variants.
+
+It is possible to run use a machine which is part of the Cider-CI environment
+as a control machine (as long it is not a Windows machine). The simplest
+Cider-CI environment combines the server, executor and control machine in one
+single instance. This is actually what happens when you follow the [Quick
+Start] guide which is essentially performed by the already mentioned
+[quick-install script].
+
 
 The working account on the **control machine** must have **ssh access to all
-target machines**. A setup with SSH keys and without passwords to the root
-account is the most straight forward configuration.
+Linux target machines**. A setup with SSH keys and without passwords to the
+root account is the most straight forward configuration.
+
+It must have also access via [WinRM][] to **all Windows executors**. There is
+also some extra setup to be performed on the control machine in this case.
+Please read and follow the instructions on the [Windows Support][] page of the
+Ansible documentation.
+
+Every executor needs during installation and for operation access via HTTPS to
+the server. The server dispatches via HTTPS during normal operation. There is
+also a pull only mode. More to this later.
+
+**Make sure that all of the depicted connections are possible and actually work
+in your environment.**
+
+
+  [WinRM]: https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx
+  [Windows Support]: http://docs.ansible.com/ansible/intro_windows.html
+  [two Ansible related lines of the quick-install script]: https://github.com/cider-ci/cider-ci_deploy/blob/master/bin/quick-install.sh#L37-L38
+  [quick-install script]: https://github.com/cider-ci/cider-ci_deploy/blob/master/bin/quick-install.sh
 
 
 </div> <div class="col-md-6">
 
-[![Environment](/installation/simple-demo.svg)](/installation/simple-demo.svg)
+
+~~~
+┏━━━━━━━━━━━━━━━━━━┓              ╔═══════════════════════════╗
+┃                  ┃              ║                           ║
+┃                  ┣──────SSH─────▶  Cider-CI Linux Executor  ║
+┃                  ┃              ║                           ║
+┃                  ┃              ╚══▲═══════════════════╦════╝
+┃                  ┃                 │                   │
+┃                  ┃                 │                   │
+┃                  ┃              HTTPS                HTTPS
+┃                  ┃              (push)           (ping, sync,
+┃                  ┃                 │             config, pull)
+┃                  ┃                 │                   │
+┃                  ┃              ╔══╩═══════════════════▼════╗
+┃                  ┃              ║                           ║
+┃ Control Machine  ┃              ║                           ║
+┃                  ┣──────SSH─────▶      Cider-CI Server      ║
+┃      Ansible     ┃              ║                           ║
+┃                  ┃              ║                           ║
+┃                  ┃              ╚══╦═══════════════════▲════╝
+┃                  ┃                 │                   │
+┃                  ┃                 │                   │
+┃                  ┃              HTTPS                HTTPS
+┃                  ┃              (push)            (ping, sync,
+┃                  ┃                 │             config, pull)
+┃                  ┃                 │                   │
+┃                  ┃              ╔══▼═══════════════════╩════╗
+┃                  ┃              ║                           ║
+┃                  ┣────WinRM─────▶ Cider-CI Windows Executor ║
+┃                  ┃              ║                           ║
+┗━━━━━━━━━━━━━━━━━━┛              ╚═══════════════════════════╝
+~~~
 
 </div> </div>
-
-<div class="alert alert-info" role="info">
-Accessing machines directly via the root account is now discouraged in many and
-effectively disabled in some Linux distributions. Read [How to enable ssh root
-access on Ubuntu 14.04][] for example.
-</div>
-
-
 
 
 ## Step by Step Instructions
