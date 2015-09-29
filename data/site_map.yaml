@@ -1,22 +1,12 @@
-path: /
+path: ''
 title: Home
 items:
-- path: introduction/
-  title : Introduction
+- path: introduction
+  title: Introduction
   items:
-  - path: quick-start/
+  - path: quick-start
     title: Quick Start
-- path: installation/
-  title: Installation
-  items:
-  - path: setup_and_deploy/
-    title: Setup and Deploy
-  - path: advanced/
-    title: Advanced
-    items:
-    - path: traits/
-      title: Traits
-- path: project-configuration/
+- path: project-configuration
   title: Project Configuration
   items:
   - path: configuration-file.html
@@ -29,3 +19,18 @@ items:
     title: Scripts
   - path: advanced.html
     title: Advanced Topics
+- path: installation
+  title: Installation
+  items:
+  - path: setup_and_deploy
+    title: Setup and Deploy
+  - path: advanced
+    title: Advanced
+    items:
+    - path: traits
+      title: Traits
+- path: api
+  title: API
+- path: 'sitemap.html'
+  title: Sitemap
+

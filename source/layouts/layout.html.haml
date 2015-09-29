@@ -14,41 +14,49 @@
     = javascript_include_tag "app"
 
   %body#the-cider-ci-documentation
-    %nav.navbar.navbar-inverse.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          = link_to "/index.html", class: "navbar-brand" do
-            Cider-CI
-            = partial 'semantic_version', locals: { semver: data.target_release }
-            Documentation
-
-        %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
-          .form-group
-            %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
-            %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
-            %input{:style => "visibility: hidden;", :type => "submit", :value => "Google Search"}
 
     .container
+
+      %nav.navbar.navbar-inverse
+        .container-fluid
+          / Brand and toggle get grouped for better mobile display
+          .navbar-header
+            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to "/index.html", class: "navbar-brand" do
+              Cider-CI
+              = partial 'semantic_version', locals: { semver: data.target_release }
+              Documentation
+          %form.navbar-form.navbar-right{:role => "search", :action => "https://www.google.com/search", :method => "get"}
+            .form-group
+              %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
+              %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
+              %button.btn.btn-default{type: 'submit'} Submit
+
 
       :ruby
         @current_path_items = []
         @current_node = {}
 
-        def find_sitemap_path(parents, current_node)
-          path_items = Array.new(parents) << current_node.select{|k,v| %w(path title).include? k}
-          path = path_items.map{|n| n['path']}.join('')
+        def find_sitemap_path(parent_nodes, current_node)
+          nodes = parent_nodes + [current_node.select{|k,v| %w(path title).include? k}]
+          path_items = nodes.map{|pi| pi['path']}
           current_path_with_root= "/" + current_path
-          # puts "############# find_sitemap_path #######"
-          # puts({parents: parents, path_items: path_items, path: path, current_path_with_root: current_path_with_root, current_node: current_node })
-          # puts "#######################################\n\n"
-          if (path == current_path_with_root) || ((path  + "index.html") == current_path_with_root)
-            # puts "MATCH"
-            @current_path_items = path_items
+          possible_path_respresentations = [path_items.join('/'), (path_items  + ["index.html"]).join('/')]
+          puts "############# find_sitemap_path #######"
+          puts({parent_nodes: parent_nodes, nodes: nodes, path_items: path_items, current_path_with_root: current_path_with_root, possible_path_respresentations: possible_path_respresentations, current_node: current_node })
+          puts "#######################################\n\n"
+          if possible_path_respresentations.include? current_path_with_root
+            puts "FOUND!"
+            @nodes = nodes
             @current_node  = current_node
           else
             if current_node['items']
               current_node['items'].map do |node|
-                find_sitemap_path(path_items, node)
+                find_sitemap_path(nodes, node)
               end
             end
           end
@@ -56,23 +64,24 @@
 
         find_sitemap_path([], data['site_map'])
         # reduce would be nicer
-        @path_prefix = ""
+        @path_prefix = []
+        puts nodes: @nodes, current_node: @current_node
 
       .row
         .col-md-6
-          -if @current_path_items.present?
+          -if @nodes.present?
             %ol.breadcrumb
-              - @current_path_items.each do |path_item|
-                - @path_prefix << path_item['path']
+              - @nodes.each do |node|
+                - @path_prefix << node['path']
+                - puts @path_prefix
                 %li
-                  %a{href: @path_prefix}= path_item['title'] || path_item['path']
+                  %a{href: (@path_prefix.join('/').presence || '/')}= node['title'] || node['path']
         .col-md-6
           - if @current_node['items']
             %ol.breadcrumb.with-circle-separator
               - @current_node['items'].try(:each) do |item|
                 %li
-                  %a{href: @path_prefix + item['path']}= item['title'] || item['path']
+                  %a{href: (@path_prefix + [item['path']]).join('/')}= item['title'] || item['path']
 
       = yield
-
 
