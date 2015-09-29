@@ -206,17 +206,19 @@ or
 
 
 <div class="alert alert-info">
-It was recommended to fork the [Cider-CI Deploy] project in the past keep
-adjustments in the fork. The structure of the project has been rewritten as of
-version 3.7 and it should now suffice to make adjustments within a dedicated
-inventory in almost all cases. It is still a good idea to put the inventory
-under version control.
+It was recommended to fork the [Cider-CI Deploy] project in the past. The
+structure of the project has been rewritten as of version 3.7 and it should now
+suffice to make adjustments within a dedicated inventory in almost all cases.
+It is still a good idea to put the inventory under version control.
 </div>
 
 The first and the only required adjustment we make is to **change the IP
 addresses** to our needs in `PATH-TO-MY-INVENTORY/hosts`. Remove all references
 from the hosts file of the Windows executor if you don't plan to use one.
-Otherwise replace the connection parameters.
+
+If you are going to use a windows executor: replace the connection parameters
+in the hosts file and set a private value for `win_executor_user_password` in the
+`windows-executor.yml` file.
 
 There is one last configuration step to perform. We set the variable
 `cider_ci_master_secret` in either `group_vars/secrets.yml` (advanced demo) or
@@ -232,13 +234,24 @@ which is used to sign cookies. If the `cider_ci_master_secret` is compromised
 your Cider-CI environment is compromised!
 </div>
 
+There are move variables which can be overridden. Defaults for them are
+defined in the [all group](https://github.com/cider-ci/cider-ci_deploy/blob/master/group_vars/all.yml).
 
   [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
   [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
 
 
+Let us recapture step by step what we just did:
 
-## Step by Step Instructions
+1. Clone the complete project.
+2. Copy a example or create an new inventory.
+3. Configure
+    0. IP addresses,
+    0. and a few more parameters for the Windows executor.
+4. Set a sensible value for the `cider_ci_master_secret`.
+
+
+## Deploy ...
 
 The following example assumes that a single Linux machine
 is ready installed, we call it the `demo-machine`.
