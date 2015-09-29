@@ -36,13 +36,90 @@ However a single machine environment can make sense for light use cases, e.g.
 when a sigle developer wants occasionally to run tests. A single machine setup
 is also easier to set-up and less demanding when it comes to interaction of the
 machines with respect to network configuration and firewalls in particular. It
-gets very simple if this machine also acts as the control machine. More about
-that in the next section.
+gets very simple if this machine also acts as the _control machine_. The
+control machine is purely used for deployment. It doesn't play a role when
+the Cider-CI environment is performing its daily business.
+
+## Example Environments
+
+
+<div class="row"> <div class="col-md-6">
+
+We will use two exemplary environments for illustration. There is the "simple"
+environment. One single Linux machine hosts the server, executor and also the
+control machine.
+
+The "advanced" environment consists of a server, an executor running on Linux,
+an executor running on Windows, and a control machine.
+
+We choose one of the two examples as a template when we will actually configure
+and deploy our environment. We recommend to use the simple example when
+installing Cider-CI for the first time.
+
+You can still go with the advanced example even if you don't plan to use
+windows. We will remove the windows host from the configuration in this
+case later on.
+
+~~~
+  "Simple" Demo Environment: 1 Machine, only local connections
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+       ╔════════════════════════════════════════════════╗
+       ║                                                ║
+       ║                Control Machine                 ║
+       ║                                                ║
+       ║                Cider-CI Server                 ║
+       ║                                                ║
+       ║            Cider-CI Linux Executor             ║
+       ║                                                ║
+       ╚════════════════════════════════════════════════╝
+~~~
+
+</div> <div class="col-md-6">
+
+~~~
+  "Advanced" Demo Environment: 3 CI Machines + Control Machine
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+ ┏━━━━━━━━━━━━━━━━━━┓              ╔═══════════════════════════╗
+ ┃                  ┃              ║                           ║
+ ┃                  ┣──────SSH─────▶  Cider-CI Linux Executor  ║
+ ┃                  ┃              ║                           ║
+ ┃                  ┃              ╚══▲═══════════════════╦════╝
+ ┃                  ┃                 │                   │
+ ┃                  ┃                 │                   │
+ ┃                  ┃              HTTPS                HTTPS
+ ┃                  ┃              (push)           (ping, sync,
+ ┃                  ┃                 │             config, pull)
+ ┃                  ┃                 │                   │
+ ┃                  ┃              ╔══╩═══════════════════▼════╗
+ ┃                  ┃              ║                           ║
+ ┃ Control Machine  ┃              ║                           ║
+ ┃                  ┣──────SSH─────▶      Cider-CI Server      ║
+ ┃      Ansible     ┃              ║                           ║
+ ┃                  ┃              ║                           ║
+ ┃                  ┃              ╚══╦═══════════════════▲════╝
+ ┃                  ┃                 │                   │
+ ┃                  ┃                 │                   │
+ ┃                  ┃              HTTPS                HTTPS
+ ┃                  ┃              (push)            (ping, sync,
+ ┃                  ┃                 │             config, pull)
+ ┃                  ┃                 │                   │
+ ┃                  ┃              ╔══▼═══════════════════╩════╗
+ ┃                  ┃              ║                           ║
+ ┃                  ┣────WinRM─────▶ Cider-CI Windows Executor ║
+ ┃                  ┃              ║                           ║
+ ┗━━━━━━━━━━━━━━━━━━┛              ╚═══════════════════════════╝
+~~~
+
+
+
+</div></div>
+
 
 
 ## Prerequisites and Preparation
 
-<div class="row"> <div class="col-md-6">
 
 The [Cider-CI Deploy Project] relies heavily on Ansible which must be present
 on the *control* machine. The control machine orchestrates deployment and
@@ -76,8 +153,8 @@ Every executor needs during installation and for operation access via HTTPS to
 the server. The server dispatches via HTTPS during normal operation. There is
 also a pull only mode. More to this later.
 
-**Make sure that all of the depicted connections are possible and actually work
-in your environment.**
+**Make sure that all of the depicted connections are possible and actually do
+work in your environment.**
 
 
   [WinRM]: https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx
@@ -85,43 +162,80 @@ in your environment.**
   [two Ansible related lines of the quick-install script]: https://github.com/cider-ci/cider-ci_deploy/blob/master/bin/quick-install.sh#L37-L38
   [quick-install script]: https://github.com/cider-ci/cider-ci_deploy/blob/master/bin/quick-install.sh
 
+## Project Checkout and Inventory Setup
 
-</div> <div class="col-md-6">
+We login to our control machine and clone the complete Cider-CI project
+including all submodules. The `master` branch contains the most recent stable
+version and is usually a good choice.
+
+`git clone -b master https://github.com/cider-ci/cider-ci.git --recursive`
 
 
-~~~
-┏━━━━━━━━━━━━━━━━━━┓              ╔═══════════════════════════╗
-┃                  ┃              ║                           ║
-┃                  ┣──────SSH─────▶  Cider-CI Linux Executor  ║
-┃                  ┃              ║                           ║
-┃                  ┃              ╚══▲═══════════════════╦════╝
-┃                  ┃                 │                   │
-┃                  ┃                 │                   │
-┃                  ┃              HTTPS                HTTPS
-┃                  ┃              (push)           (ping, sync,
-┃                  ┃                 │             config, pull)
-┃                  ┃                 │                   │
-┃                  ┃              ╔══╩═══════════════════▼════╗
-┃                  ┃              ║                           ║
-┃ Control Machine  ┃              ║                           ║
-┃                  ┣──────SSH─────▶      Cider-CI Server      ║
-┃      Ansible     ┃              ║                           ║
-┃                  ┃              ║                           ║
-┃                  ┃              ╚══╦═══════════════════▲════╝
-┃                  ┃                 │                   │
-┃                  ┃                 │                   │
-┃                  ┃              HTTPS                HTTPS
-┃                  ┃              (push)            (ping, sync,
-┃                  ┃                 │             config, pull)
-┃                  ┃                 │                   │
-┃                  ┃              ╔══▼═══════════════════╩════╗
-┃                  ┃              ║                           ║
-┃                  ┣────WinRM─────▶ Cider-CI Windows Executor ║
-┃                  ┃              ║                           ║
-┗━━━━━━━━━━━━━━━━━━┛              ╚═══════════════════════════╝
-~~~
+Let us descend into the deploy directory which is a submodule.
 
-</div> </div>
+`cd cider-ci/deploy`
+
+There is an inventory directory which hosts the two example respectively demo
+environments. The tree structure looks like the following.
+
+    ▾ inventories/
+      ▾ demo/
+        ▾ advanced/
+          ▾ group_vars/
+              cider-ci-executors-linux.yml
+              secrets.yml
+          ▾ host_vars/
+              windows-executor.yml
+            hosts
+        ▾ simple/
+          ▾ host_vars/
+              demo-machine.yml
+            hosts
+
+The main inventory files are [`inventories/demo/simple/hosts`] and
+[`inventories/demo/advanced/hosts`]. They define the machines (or hosts) as the
+name of the file suggests. The other files are group or machine related
+configuration files. We **copy either of the two inventories** to a place outside
+the repository.
+
+`cp -rv inventories/demo/simple PATH-TO-MY-INVENTORY`
+
+or
+
+`cp -rv inventories/demo/advanced PATH-TO-MY-INVENTORY`
+
+
+<div class="alert alert-info">
+It was recommended to fork the [Cider-CI Deploy] project in the past keep
+adjustments in the fork. The structure of the project has been rewritten as of
+version 3.7 and it should now suffice to make adjustments within a dedicated
+inventory in almost all cases. It is still a good idea to put the inventory
+under version control.
+</div>
+
+The first and the only required adjustment we make is to **change the IP
+addresses** to our needs in `PATH-TO-MY-INVENTORY/hosts`. Remove all references
+from the hosts file of the Windows executor if you don't plan to use one.
+Otherwise replace the connection parameters.
+
+There is one last configuration step to perform. We set the variable
+`cider_ci_master_secret` in either `group_vars/secrets.yml` (advanced demo) or
+`host_vars/demo-machine.yml` (simple demo) to something like the following
+(where we of course replace 'MY-VERY-SECRET-STRING').
+
+    cider_ci_master_secret: MY-VERY-SECRET-STRING
+
+
+<div class="alert alert-danger">
+The `cider_ci_master_secret` is used to derive all other secrets, like the one
+which is used to sign cookies. If the `cider_ci_master_secret` is compromised
+your Cider-CI environment is compromised!
+</div>
+
+
+  [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
+  [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
+
 
 
 ## Step by Step Instructions
