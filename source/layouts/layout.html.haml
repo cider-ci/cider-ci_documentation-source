@@ -38,24 +38,24 @@
 
 
       :ruby
-        @current_path_items = []
+        @current_path_children = []
         @current_node = {}
 
         def find_sitemap_path(parent_nodes, current_node)
           nodes = parent_nodes + [current_node.select{|k,v| %w(path title).include? k}]
-          path_items = nodes.map{|pi| pi['path']}
+          path_children = nodes.map{|pi| pi['path']}
           current_path_with_root= "/" + current_path
-          possible_path_respresentations = [path_items.join('/'), (path_items  + ["index.html"]).join('/')]
-          puts "############# find_sitemap_path #######"
-          puts({parent_nodes: parent_nodes, nodes: nodes, path_items: path_items, current_path_with_root: current_path_with_root, possible_path_respresentations: possible_path_respresentations, current_node: current_node })
-          puts "#######################################\n\n"
+          possible_path_respresentations = [path_children.join('/'), (path_children  + ["index.html"]).join('/')]
+          #puts "############# find_sitemap_path #######"
+          #puts({parent_nodes: parent_nodes, nodes: nodes, path_children: path_children, current_path_with_root: current_path_with_root, possible_path_respresentations: possible_path_respresentations, current_node: current_node })
+          #puts "#######################################\n\n"
           if possible_path_respresentations.include? current_path_with_root
-            puts "FOUND!"
+            #puts "FOUND!"
             @nodes = nodes
             @current_node  = current_node
           else
-            if current_node['items']
-              current_node['items'].map do |node|
+            if current_node['children']
+              current_node['children'].map do |node|
                 find_sitemap_path(nodes, node)
               end
             end
@@ -77,11 +77,11 @@
                 %li
                   %a{href: (@path_prefix.join('/').presence || '/')}= node['title'] || node['path']
         .col-md-6
-          - if @current_node['items']
+          - if @current_node['children']
             %ol.breadcrumb.with-circle-separator
-              - @current_node['items'].try(:each) do |item|
+              - @current_node['children'].reject{|i| i['omit_child_link']}.each do |child|
                 %li
-                  %a{href: (@path_prefix + [item['path']]).join('/')}= item['title'] || item['path']
+                  %a{href: (@path_prefix + [child['path']]).join('/')}= child['title'] || child['path']
 
       = yield
 
