@@ -36,8 +36,8 @@ children:
   children:
   - path: github/status-push
     title: Github Status Messages
-  - path: security/protected-repositories
-    title: Private Repositories
+  - path: security/repository-authentication
+    title: Repository Authentication
 
 - path: 'sitemap.html'
   title: Sitemap
