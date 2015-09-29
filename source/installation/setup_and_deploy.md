@@ -164,6 +164,7 @@ work in your environment.**
 
 ## Project Checkout and Inventory Setup
 
+### Cloning
 We login to our control machine and clone the complete Cider-CI project
 including all submodules. The `master` branch contains the most recent stable
 version and is usually a good choice.
@@ -174,6 +175,8 @@ version and is usually a good choice.
 Let us descend into the deploy directory which is a submodule.
 
 `cd cider-ci/deploy`
+
+### Inventory
 
 There is an inventory directory which hosts the two example respectively demo
 environments. The tree structure looks like the following.
@@ -212,15 +215,9 @@ suffice to make adjustments within a dedicated inventory in almost all cases.
 It is still a good idea to put the inventory under version control.
 </div>
 
-The first and the only required adjustment we make is to **change the IP
-addresses** to our needs in `PATH-TO-MY-INVENTORY/hosts`. Remove all references
-from the hosts file of the Windows executor if you don't plan to use one.
+### The Master Secret
 
-If you are going to use a windows executor: replace the connection parameters
-in the hosts file and set a private value for `win_executor_user_password` in the
-`windows-executor.yml` file.
-
-There is one last configuration step to perform. We set the variable
+We set the variable
 `cider_ci_master_secret` in either `group_vars/secrets.yml` (advanced demo) or
 `host_vars/demo-machine.yml` (simple demo) to something like the following
 (where we of course replace 'MY-VERY-SECRET-STRING').
@@ -237,18 +234,17 @@ your Cider-CI environment is compromised!
 There are move variables which can be overridden. Defaults for them are
 defined in the [all group](https://github.com/cider-ci/cider-ci_deploy/blob/master/group_vars/all.yml).
 
+### For the Advanced Demo Only
+
+Change the IP addresses in `PATH-TO-MY-INVENTORY/hosts`. Remove all references
+from the hosts file of the Windows executor if you don't plan to use one.
+
+If you are going to use a windows executor: replace the connection parameters
+in the hosts file and set a private value for `win_executor_user_password` in
+the `windows-executor.yml` file.
+
   [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
   [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
-
-
-Let us recapture step by step what we just did:
-
-1. Clone the complete project.
-2. Copy a example or create an new inventory.
-3. Configure
-    0. IP addresses,
-    0. and a few more parameters for the Windows executor.
-4. Set a sensible value for the `cider_ci_master_secret`.
 
 
 ## Deploy ...
