@@ -16,13 +16,13 @@ Visit your [Personal acceess tokens](https://github.com/settings/tokens)
 page on GitHub and create a new token.
 
 </div> <div class="col-md-6">
-![Create Token](/features/github/pushing-status/create-token.png)
+![Create Token](/howtos/github/status-push/create-token.png)
 </div> </div>
 
 2. Copy the Token.
 <div class="row"> <div class="col-md-6">
 </div> <div class="col-md-6">
-![Copy Token](/features/github/pushing-status/copy-token.png)
+![Copy Token](/howtos/github/status-push/copy-token.png)
 </div> </div>
 
 
@@ -32,7 +32,7 @@ Visit your instance of Cider-CI. Set the **GitHub Authentication Token**
 for your Repository (Administration → Repositories → Repository → Edit).
 
 </div> <div class="col-md-6">
-![Configur Repository](/features/github/pushing-status/configure-repo-with-token.png)
+![Configur Repository](/howtos/github/status-push/configure-repo-with-token.png)
 </div> </div>
 
 
@@ -42,7 +42,7 @@ for your Repository (Administration → Repositories → Repository → Edit).
 4. Run a Job.
 <div class="row"> <div class="col-md-6">
 </div> <div class="col-md-6">
-![Run Job](/features/github/pushing-status/run-job.png)
+![Run Job](/howtos/github/status-push/run-job.png)
 </div> </div>
 
 
@@ -54,7 +54,7 @@ on the branches overview page of your GitHub project:
 `https://github.com/YOUR-ORGANIZATION/YOUR-PROJECT/branches`.
 
 </div> <div class="col-md-6">
-![Watch Status Message](/features/github/pushing-status/watch-status-on-github.png)
+![Watch Status Message](/howtos/github/status-push/watch-status-on-github.png)
 </div> </div>
 
 

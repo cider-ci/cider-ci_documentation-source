@@ -21,20 +21,22 @@
         .container-fluid
           / Brand and toggle get grouped for better mobile display
           .navbar-header
-            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
             = link_to "/index.html", class: "navbar-brand" do
               Cider-CI
               = partial 'semantic_version', locals: { semver: data.target_release }
               Documentation
-          %form.navbar-form.navbar-right{:role => "search", :action => "https://www.google.com/search", :method => "get"}
+          %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
             .form-group
               %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
               %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
-              %button.btn.btn-default{type: 'submit'} Submit
+              %button.btn.btn-default{style: 'display: none', type: 'submit'} Submit
+          %ul.nav.navbar-nav
+            %li
+              %a{href: '/introduction/'} Introduction
+            %li
+              %a{href: '/introduction/quick-start/'} Quick-Start
+            %li
+              %a{href: '/sitemap.html'} Sitemap
 
 
       :ruby

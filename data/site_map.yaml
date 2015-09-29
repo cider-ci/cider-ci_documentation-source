@@ -31,6 +31,14 @@ children:
       title: Traits
 - path: api
   title: API
+- path: howtos
+  title: Howtos
+  children:
+  - path: github/status-push
+    title: Github Status Messages
+  - path: security/protected-repositories
+    title: Private Repositories
+
 - path: 'sitemap.html'
   title: Sitemap
   omit_child_link: true
