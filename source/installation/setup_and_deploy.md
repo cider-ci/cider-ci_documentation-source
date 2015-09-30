@@ -171,15 +171,38 @@ version and is usually a good choice.
 
 `git clone -b master https://github.com/cider-ci/cider-ci.git --recursive`
 
-
-Let us descend into the deploy directory which is a submodule.
+We descend into the deploy directory/project.
 
 `cd cider-ci/deploy`
 
 ### Inventory
 
-There is an inventory directory which hosts the two example respectively demo
-environments. The tree structure looks like the following.
+<div class="row"> <div class="col-md-6">
+
+There is an inventory directory which contains two demo environments. See the
+tree structure in the provided code snippet.
+
+The main inventory files are [`inventories/demo/simple/hosts`] and
+[`inventories/demo/advanced/hosts`] respectively. They define the machines (or
+hosts) as the name of the file suggests. The other files are group or machine
+related configuration files. We **copy either of the two inventories** to
+a place outside the repository.
+
+`cp -rv inventories/demo/simple PATH-TO-MY-INVENTORY`
+
+or
+
+`cp -rv inventories/demo/advanced PATH-TO-MY-INVENTORY`
+
+
+<div class="alert alert-info">
+It was recommended to fork the [Cider-CI Deploy] project in the past and
+perform changes within. The structure of the project has been rewritten as of
+version 3.7. It should now suffice to make adjustments within a dedicated
+inventory.
+</div>
+
+</div> <div class="col-md-6">
 
     ▾ inventories/
       ▾ demo/
@@ -195,25 +218,56 @@ environments. The tree structure looks like the following.
               demo-machine.yml
             hosts
 
-The main inventory files are [`inventories/demo/simple/hosts`] and
-[`inventories/demo/advanced/hosts`]. They define the machines (or hosts) as the
-name of the file suggests. The other files are group or machine related
-configuration files. We **copy either of the two inventories** to a place outside
-the repository.
+</div></div>
 
-`cp -rv inventories/demo/simple PATH-TO-MY-INVENTORY`
+### Hosts Files
 
-or
+<div class="row"> <div class="col-md-6">
+The `hosts` files declare the involved machines, group then, and define  how
+they can be reached for Ansible during deployment.
 
-`cp -rv inventories/demo/advanced PATH-TO-MY-INVENTORY`
+The simple demo uses the local connection `127.0.0.1`.  We don't need to change
+anything in this case.
+</div> <div class="col-md-6">
+    # Cider-CI hosts for the simple demo
+
+    [simple-demo-machines]
+    demo-machine ansible_ssh_host=127.0.0.1 ansible_ssh_user=root
+
+    [cider-ci-server]
+    demo-machine
+
+    [cider-ci-executors-linux]
+    demo-machine
+</div></div>
+
+<div class="row"> <div class="col-md-6">
+
+For the advanced demo we need tho **adjust the IP addresses**.
+
+We **either delete the `windows-executor`** and all references in
+the file or we **adjust the IP address** and the **connection parameters**
+for it.
+
+</div> <div class="col-md-6">
+    # Cider-CI hosts for the advanced demo
+
+    [advanced-demo-machines]
+    server ansible_ssh_host=192.168.0.10 ansible_ssh_user=root
+    linux-executor ansible_ssh_host=192.168.0.11 ansible_ssh_user=root
+    windows-executor ansible_ssh_host=192.168.0.60 ansible_connection=winrm ansible_ssh_user=root ansible_ssh_pass=root
+
+    [cider-ci-server]
+    server
+
+    [cider-ci-executors-linux]
+    linux-executor
+
+    [cider-ci-executors-windows]
+    windows-executor
+</div></div>
 
 
-<div class="alert alert-info">
-It was recommended to fork the [Cider-CI Deploy] project in the past. The
-structure of the project has been rewritten as of version 3.7 and it should now
-suffice to make adjustments within a dedicated inventory in almost all cases.
-It is still a good idea to put the inventory under version control.
-</div>
 
 ### The Master Secret
 
