@@ -67,7 +67,7 @@
         find_sitemap_path([], data['site_map'])
         # reduce would be nicer
         @path_prefix = []
-        puts nodes: @nodes, current_node: @current_node
+        # puts nodes: @nodes, current_node: @current_node
 
       .row
         .col-md-6
@@ -75,7 +75,6 @@
             %ol.breadcrumb
               - @nodes.each do |node|
                 - @path_prefix << node['path']
-                - puts @path_prefix
                 %li
                   %a{href: (@path_prefix.join('/').presence || '/')}= node['title'] || node['path']
         .col-md-6

@@ -1,7 +1,7 @@
 ---
 title: Setup and Deployment
 ---
-{::options parse_block_html="true" /}
+{::options parse_block_html="true" line_numbers="false" /}
 
 # Setup and Deploy
 {:.no_toc}
@@ -194,17 +194,9 @@ or
 
 `cp -rv inventories/demo/advanced PATH-TO-MY-INVENTORY`
 
-  [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
-  [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
+We will modify our freshly created inventory in the next sections. The contents
+of the deploy folder remain untuched.
 
-
-
-<div class="alert alert-info">
-It was recommended to fork the [Cider-CI Deploy] project in the past and
-perform changes within. The structure of the project has been rewritten as of
-version 3.7. It should now suffice to make adjustments within a dedicated
-inventory.
-</div>
 
 </div> <div class="col-md-6">
 
@@ -223,6 +215,16 @@ inventory.
             hosts
 
 </div></div>
+
+<div class="alert alert-info">
+It was recommended to fork the [Cider-CI Deploy Project] in earlier revisions
+of this guide to perform changes within. The structure of the project has been
+rewritten as of version 3.7.
+</div>
+
+  [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
+  [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
+
 
 ### Hosts Files
 
@@ -319,8 +321,7 @@ This `all.yml` file is the first one consulted for variable definitions. Then
 comme the `group_vars` in the individual inventory (relative to the `hosts`
 file), then the `host_vars`. Finally command line options for `ansible` or
 `ansible-playbook` will override any variable which were set before. We will
-make use of this when actually performing a deploy in the next section.
-
+make use of this when performing a deploy in the next section.
 
   [group_vars/all.yml]: https://github.com/cider-ci/cider-ci_deploy/blob/master/group_vars/all.yml
 

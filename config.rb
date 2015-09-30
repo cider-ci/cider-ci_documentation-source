@@ -64,7 +64,7 @@ set :js_dir, 'assets/javascripts'
 
 set :images_dir, 'assets/images'
 
-activate :syntax, :line_numbers => true
+# activate :syntax, :line_numbers => true
 
 set :markdown_engine, :kramdown
 
