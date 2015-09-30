@@ -14,7 +14,7 @@ items:
 - title: Installation
   path: /installation/index.html
   items:
-  - title: Setup and Deploy
+  - title: Setup and Deployment
     path: /installation/setup_and_deploy.html
   - title: Advanced Installation
     path: /installation/advanced.html
@@ -34,7 +34,7 @@ items:
     path: /project-configuration/advanced.html
 
 - title: Development
-  path: /development/index.html
+  path: /development/
   items:
   - title: Architecture
     path: /development/architecture/index.html

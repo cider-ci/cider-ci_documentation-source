@@ -1,5 +1,5 @@
 ---
-title: Easy Setup and Deploy
+title: Setup and Deployment
 ---
 {::options parse_block_html="true" /}
 
@@ -325,7 +325,7 @@ make use of this when actually performing a deploy in the next section.
   [group_vars/all.yml]: https://github.com/cider-ci/cider-ci_deploy/blob/master/group_vars/all.yml
 
 
-## Next
+## Where to go from here
 
 Add your own project to your installation and configure it which is covered in
 [Project Configuration](/project-configuration/). You will probably need a few

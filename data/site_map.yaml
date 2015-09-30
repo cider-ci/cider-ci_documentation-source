@@ -1,11 +1,13 @@
 path: ''
 title: Home
 children:
+
 - path: introduction
   title: Introduction
   children:
   - path: quick-start
     title: Quick Start
+
 - path: project-configuration
   title: Project Configuration
   children:
@@ -19,16 +21,22 @@ children:
     title: Scripts
   - path: advanced.html
     title: Advanced Topics
+
 - path: installation
   title: Installation
   children:
   - path: setup-and-deploy
     title: Setup and Deploy
-  - path: advanced
-    title: Advanced
+  - path: howtos
+    title: Howtos
     children:
-    - path: traits
-      title: Traits
+    - path: github/status-push
+      title: Github Status Messages
+    - path: security/repository-authentication
+      title: Repository Authentication
+
+
+
 - path: api
   title: API
   children:
@@ -36,13 +44,14 @@ children:
       title: Resources
     - path: storage_resources.html
       title: Storage Specific Resources
-- path: howtos
-  title: Howtos
+
+- title: Development
+  path: development
   children:
-  - path: github/status-push
-    title: Github Status Messages
-  - path: security/repository-authentication
-    title: Repository Authentication
+  - title: Architecture
+    path: architecture
+  - title: Setup
+    path: setup
 
 - path: 'sitemap.html'
   title: Sitemap

@@ -85,5 +85,6 @@
                 %li
                   %a{href: (@path_prefix + [child['path']]).join('/')}= child['title'] || child['path']
 
-      = yield
+      .content{class: current_page.data.classes || ""}
+        = yield
 
