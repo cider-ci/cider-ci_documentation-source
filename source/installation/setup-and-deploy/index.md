@@ -45,11 +45,11 @@ the Cider-CI environment is performing its daily business.
 
 <div class="row"> <div class="col-md-6">
 
-We will use two exemplary environments for illustration. There is the "simple"
-environment. One single Linux machine hosts the server, executor and also the
+We will use two exemplary environments for illustration. There is the **_simple_
+demo environment**. One single Linux machine hosts the server, executor and also the
 control machine.
 
-The "advanced" environment consists of a server, an executor running on Linux,
+The **_advanced_ demo environment** consists of a server, an executor running on Linux,
 an executor running on Windows, and a control machine.
 
 We choose one of the two examples as a template when we will actually configure
@@ -194,6 +194,10 @@ or
 
 `cp -rv inventories/demo/advanced PATH-TO-MY-INVENTORY`
 
+  [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
+  [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
+
+
 
 <div class="alert alert-info">
 It was recommended to fork the [Cider-CI Deploy] project in the past and
@@ -268,82 +272,57 @@ for it.
 </div></div>
 
 
-
-### The Master Secret
-
-We set the variable
-`cider_ci_master_secret` in either `group_vars/secrets.yml` (advanced demo) or
-`host_vars/demo-machine.yml` (simple demo) to something like the following
-(where we of course replace 'MY-VERY-SECRET-STRING').
-
-    cider_ci_master_secret: MY-VERY-SECRET-STRING
-
-
-<div class="alert alert-danger">
-The `cider_ci_master_secret` is used to derive all other secrets, like the one
-which is used to sign cookies. If the `cider_ci_master_secret` is compromised
-your Cider-CI environment is compromised!
-</div>
-
-There are move variables which can be overridden. Defaults for them are
-defined in the [all group](https://github.com/cider-ci/cider-ci_deploy/blob/master/group_vars/all.yml).
-
-### For the Advanced Demo Only
-
-Change the IP addresses in `PATH-TO-MY-INVENTORY/hosts`. Remove all references
-from the hosts file of the Windows executor if you don't plan to use one.
-
-If you are going to use a windows executor: replace the connection parameters
-in the hosts file and set a private value for `win_executor_user_password` in
-the `windows-executor.yml` file.
-
-  [`inventories/demo/simple/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/simple/hosts
-  [`inventories/demo/advanced/hosts`]: https://github.com/cider-ci/cider-ci_deploy/blob/master/inventories/demo/advanced/hosts
+<div class="row"> <div class="col-md-6">
+In case when we kept the Windows executor: the deploy procedure will
+create a user on the windows system, we should change
+the `win_executor_user_password` in `host_vars/windows-executor.yml`.
+</div> <div class="col-md-6">
+    # Configuration for the windows-executor in the advanced demo
+    win_executor_user_password: SECRET
+</div></div>
 
 
-## Deploy ...
+### The Master-Secret
 
-The following example assumes that a single Linux machine
-is ready installed, we call it the `demo-machine`.
+<div class="row"> <div class="col-md-6">
+Every Cider-CI Environment contains several secrets, there is for example one
+for the database, one for signing session objects and so on. By default all
+these secrets are build from one master-secret, but each of them can defined
+individually, but there is usually no need to do so.
 
+The master-secret has a default value which is likely to be secure but that
+depends on how the server machine is configured and on who can access what data
+inside of it. We highly recommend to override the master-secret.
 
-1.  We check out the [Cider-CI Main Project][] including all sub-projects inside
-    the control machine:
-
-    `git clone --recursive https://github.com/cider-ci/cider-ci.git`
-
-2. We descend into the deploy directory which is part of the [Cider-CI Deploy Project][]:
-
-    `cd cider-ci/deploy`
-
-3. We start the setup with the following command where we replace
-    `192.168.0.31` with the IP address of our `demo-machine`:
-
-
-    ```DEPLOY_ROOT_DIR=`pwd` ansible-playbook -i inventories/demo/easy/hosts play_site.yml -e 'ansible_ssh_host=192.168.0.31 cider_ci_master_secret=secret admin_password=secret'```
-
-    <div class="alert alert-warning" role="alert">
-    You can leave the value of the `cider_ci_master_secret` and `admin_password`
-    as is if your `demo-machine` cannot be accessed from "the outside". Otherwise
-    you need to change them or virtually everbody has unrestricted access to
-    your machine!
-    </div>
-
-<div class="alert alert-info" role="info">
-Installing Cider-CI from scratch can take a while. 45 minutes are typical for
-a virtual machine running on my laptop. The setup performs many downloads from
-the internet which can be a reason for temporary failures. The playbook is
-idempotent and thus can be rerun again at any time.
-</div>
+Uncomment and adjust the value of the `cider_ci_master_secret` in
+`group_vars/demo-machines.yml`.
+</div> <div class="col-md-6">
+    # in group_vars/demo-machines.yml
+    cider_ci_master_secret: A-VERY-LONG-SECRET-STRING
+</div></div>
 
 
-This is it. You can no visit your installation at
-`http://IP-OF-YOUR-DEMO-MACHINE`. The setup will create an `admin` user with
-the password `secret` (unless the parameters have been changed in step 3). The
-setup also configured two projects. Run some of the jobs from the [Cider-CI
-Bash Demo Project][] to learn about the capablities of Cider-CI.
+### Setting Custom Variables
+
+The `cider_ci_master_secret` is one example of many variables wich have default
+values but can be overridden. These variables are defined in the file
+[group_vars/all.yml][] (relative to the top level deploy project). We recommend
+to have a look into the file to see what variables are available. The secrets
+section towards the end is in particular relevant with respect to redefining
+the `cider_ci_master_secret`.
+
+The following explains slightly simplified rules for variable precedence.
+The precise rules are explained in [...] but there should be no need to
+dive that deep into the matter unless we run into problems.
+
+This `all.yml` file is the first one consulted for variable definitions. Then
+comme the `group_vars` in the individual inventory (relative to the `hosts`
+file), then the `host_vars`. Finally command line options for `ansible` or
+`ansible-playbook` will override any variable which were set before. We will
+make use of this when actually performing a deploy in the next section.
 
 
+  [group_vars/all.yml]: https://github.com/cider-ci/cider-ci_deploy/blob/master/group_vars/all.yml
 
 
 ## Next

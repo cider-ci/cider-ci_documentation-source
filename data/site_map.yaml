@@ -22,7 +22,7 @@ children:
 - path: installation
   title: Installation
   children:
-  - path: setup_and_deploy
+  - path: setup-and-deploy
     title: Setup and Deploy
   - path: advanced
     title: Advanced
