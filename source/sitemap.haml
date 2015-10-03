@@ -1,0 +1,26 @@
+%h1 Sitemap
+
+%a{href: '/'} Home
+
+%ul
+  - data['site_map']['children'].each do |l1i|
+    %li
+      %a{href: ['',l1i['path']].join}
+        = l1i['title'] || l1i['path']
+      - if l1i['children']
+        %ul
+          - l1i['children'].each do |l2i|
+            %li
+              %a{href: [l1i['path'],l2i['path']].join}
+                = l2i['title'] || l2i['path']
+              - if l2i['children']
+                %ul
+                  - l2i['children'].each do |l3i|
+                    %li
+                      %a{href: [l1i['path'],l2i['path'],l3i['path']].join}
+                        = l3i['title'] || l3i['path']
+
+
+
+
+

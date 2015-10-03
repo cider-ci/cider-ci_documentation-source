@@ -14,64 +14,94 @@
     = javascript_include_tag "app"
 
   %body#the-cider-ci-documentation
-    %nav.navbar.navbar-inverse.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          = link_to "/index.html", class: "navbar-brand" do
-            Cider-CI
-            = partial 'semantic_version', locals: { semver: data.target_release }
-            Documentation
 
-        %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
-          .form-group
-            %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
-            %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
-            %input{:style => "visibility: hidden;", :type => "submit", :value => "Google Search"}
+    .container
 
-        %ul.nav.navbar-nav
-          - data.navigation.items.each do |nav_item|
-            - is_active=  "/"+current_path == nav_item["path"]
-            - active_class = is_active ? " active " : ""
-            - has_items = nav_item["items"] &&  nav_item["items"].count > 0
-            - dropdown_class = has_items ? " dropdown" : ""
-            %li.dropdown
-              = link_to "#" ,class: "dropdown-toggle", data: {toggle: :dropdown} do
-                %strong= nav_item["title"]
-                %span.caret
-              %ul.dropdown-menu
-                - if nav_item["path"]
-                  %li
-                    = link_to nav_item["path"] do
-                      = nav_item["title"]
-                - nav_item["items"].each do |nav_item_sub|
-                  %li
-                    = link_to nav_item_sub["path"] do
-                      = nav_item_sub["title"]
+      %nav.navbar.navbar-inverse
+        .container-fluid
+          .navbar-header
+            = link_to "/index.html", class: "navbar-brand" do
+              Cider-CI
+              = partial 'semantic_version', locals: { semver: data.target_release }
+              Documentation
+          %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
+            .form-group
+              %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
+              %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
+              %button.btn.btn-default{style: 'display: none', type: 'submit'} Submit
+          %ul.nav.navbar-nav
+            %li
+              = link_to '/introduction/index.html' do
+                Introduction
+            %li
+              = link_to '/introduction/quick-start/index.html' do
+                Quick-Start
+            %li
+              = link_to '/sitemap.html' do
+                Sitemap
 
-    .container-fluid
+      :ruby
+        @current_path_children = []
+        @current_node = {}
+
+        @current_path_with_root= "/" + current_path
+        puts(current_path_with_root: @current_path_with_root)
+
+        def find_sitemap_path(parent_nodes, current_node)
+          nodes = parent_nodes + [current_node.select{|k,v| %w(path title).include? k}]
+          path_children = nodes.map{|pi| pi['path']}
+          possible_path_respresentations = [path_children.join(''), (path_children  + ["index.html"]).join('')]
+          puts "############# find_sitemap_path #######"
+          puts({parent_nodes: parent_nodes, nodes: nodes, path_children: path_children, possible_path_respresentations: possible_path_respresentations, current_node: current_node })
+          puts "#######################################\n\n"
+          if possible_path_respresentations.include? @current_path_with_root
+            puts "FOUND!"
+            @nodes = nodes
+            @current_node  = current_node
+          else
+            if current_node['children']
+              current_node['children'].map do |node|
+                find_sitemap_path(nodes, node)
+              end
+            end
+          end
+        end
+
+        def path_for_breadcrumbs segments
+          joined = segments.join
+          path =if joined =~ /^.*\/$/
+                  joined + "index.html"
+                else
+                  joined
+                end
+          puts({path: path})
+          path
+        end
+
+        find_sitemap_path([], data['site_map'])
+        # reduce would be nicer
+        @path_prefix = []
+        # puts nodes: @nodes, current_node: @current_node
+
       .row
-        .col-sm-3.col-md-2.sidebar
-          - data.navigation.items.each do |nav_item|
-            %ul.nav.nav-sidebar
-              - is_active=  "/"+current_path == nav_item["path"]
-              %li{class: (is_active ? "active" : "")}
-                - if nav_item["path"]
-                  = link_to nav_item["path"] ,class: "alike" do
-                    %strong= nav_item["title"]
-                - else
-                  %span.alike
-                    %strong= nav_item["title"]
-              - nav_item["items"].each do |nav_item_sub|
-                %ul.nav.nav-sidebar
-                  - is_active_sub= "/"+current_path == nav_item_sub["path"]
-                  %li{class: (is_active_sub ? "active" : "")}
-                    = link_to nav_item_sub["path"] do
-                      = nav_item_sub["title"]
-                    - if is_active_sub
-                      %ul.toc
+        .col-md-6
+          -if @nodes.present?
+            %ol.breadcrumb
+              - @nodes.each do |node|
+                - @path_prefix << node['path']
+                %li
+                  = link_to path_for_breadcrumbs(@path_prefix)  do
+                    = node['title'] || node['path']
+        .col-md-6
+          - if @current_node['children']
+            %ol.breadcrumb.with-circle-separator
+              - @current_node['children'].reject{|i| i['omit_child_link']}.each do |child|
+                %li
+                  = link_to path_for_breadcrumbs(@path_prefix + [child['path']]) do
+                    = child['title'] || child['path']
 
-        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+      .content{class: current_page.data.classes || ""}
 
-          = yield
 
+        = yield
 

@@ -39,7 +39,7 @@ RSpec.configure do |config|
 
   config.before(:all) do |example|
     $logger = Logger.new(STDOUT)
-    $logger.level = Logger::WARN
+    $logger.level = Logger::INFO
   end
 
   config.before(:each) do |example|

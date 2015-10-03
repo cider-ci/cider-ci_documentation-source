@@ -1,6 +1,11 @@
 # Advanced Installation
 {::options parse_block_html="true" /}
 
+<div class="alert alert-danger" role="alert">
+This page is outdated. It will be updated for version 3.7 "Redmond".
+</div>
+
+
 ### Table of Contents
 {:.no_toc}
 * Will be replaced with the ToC, excluding the "Contents" header
@@ -93,33 +98,6 @@ The default root location of an installed executor on Linux is
 `/var/local/cider-ci/executor`. The scripts are invoked as the user
 `cider-ci_exec-user`.
 
-
-### Adding Traits {#adding-traits}
-
-The demo installation will provide the traits `linux` and `bash` for each
-executor. They suffice to run the jobs of the [Bash Demo Project for
-Cider-CI][].
-
-#### Adding Traits Provided by the Cider-CI Deploy Project
-
-A set of additional traits can be automatically installed with
-
-`ansible-playbook -i hosts_demo_single play_traits.yml`
-
-<div class="alert alert-warning" role="alert">
-The traits made available are optimized for **ease of use** and **performance** but not
-for isolation and security. See [Restricting the Accepted
-Repositories](#accepted-repositories) for isolating executions on the basis
-of the repository from each other.
-</div>
-
-
-#### Adding Custom Traits
-
-Every executor advertises its available traits to the server. It aggregates the
-traits from  `/etc/cider-ci/traits.txt`, and `./config/traits.txt`. The path of
-the latter is meant relative to the root location of the executor. The traits
-are separated by commas.
 
 ### Restricting the Accepted Repositories {#accepted-repositories}
 

@@ -1,0 +1,68 @@
+path: '/'
+title: Home
+children:
+
+- path: introduction/
+  title: Introduction
+  children:
+  - path: quick-start/
+    title: Quick Start
+
+- path: project-configuration/
+  title: Project Configuration
+  children:
+  - path: configuration-file.html
+    title: Configuration File
+  - path: jobs.html
+    title: Jobs
+  - path: tasks.html
+    title: Tasks
+  - path: scripts.html
+    title: Scripts
+  - path: advanced.html
+    title: Advanced Topics
+
+- path: installation/
+  title: Installation
+  children:
+  - path: setup-and-deploy/
+    title: Setup and Deploy
+    children:
+      - path: windows-preparation/
+        title: Windows Preparation
+
+  - path: adding-traits/
+    title: Adding Traits
+
+- title: Development
+  path: development/
+  children:
+  - title: Architecture
+    path: architecture/
+  - title: Setup
+    path: setup/
+
+- path: 'sitemap.html'
+  title: Sitemap
+  omit_child_link: true
+
+- path: api/
+  title: API
+  children:
+    - path: api_resources.html
+      title: Resources
+    - path: storage_resources.html
+      title: Storage Specific Resources
+
+- path: howtos/
+  title: Howtos
+  children:
+  - path: executors/pull-mode/
+    title: Configuring Pull Mode for Executors
+  - path: github/status-push/
+    title: GitHub Status Messages
+  - path: executors/disk-space/
+    title: Managing Disk Space on Executors
+  - path: security/repository-authentication/
+    title: Repository Authentication
+

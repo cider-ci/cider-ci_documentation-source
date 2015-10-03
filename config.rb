@@ -1,4 +1,4 @@
-require 'pry' 
+require 'pry'
 
 ###
 # Compass
@@ -52,6 +52,7 @@ require 'pry'
 
 # activate :syntax, :line_numbers => false
 #
+#
 
 set :relative_links, true
 
@@ -61,7 +62,7 @@ set :js_dir, 'assets/javascripts'
 
 set :images_dir, 'assets/images'
 
-activate :syntax, :line_numbers => true
+# activate :syntax, :line_numbers => true
 
 set :markdown_engine, :kramdown
 
@@ -71,6 +72,7 @@ set :haml, { ugly: true }
 configure :build do
 
   ignore '**/*.graffle'
+  ignore '**/*.monopic'
 
   # For example, change the Compass output style for deployment
   activate :minify_css

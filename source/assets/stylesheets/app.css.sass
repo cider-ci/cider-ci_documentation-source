@@ -18,19 +18,39 @@ img.preview
 
 pre
   overflow: auto
+  word-wrap: normal
+  overflow: auto
   white-space: pre
   code
     white-space: pre
-   
+
+.CodeRay
+  .code
+    pre
+      .line-numbers
+        padding-right: 1em
+
+
+
+img.quick-start
+  padding: 20px 20px
+  background-color: $gray-light
+
+
+.image-with-border
+  img
+    padding: 7px 7px
+    background-color: $gray-light
+
 
 @import pygments/github.css
 
 
-h1, h2, h3, h4, h5, h6, 
+h1, h2, h3, h4, h5, h6,
   padding: 1em 0 0.25em
   border-bottom: 0.125em solid #F9F9F9
 
-.footnotes 
+.footnotes
   margin-top: 1em
   padding: 1em 0 0.25em
   border-top: 0.25em solid #F9F9F9
@@ -40,17 +60,9 @@ h3
 
 
 
-
-
-
-
 /*
  * Base structure
 
-/* Move down content because we have a fixed navbar that is 50px tall
-
-body
-  padding-top: 50px
 
 /*
  * Global add-ons
@@ -103,7 +115,7 @@ body
       &:hover, &:focus
         color: #fff
         background-color: #428bca
-    li > * 
+    li > *
       padding-right: 20px
       padding-left: 20px
 
@@ -113,11 +125,11 @@ body
       padding: $nav-link-padding
 
     ul.toc
-      li 
+      li
         position: relative
         display: block
         padding: 0
-        a 
+        a
           padding: 0
 
 
@@ -161,4 +173,10 @@ body
   img
     display: inline-block
     border-radius: 50%
+
+
+.breadcrumb.with-circle-separator
+  > li
+    + li:before
+      content: "○"
 

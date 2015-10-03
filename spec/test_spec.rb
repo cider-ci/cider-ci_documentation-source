@@ -22,9 +22,9 @@ describe "The site", type: :feature  do
     end
   end
 
-  it "hashtag targets exist", type: :feature do
+  it "fragment targets exist", type: :feature do
     @internal_pages.each do |path,properties|
-      expect(path).to pass_hastag_check(properties)
+      expect(path).to pass_fragments_check(properties)
     end
   end
 

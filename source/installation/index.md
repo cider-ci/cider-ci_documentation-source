@@ -5,14 +5,13 @@ title: Install
 
 # Installing Cider-CI
 {:.no_toc}
-Cider-CI is open source and can be installed with little effort. The [Setup
-and Deploy] page guides through an initial installation with the most simple
-possible setup.
 
-The [Advanced Installation] page features documentation for upgrading
-Cider-CI and applying various custom setting.
+Cider-CI is open source and can be installed with little effort. The [Quick
+Start][] guide of the [Introduction][] shows the easiest and quickest way to
+install and to try Cider-CI. The [Setup and Deploy] guide of this section leads
+to the next level of installation.
 
-
-  [Setup and Deploy]: /installation/setup_and_deploy.html
   [Advanced Installation]: /installation/advanced.html
-
+  [Introduction]: /introduction/index.html
+  [Quick Start]: /introduction/quick-start/index.html
+  [Setup and Deploy]: /installation/setup-and-deploy/index.html

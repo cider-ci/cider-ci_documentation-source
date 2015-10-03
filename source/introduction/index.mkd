@@ -100,4 +100,8 @@ in the corresponding job.
 [![Services](/development/architecture/services.svg){: .docu-image.maxh20em}](/development/architecture/services.svg)
 </div> </div>
 
+### Where To Go From Here
+
+The [Quick Start](/introduction/quick-start/index.html) guide shows how to install
+and perform first steps in a Cider-CI environment.
 

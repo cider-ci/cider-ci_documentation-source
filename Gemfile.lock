@@ -210,3 +210,6 @@ DEPENDENCIES
   rack-rewrite
   rspec
   selenium-webdriver
+
+BUNDLED WITH
+   1.10.6
