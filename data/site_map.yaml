@@ -30,7 +30,8 @@ children:
     children:
       - path: windows-preparation/
         title: Windows Preparation
-
+  - path: upgrading/
+    title: Upgrading and Updating
   - path: adding-traits/
     title: Adding Traits
 

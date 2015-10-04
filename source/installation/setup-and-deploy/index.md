@@ -312,10 +312,11 @@ performing a deploy in the next section.
 
 
 ## Deploy
+{: #deploy}
 
 We will now deploy our configured Cider-CI environment:
 
-```ANSIBLE_LOAD_CALLBACK_PLUGINS=1 DEPLOY_ROOT_DIR=`pwd` ansible-playbook -i PATH-TO-OUR-INVENTORY -e "admin_password=SOME-SECRET"```
+```ANSIBLE_LOAD_CALLBACK_PLUGINS=1 DEPLOY_ROOT_DIR=`pwd` ansible-playbook -i PATH-TO-OUR-INVENTORY play_site.yml -e "admin_password=SOME-SECRET"```
 
 The deploy can take a while. We can expect at least 30 minutes for an initial
 deploy. It can take much longer depending on the power of the machines and
