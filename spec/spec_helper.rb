@@ -25,7 +25,7 @@ require 'logger'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  PORT=8889
+  PORT=8888
   HOST="http://localhost:#{PORT}"
 
   Capybara.current_driver = :selenium

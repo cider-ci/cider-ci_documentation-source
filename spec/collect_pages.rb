@@ -7,7 +7,7 @@ def initialize_path path
   end
 end
 
-def collect_targets url
+def collect_targets url, context = url
 
   @internal_pages ||= {}
   @external_uris ||= Set.new()
@@ -27,10 +27,10 @@ def collect_targets url
     .map(&:normalize)
 
   local_targets.each do |target|
-    if Capybara.app_host == target.site
+    if (Capybara.app_host == target.site) and (target.path.starts_with? context)
       unless @internal_pages [target.path]
         initialize_path target.path
-        collect_targets target
+        collect_targets target, context
       end
       if target.fragment.present? and ! (target.fragment =~ /.+\:.+/)
         @internal_pages[target.path][:fragments].add target.fragment
