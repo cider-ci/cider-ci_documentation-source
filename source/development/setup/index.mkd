@@ -19,7 +19,7 @@ Prerequisites
 -   RabbitMQ version ≥ 3.0 (≥ 3.3 recommended)
 -   JDK 7 or later
 -   [Leiningen][] version ≥ 2.0 (≥ 2.5 recommended)
--   [Ruby][] ≥ 1.9 (≥ 2.1 recommended) with [Bundler][]
+-   [Ruby][] ≥ 2.2  with [Bundler][]
 -   [Nodejs][] with npm
 
 The environment will by default require the following ports (in
@@ -91,19 +91,10 @@ bundle exec rake db:seed
 
 ## Reverse Proxy
 
-<div class="row"> <div class="col-md-6">
 A deployed environment of Cider-CI uses the Apache HTTP server as a reverse
-proxy. A development environment uses the [Cider-CI Reverse Proxy][] instead.
-The code is located in the `cider-ci/reverse-proxy` dictionary and the service
-can be started by running `./bin/run` from within that directory.
-
-
-</div> <div class="col-md-6">
-    cd reverse-proxy
-    ./bin/run
-
-
-</div> </div>
+proxy. We use the same technology during development and in the integration
+tests. Installing and starting the reverse proxy for development is operating
+system specific. Details are discussed in the [Cider-CI Integration-Tests Project].
 
 
 ## User-Interface Service
@@ -111,14 +102,9 @@ can be started by running `./bin/run` from within that directory.
 The [Cider-CI User-Interface][] is a Ruby on Rails application.
 
 <div class="row"> <div class="col-md-6">
-The Javascript dependencies are managed via npm and we need to build them.
-</div> <div class="col-md-6">
-    npm run build
-</div> </div>
-
-<div class="row"> <div class="col-md-6">
 We start the web-server from within the directory of the Cider-CI User-Interface.
 </div> <div class="col-md-6">
+    bundle
     bundle exec rails s -p 8880
 </div> </div>
 
@@ -147,6 +133,7 @@ All of the remain services
 [Cider-CI Builder][],
 [Cider-CI Dispatcher][],
 [Cider-CI Executor][],
+[Cider-CI Notifier][],
 [Cider-CI Repository][], and
 [Cider-CI Storage][]
 are written in clojure. Each of them comes with a `./bin/run` script which will
@@ -196,12 +183,10 @@ might not match the given development environment.
 ## Running a Job
 
 <div class="row"> <div class="col-md-6">
-Running a job is the final test for our environment. The dataset comes
-with a predefined repository. It features fairly simple examples. Some of the
-defined tasks purposely fail with a certain probability. Hence, a failed
-job can be a positive outcome of this test. Note, that a particular
-job can only exist once for a given tree_id or commit. However, existing
-jobs can be deleted.
+Running a job is the final test for our environment. The dataset comes with
+a predefined repository. It features fairly simple examples. Some of the
+defined tasks purposely fail with a certain probability. Hence, a failed job
+can be a positive outcome of this test.
 
 </div> <div class="col-md-6">
 [![Job](/development/setup/job.png){: .preview}](/development/setup/job.png)
@@ -213,8 +198,9 @@ jobs can be deleted.
   [Cider-CI Builder]: https://github.com/cider-ci/cider-ci_builder
   [Cider-CI Dispatcher]: https://github.com/cider-ci/cider-ci_dispatcher
   [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor
+  [Cider-CI Notifier]: https://github.com/cider-ci/cider-ci_notifier
   [Cider-CI Repository]: https://github.com/cider-ci/cider-ci_repository
-  [Cider-CI Reverse Proxy]: https://github.com/cider-ci/cider-ci_reverse-proxy
+  [Cider-CI Integration-Tests Project]: https://github.com/cider-ci/cider-ci_integration-tests
   [Cider-CI Storage]: https://github.com/cider-ci/cider-ci_storage
   [Cider-CI User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
 
