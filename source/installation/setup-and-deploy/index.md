@@ -272,12 +272,12 @@ the IP address** and the **connection parameters** for it. See the
 <div class="row"> <div class="col-md-6">
 Every Cider-CI Environment contains several secrets, there is for example one
 for the database, one for signing session objects and so on. By default all
-these secrets are build from one master-secret, but each of them can defined
-individually, but there is usually no need to do so.
+these secrets are derived from one master-secret. Each of them can defined
+individually.
 
-The master-secret has a default value which is likely to be secure but that
-depends on how the server machine is configured and on who can access what data
-inside of it. We highly recommend to override the master-secret.
+The default master-secret is derived from several system properties. Its
+security depends on the setup of your system. **We highly recommend to override
+the master-secret for productive system**.
 
 Uncomment and adjust the value of the `cider_ci_master_secret` in
 `group_vars/demo-machines.yml`.
