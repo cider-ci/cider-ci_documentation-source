@@ -1,4 +1,29 @@
 require 'pry'
+require 'open3'
+
+module ::PandocHelper
+  def self.render_markdown input
+    puts "RENDERING MARKDOWN WITH PANDOC"
+    stdin,stdout,serr,wait = Open3.popen3("pandoc --toc --toc-depth=6 --template pandoc_html-template.html --number-section  -t html5 -f markdown -")
+    stdin.write input
+    stdin.close
+    stdout.read
+  end
+end
+
+class ::PandocMarkdownRenderTemplate < ::Tilt::Template
+  def prepare
+  end
+  def evaluate(scope,locals,&block)
+    @output = PandocHelper.render_markdown data
+  end
+end
+
+Tilt.register PandocMarkdownRenderTemplate, 'pmd'
+
+set :markdown_engine, PandocMarkdownRenderTemplate
+
+
 
 ###
 # Compass
