@@ -35,21 +35,22 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 {: #task}
 
 
-|------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Key/Property                 | Presence      | Value                                                                                                                                                      |
-|------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `eager-trials`               | defaults to 1 | Integer - Number of trials which are instantiated eagerly. Example: [eager_and_retry]                                                                      |
-| `environment-variables`      | optional      | Map - Declares available environment variables during execution of each script. Example: [environment-variables]                                           |
-| `exclusive-global-resources` | optional      | Map - Ensures that there is at most one trial executing at any point in time for an any `exclusive-global-resource`. Example: [exclusive-global-resources] |
-| `git-options`                | optional      | Map - Specifies whether git submodules are checked cloned for execution, too. Example: [git-submodules]                                                    |
-| `max-auto-trials`            | default 3     | Integer - Maximal number of trials which are instantiated automatically. Example: [eager_and_retry]                                                        |
-| `name`                       | yes[^r]       | String - The visible name of the task.                                                                                                                     |
-| `ports`                      | optional      | Map - Finds, occupies and publishes a port while processing the trial. Example: [ports]                                                                    |
-| `scripts`                    | optional      | Map of Maps -  See [script][].                                                                                                                             |
-| `traits`                     | optional      | Map of Booleans - Executors are matched on by the keys with true value.  Example: [introduction]                                                           |
-| `tree-attachments`           | optional      | Map - Declares files which are attached to the `tree-id`. Example: [attachments]                                                                           |
-| `trial-attachments`          | optional      | Map - Declares files which are attached to the trial. Example: [attachments]                                                                               |
-|------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Key/Property                 | Presence                  | Value                                                                                                                                                      |
+|------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `aggregate-state`            | defaults to `satisfy-any` | String - `satisfy-any`: task passes if any trial passes, `satisfy-last`: task passes if and only if the last trial passes. Examples: [aggregate-state][]   |
+| `eager-trials`               | defaults to `1`           | Integer - Number of trials which are instantiated eagerly. Example: [eager_and_retry]                                                                      |
+| `environment-variables`      | optional                  | Map - Declares available environment variables during execution of each script. Example: [environment-variables]                                           |
+| `exclusive-global-resources` | optional                  | Map - Ensures that there is at most one trial executing at any point in time for an any `exclusive-global-resource`. Example: [exclusive-global-resources] |
+| `git-options`                | optional                  | Map - Specifies whether git submodules are checked cloned for execution, too. Example: [git-submodules]                                                    |
+| `max-auto-trials`            | defaults to `2`           | Integer - Maximal number of trials which are instantiated automatically after previous ones failed. Example: [eager_and_retry]                             |
+| `name`                       | yes[^r]                   | String - The visible name of the task.                                                                                                                     |
+| `ports`                      | optional                  | Map - Finds, occupies and publishes a port while processing the trial. Example: [ports]                                                                    |
+| `scripts`                    | optional                  | Map of Maps -  See [script][].                                                                                                                             |
+| `traits`                     | optional                  | Map of Booleans - Executors are matched on by the keys with true value.  Example: [introduction]                                                           |
+| `tree-attachments`           | optional                  | Map - Declares files which are attached to the `tree-id`. Example: [attachments]                                                                           |
+| `trial-attachments`          | optional                  | Map - Declares files which are attached to the trial. Example: [attachments]                                                                               |
+|------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
 {: .table .table-striped }
 
 
@@ -60,6 +61,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
   [Generating Tasks]: /project-configuration/advanced.html#generating-tasks
 
 
+  [aggregate-state]: /demo-project/cider-ci/jobs/aggregate-state.yml
   [attachments]: /demo-project/cider-ci/jobs/attachments.yml
   [contexts]: /demo-project/cider-ci/jobs/contexts.yml
   [eager_and_retry]: /demo-project/cider-ci/jobs/eager_and_retry.yml

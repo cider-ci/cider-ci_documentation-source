@@ -17,6 +17,7 @@ IOPS
 JDK
 JSON
 Javascript
+Jinja2
 Leiningen
 MacOS
 Madek
@@ -99,6 +100,7 @@ stringified
 styleguide
 subcontext
 subcontexts
+templated
 truthy
 url
 username
