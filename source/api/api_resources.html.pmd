@@ -90,6 +90,10 @@ Examples:
     jobs of the commit where the branch master points to and which
     are descendants of the branch next.
 
+##### `key`
+
+Filters the jobs by their key as defined in the project configuration.
+
 ##### `repository_url`
 
 Filters the jobs  related to commits within repositories with the url equal to the

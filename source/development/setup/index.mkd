@@ -117,7 +117,7 @@ We visit the url <http://localhost:8888/cider-ci/ui/public> in a browser and sho
 <div class="row"> <div class="col-md-6">
 
 We sign in with the user `admin` and password `secret` and follow the links
-`Administration` → `Service stati`.
+`Administration` → `Server status`.
 <http://localhost:8888/cider-ci/ui/admin/status> reveals that the message queue
 is running but non of the services are:
 </div>
