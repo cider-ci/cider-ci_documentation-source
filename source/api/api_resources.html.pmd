@@ -51,6 +51,7 @@ The entry-point.
 
 Returns the properties of the corresponding _Job_.
 
+
 ## Job-Stats
 
 ### GET `/job/:id/stats`
@@ -58,8 +59,13 @@ Returns the properties of the corresponding _Job_.
 Returns the aggregated count of the number of tasks belonging to an _Job_
 with respect to their state.
 
-
 ## Jobs
+
+### POST `/jobs/create`
+
+Create a new job. Requires the body of the JSON encoded request must
+contain a map with the keys `tree_id` and `key`.
+
 
 ### GET `/jobs/`
 
@@ -139,7 +145,12 @@ Query string example: `?page=0&state=failed`
 
 Returns the properties of the trial with the id `:id`.
 
+
 ## Trials
+
+### POST `/tasks/:id/trials/retry`
+
+Create a new trial for this tasks.
 
 ### GET `/tasks/:task_id/trials/`
 
@@ -166,7 +177,6 @@ Returns the properties of a _Tree-Attachment_.
 This does not return the data-stream of the attachment itself. A
 hyperlink to the latter is included in `application/json-roa+json`
 response types, see [Content Types][].
-
 
 ## Tree-Attachments
 
