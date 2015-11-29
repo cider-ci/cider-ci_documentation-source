@@ -21,9 +21,9 @@ gem 'kramdown'
 gem 'bootswatch-sprockets', "~> 1.0"
 
 
-gem 'activesupport', '~> 4.1.9'
 gem 'capybara'
 gem 'rspec'
 gem 'selenium-webdriver'
-gem 'addressable'
-gem 'faraday'
+
+gem 'rspec_website_helpers', "= 0.2.0"
+# gem 'rspec_website_helpers', path: '/Users/thomas/Programming/ROR/rspec_website_helpers'
