@@ -1,0 +1,9 @@
+:ruby
+  @pages = sitemap.resources.select do |r|
+    /html$/.match r.destination_path
+  end.reject do |r|
+    /^google.*html/.match r.destination_path
+  end
+
+- @pages.each do |p|
+  http://docs.cider-ci.info/#{p.destination_path}
