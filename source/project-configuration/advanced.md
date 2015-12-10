@@ -127,11 +127,34 @@ the context are passed down by applying the [Deep-Merge](#deep-merge) strategy
 recursively: `deep_merge( deep_merge( task_defauls parent context,
 task-defaults current context), task)`.
 
+## Canonical Syntax and Compact Notation
+
+Some parts of the Cider-CI configuration file can be written in a *compact
+notation*. The compact notation is short and easy to read. But it does not
+compose well and there are potential conflicts with [including files][].
+
+The notation shortcuts can only be meaningfully evaluated in their context. In
+other words: the compact notation is context sensitive. Including files with the
+deep merge strategy happens in a context free manner. It follows that the
+compact notation can only be evaluated[^compact-eval] after the inclusion has
+been finished. Now, since the compact notation uses structures which can not be
+merged there is a potential risk of loosing information without intention.
+
+[^compact-eval]: Structures written in compact notation are actually not
+    evaluated. They are converted into canonical syntax which is then used
+    to build jobs, tasks and so on.
+
+Using booth concepts _compact notation_ and inclusion (resp. merging) across
+structures will likely end with undesired results and should be avoided.
+{: .text-danger}
+
+  [including files]: #including-files
+
 
 ## The Deep-Merge Strategy {#deep-merge}
 
 Inclusion and inheritance use a particular merging strategy which we call the
-_Deep-Merge_ strategy. The canonic definition of _Deep-Merge_ is mnemonic and
+_Deep-Merge_ strategy. The canonical definition of _Deep-Merge_ is mnemonic and
 easy to understand. The following almost formal definition will help to clarify
 doubts:
 

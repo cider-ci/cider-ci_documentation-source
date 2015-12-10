@@ -30,56 +30,74 @@ read.
 {: .text-warning}
 
 
-## The Configuration File - Getting Started
-{: #getting-started}
+## The Configuration File
 
-The following example shows a simple but fully functional Cider-CI
-configuration file. It specifies one job with one task and inside a very simple
-script. The screenshot shows a corresponding outcome in Cider-CI when after the
-specified job has been run.
+### Getting Started
+<div class="row"> <div class="col-md-6">
+
+The following example specifies one job with one task and inside a very simple script. It is a minimal but fully functional Cider-CI configuration file and part of [Bash Demo Project for Cider-CI] in the file [`introduction.yml`][].
+
+
+</div> <div class="col-md-6">
+~~~yaml
+jobs:
+  intro-demo:
+    name: Introduction Demo and Example.
+    task-defaults:
+      traits: [bash]
+    task: test a = a
+~~~
+</div> </div>
+
+### Canonical Syntax versus Compact Notation
 
 <div class="row"> <div class="col-md-6">
 
-    jobs:
+The previous example is written in _compact notation_. The compact notation is
+short and easy to read. However, advanced configuration options are only
+accessible via the _canonical syntax_. The canonical syntax is authoritative
+with respect of evaluation and this documentation.
 
-      intro-demo:
-        name: Introduction Demo and Example
-
-        context:
-
-          tasks:
-
-            example-task:
-              name: Example Task
-
-              traits:
-                linux: true
-                bash: true
-
-              scripts:
-
-                equality:
-                  name: Equality Test
-
-                  body: |
-                    #!/usr/bin/env bash
-                    test a = a
-  {: .language-yaml}
+<span class="text-warning">
+Including files and using the compact notation together can end with unexpected
+results and should be avoided. </span> The [Advanced Topics] page contains some
+background information on this.
 
 </div> <div class="col-md-6">
-[![Intro](/project-configuration/intro-job.png){: .docu-image}](/project-configuration/intro-job.png)
+
+~~~yaml
+jobs:
+  intro-demo:
+    key: intro-demo
+    name: Introduction Demo and Example.
+    context:
+      task-defaults:
+        traits:
+          bash: true
+      tasks:
+        '0':
+          scripts:
+            main:
+              body: test a = a
+~~~
+
 </div> </div>
 
-## Maps and Arrays
 
-The omnipresence of maps and the absence of arrays in the configuration file is apparent.
-Maps are generally favored in Cider-CI because they enable inclusion. This is
-discussed in the [Advanced Topics] page. The above example is
-actually included from the configuration file of the
-[Bash Demo Project for Cider-CI]
-which is similar to
-the following example.
+### Maps and Arrays
 
+<div class="row"> <div class="col-md-6">
+
+The omnipresence of maps and the absence of arrays in the canonical notation is
+apparent. Maps are generally favored in Cider-CI because they enable
+composition by the means of merging and inclusion. This is discussed in the
+[Advanced Topics] page.
+
+The example from above would be a legal standalone configuration file but it is
+actually included from the configuration file of the [Bash Demo Project for
+Cider-CI] which is similar to the following example.
+
+</div> <div class="col-md-6">
 
     _cider-ci_include:
       - .cider-ci/jobs/attachments.yml
@@ -87,8 +105,11 @@ the following example.
       - .cider-ci/jobs/timeout.yml
   {: .language-yaml}
 
+</div> </div>
 
 
   [Advanced Topics]: /project-configuration/advanced.html
   [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
+  [`introduction.yml`]: /demo-project/cider-ci/jobs/introduction.yml
+
 
