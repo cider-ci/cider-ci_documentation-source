@@ -48,8 +48,8 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
 | `ports`                      | optional                  | Map - Finds, occupies and publishes a port while processing the trial. Example: [ports]                                                                    |
 | `scripts`                    | optional                  | Map of Maps -  See [script][].                                                                                                                             |
 | `traits`                     | optional                  | Map of Booleans - Executors are matched on by the keys with true value.  Example: [introduction]                                                           |
-| `tree-attachments`           | optional                  | Map - Declares files which are attached to the `tree-id`. Example: [attachments]                                                                           |
-| `trial-attachments`          | optional                  | Map - Declares files which are attached to the trial. Example: [attachments]                                                                               |
+| `tree-attachments`           | optional                  | Map - Declares files which are attached to the `tree-id`, see [Shared/Attachments]. Example: [attachments]                                                 |
+| `trial-attachments`          | optional                  | Map - Declares files which are attached to the trial, see [Shared/Attachments]. Example: [attachments]                                                     |
 |------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------|
 {: .table .table-striped }
 
@@ -59,7 +59,7 @@ Maps] in [Advanced Topics], each mapping to a [Task](#task).
   [script]: /project-configuration/scripts.html#script
   [Advanced Topics]: /project-configuration/advanced.html
   [Generating Tasks]: /project-configuration/advanced.html#generating-tasks
-
+  [Shared/Attachments]: /project-configuration/shared.html#attachments
 
   [aggregate-state]: /demo-project/cider-ci/jobs/aggregate-state.yml
   [attachments]: /demo-project/cider-ci/jobs/attachments.yml
