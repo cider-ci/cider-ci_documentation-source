@@ -29,6 +29,19 @@ set :markdown_engine, PandocMarkdownRenderTemplate
 # Compass
 ###
 
+require 'pry'
+helpers do
+  def cider_ci_release
+    cider_ci_main_dir = Pathname(File.dirname(File.absolute_path(__FILE__))).parent
+    YAML.load_file(cider_ci_main_dir.join('config','releases.yml')) \
+      .with_indifferent_access[:releases][0]
+  end
+end
+
+###
+# Compass
+###
+
 # Change Compass configuration
 # compass_config do |config|
 #   config.output_style = :compact

@@ -22,7 +22,7 @@
           .navbar-header
             = link_to "/index.html", class: "navbar-brand" do
               Cider-CI
-              = partial 'semantic_version', locals: { semver: data.target_release }
+              = partial 'semantic_version', locals: { semver: cider_ci_release }
               Documentation
           %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
             .form-group
@@ -40,6 +40,10 @@
             %li
               = link_to '/sitemap.html' do
                 Sitemap
+
+      .alert.alert-danger
+        The documentation hasn't been completely updated to meet the changes
+        for version 4.0.0 of Cider-CI yet!
 
       :ruby
         @current_path_children = []
