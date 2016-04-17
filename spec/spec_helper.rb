@@ -25,7 +25,8 @@ require 'logger'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  PORT= ENV['REVERSE_PROXY_HTTP_PORT'].presence || 8888
+  PORT= ENV['MIDDLEMNAN_PORT'].presence \
+    || raise("MIDDLEMNAN_PORT must be present!")
   HOST="http://localhost:#{PORT}"
 
   Capybara.current_driver = :selenium
@@ -34,7 +35,7 @@ RSpec.configure do |config|
 
 
   if ENV['FIREFOX_ESR_PATH'].present?
-    Selenium::WebDriver::Firefox.path = ENV['FIREFOX_ESR_PATH']
+    Selenium::WebDriver::Firefox::Binary.path= ENV['FIREFOX_ESR_PATH']
   end
 
   config.before(:all) do |example|

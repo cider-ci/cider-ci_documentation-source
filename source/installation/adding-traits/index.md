@@ -3,6 +3,10 @@ title: Adding Traits - Advanced Installation
 ---
 {::options parse_block_html="true" /}
 
+<div class="alert alert-danger">
+  TODO: This part of the documentation is partly outdated and needs to be
+  updated for Cider-CI 4.
+</div>
 
 # Adding Traits {#adding-traits}
 
@@ -14,10 +18,10 @@ the [Cider-CI Windows Demo Project].
 ## Adding Traits Provided by the Cider-CI Deploy Project
 
 The [Cider-CI Deploy Project] includes a number of traits, listed in
-[`play_traits_executors-linux.yml`][] which can be installed on demand. The
+TODO which can be installed on demand. The
 ones mentioned above are enabled by default, all others are "opt in" by setting
 the corresponding value to `True`. This is demonstrated in
-[`inventories/demo/advanced/group_vars/cider-ci-executors-linux.yml`][] for
+`TODO` for
 example.
 
 
@@ -51,6 +55,5 @@ which are manged by other means.
   [Cider-CI Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash.git
   [Cider-CI Windows Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-windows
   [`play_traits_executors-linux.yml`]: https://github.com/cider-ci/cider-ci_deploy/blob/tmp/play_traits_executors-linux.yml
-  [`inventories/demo/advanced/group_vars/cider-ci-executors-linux.yml`]: https://github.com/cider-ci/cider-ci_deploy/blob/tmp/inventories/demo/advanced/group_vars/cider-ci-executors-linux.yml
-  [Tasks in Project Configuration]: /project-configuration/tasks.html
+  [Tasks in Project Configuration]: /project-configuration/specification/task.html
 

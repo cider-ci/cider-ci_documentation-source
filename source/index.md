@@ -7,8 +7,8 @@ This is the documentation for Cider-CI.
 Cider-CI is a service and application stack for continuous integration. It can
 be used in the traditional sense as a test runner. But Cider-CI can do much more:
 
-* It takes care of the whole continuous integration procedures from **testing**,
-    over **building** to **deployment**.
+* It takes care of the whole continuous integration procedures from
+  **testing**, over **building** to **deployment**.
 * It has abstractions for **managing** and altogether **avoiding false test negatives**.
 * It supports **running tests in parallel**.
 * **Installation and maintenance** is fully **automatized**.

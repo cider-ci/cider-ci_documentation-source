@@ -2,6 +2,8 @@
 2GB
 4GB
 API
+API
+APIs
 Ansible
 Auth
 Clojure
@@ -21,6 +23,7 @@ Jinja2
 Leiningen
 MacOS
 Madek
+Madek
 NoDerivatives
 Nodejs
 OpenSSL
@@ -37,6 +40,8 @@ SCMs
 Schank
 Sitemap
 Subcontexts
+TODO
+Templating
 URLs
 Ubuntu
 YAML
@@ -48,6 +53,7 @@ ci
 ci2
 ci3
 clojure
+composability
 config
 cp
 createdb
@@ -79,6 +85,7 @@ m1
 m2
 madek
 modelled
+monoid
 netrc
 npm
 optional1
@@ -100,14 +107,13 @@ styleguide
 subcontext
 subcontexts
 templated
+templating
 truthy
 url
 username
+validator
 vhost
 wip
 workflow
 yml
 zhkd
-API
-APIs
-Madek

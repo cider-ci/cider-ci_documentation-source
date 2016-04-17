@@ -6,5 +6,5 @@ HUNSPELL_BASE_DICTIONARIES  = "en_US"
 
 
 describe "Testing the web site", type: :feature  do
-  include_context :test_website, '/cider-ci/docs'
+  include_context :test_website, ENV['DOCS_CONTEXT']
 end

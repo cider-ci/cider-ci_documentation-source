@@ -3,6 +3,11 @@ title: Install
 ---
 {::options parse_block_html="true" /}
 
+<div class="alert alert-danger">
+  TODO: This part of the documentation is partly outdated and needs to be
+  updated for Cider-CI 4.
+</div>
+
 # Installing Cider-CI
 {:.no_toc}
 

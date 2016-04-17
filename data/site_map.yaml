@@ -13,14 +13,40 @@ children:
   children:
   - path: configuration-file.html
     title: Configuration File
-  - path: jobs.html
-    title: Jobs
-  - path: tasks.html
-    title: Tasks
-  - path: scripts.html
-    title: Scripts
-  - path: advanced.html
+  - path: advanced/
     title: Advanced Topics
+    children:
+    - path: sharing-data.html
+      title: Sharing Data
+    - path: inheritance.html
+      title: Hierarchy and Inheritance
+    - path: composing-data.html
+      title: Composing Data
+    - path: data-flow.html
+      title: Data Flow
+  - path: specification/
+    title: Specification
+    children:
+    - path: context.html
+      title: Context
+    - path: job/
+      title: Job
+      children:
+      - path: dependencies-and-triggers.html
+        title: Dependencies and Triggers
+    - path: task.html
+      title: Task
+    - path: script.html
+      title: Script
+    - path: other/
+      title: Other Values
+      children:
+      - path: duration.html
+        title: Duration
+
+
+
+
 
 - path: installation/
   title: Installation

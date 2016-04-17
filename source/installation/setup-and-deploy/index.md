@@ -3,9 +3,16 @@ title: Setup and Deployment
 ---
 {::options parse_block_html="true" line_numbers="false" /}
 
+<div class="alert alert-danger">
+  TODO: This part of the documentation is partly outdated and needs to be
+  updated for Cider-CI 4.
+</div>
+
+
 # Setup and Deploy
 {:.no_toc}
 This page guides through the process of installing a Cider-CI environment.
+
 
 
 ### Table of Contents

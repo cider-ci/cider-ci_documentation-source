@@ -1,0 +1,58 @@
+jobs:
+  test-documentation:
+    name: Test Documentation
+    run_on:
+    - type: branch
+      include_match: ^.*$
+    context:
+      script_defaults:
+        # TODO remove this once default is set properly
+        template_environment_variables: true
+      tasks:
+        test:
+          git_options:
+            submodules:
+              include_match: ^.*$
+          ports:
+            MIDDLEMNAN_PORT:
+              min: 8000
+              max: 8999
+            DISPLAY_PORT:
+              min: 9000
+              max: 9999
+          environment_variables:
+            DOCS_CONTEXT: '/'
+            DISPLAY: ':{{DISPLAY_PORT}}'
+          scripts:
+
+            run-xvfb:
+              body: Xvfb ${DISPLAY}
+              terminate_when:
+                test-has-finished:
+                  script: test
+                  state: [passed, failed, skipped, aborted, defective]
+
+            run-middleman:
+              body: |
+                set -eux
+                export PATH=$(pwd)/vendor/jruby/bin:$PATH
+                jruby --dev -S bundle exec middleman -p ${MIDDLEMNAN_PORT}
+              terminate_when:
+                test-has-finished:
+                  script: test
+                  state: [passed, failed, skipped, aborted, defective]
+              ignore_state: true
+
+            test:
+              body: |
+                set -eux
+                sleep 5
+                export PATH=$(pwd)/vendor/jruby/bin:$PATH
+                jruby --dev -S bundle exec rspec
+              start_when:
+                middleman-is-running:
+                  script: run-middleman
+                  states: [executing]
+                xvfb-is-running:
+                  script: run-xvfb
+                  states: [executing]

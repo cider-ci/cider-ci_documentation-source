@@ -3,6 +3,12 @@ title: Preparing a Windows Executor
 ---
 {::options parse_block_html="true" line_numbers="false" /}
 
+<div class="alert alert-danger">
+  TODO: This part of the documentation is partly outdated and needs to be
+  updated for Cider-CI 4.
+</div>
+
+
 # Preparing a Windows Executor
 {:.no_toc}
 This page guides through the process of installing a Cider-CI environment.

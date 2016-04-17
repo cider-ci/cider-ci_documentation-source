@@ -3,113 +3,131 @@ title: Project Configuration File
 ---
 {::options parse_block_html="true" /}
 
+
 # The Cider-CI Configuration File {#configuration-file}
 {:.no_toc}
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-
-This page documents the contents of the Cider-CI configuration file. It defines
-and specifies available _jobs_, relations between them, and all other
-properties which are available to build tasks, scripts and execute them.
-
-The section [Getting Started](#getting-started) on this pages features
-a complete and self contained example.
-
-The following locations are valid: `cider-ci.yml`, `.cider-ci.yml`,
-`cider-ci.json`, or `.cider-ci.json`. They are looked up precisely in the order
-given. The first one found will be used and any others ignored. The valid
-syntax is as the name suggests either [YAML](http://www.yaml.org/) or
-[JSON](http://json.org/).
-
-YAML is technically a superset of JSON, by capability and syntax! Note that
-Cider-CI uses only features of YAML which can be presented in JSON. We yet
-prefer YAML for examples in this documentation as we believe it is easier to
-read.
-{: .text-warning}
+Cider-CI reads the specification to create and run jobs from a file in the top
+level directory of your project. This page gives an introduction how to write
+a Cider-CI project file. The more formal [Cider-CI Project Specification] lists
+all available keys and configuration options of Cider-CI.
 
 
-## The Configuration File
 
-### Getting Started
-<div class="row"> <div class="col-md-6">
+## Filenames
 
-The following example specifies one job with one task and inside a very simple script. It is a minimal but fully functional Cider-CI configuration file and part of [Bash Demo Project for Cider-CI] in the file [`introduction.yml`][].
+Cider-CI will look for the following files to read the configuration:
+
+0. `cider-ci.yml`,
+0. `.cider-ci.yml`,
+0. `cider-ci.json`, and
+0. `.cider-ci.json`.
+
+The first file found will be used and any further will be ignored. The Cider-CI
+User Interface will show a warning if none of the possible configuration files
+have been found.
+
+## Accepted Formats
+
+As indicated by the extension of the files Cider-CI accepts either
+[YAML](http://www.yaml.org/) or [JSON](http://json.org/) format. YAML is
+technically a superset of JSON, by capability and syntax. Cider-CI uses only
+features of YAML which can be presented in JSON. We prefer to use YAML for
+examples in this documentation.
 
 
-</div> <div class="col-md-6">
-~~~yaml
+## Getting Started
+<div class="row"> <div class="col-md-5">
+
+The example specifies one job with one task and inside a very simple script. It
+exits with status 0 which indicates that the script has `passed`. The script
+itself is written so it will work with under either _Linux_, _Mac OS_, or
+_Windows_.
+
+
+</div> <div class="col-md-7">
+~~~yml
 jobs:
-  intro-demo:
-    name: Introduction Demo and Example.
-    task-defaults:
-      traits: [bash]
-    task: test a = a
+  introduction-demo:
+    name: Introduction Demo and Example Job
+    description: |
+      A very concise job declaration which uses the compact notation.
+    task: |
+      :; exit 0
+      exit /b 0
 ~~~
 </div> </div>
 
-### Canonical Syntax versus Compact Notation
 
-<div class="row"> <div class="col-md-6">
+## Canonical Syntax versus Compact Notation
+
+<div class="row"> <div class="col-md-5">
 
 The previous example is written in _compact notation_. The compact notation is
-short and easy to read. However, advanced configuration options are only
-accessible via the _canonical syntax_. The canonical syntax is authoritative
-with respect of evaluation and this documentation.
+short and easy to read. However, many configuration options can not be
+expressed in compact notation and thus only simple jobs can be written in this
+format.
 
-<span class="text-warning">
-Including files and using the compact notation together can end with unexpected
-results and should be avoided. </span> The [Advanced Topics] page contains some
-background information on this.
+Internally Cider-CI converts the _compact notation_ into its _canonical syntax_
+before evaluating it. The same configuration in _canonical syntax_ would
+read like the example given here.
 
-</div> <div class="col-md-6">
+</div> <div class="col-md-7">
 
 ~~~yaml
 jobs:
-  intro-demo:
-    key: intro-demo
-    name: Introduction Demo and Example.
+  introduction-demo:
+    key: introduction-demo
+    name: Introduction Demo and Example Job
+    description: A very concise job declaration which uses the compact notation.
     context:
-      task-defaults:
-        traits:
-          bash: true
       tasks:
         '0':
           scripts:
             main:
-              body: test a = a
+              body: |
+                :; exit 0
+                exit /b 0
 ~~~
 
 </div> </div>
 
 
-### Maps and Arrays
+## Validation of the Specification
 
-<div class="row"> <div class="col-md-6">
+Much of what is happening inside Cider-CI adheres to the [fail-fast] principle.
+To that end Cider-CI has a **validator** which will parse the project
+configuration. It will show a warnings and prevent any execution when it
+encounters **unspecified keys**, if **values are of wrong type**, or if they
+**can not be parsed**.
 
-The omnipresence of maps and the absence of arrays in the canonical notation is
-apparent. Maps are generally favored in Cider-CI because they enable
-composition by the means of merging and inclusion. This is discussed in the
-[Advanced Topics] page.
+On the one hand the validator might feel annoying at times. But we believe that
+such a rigorous validation is a very important quality of a CI system. In the
+end it lets you write your configuration faster and more efficient since it
+frees you from double and triple checking it.
 
-The example from above would be a legal standalone configuration file but it is
-actually included from the configuration file of the [Bash Demo Project for
-Cider-CI] which is similar to the following example.
+## Reserved Keywords
 
-</div> <div class="col-md-6">
+The keywords of the maps used in the Cider-CI configuration play important
+roles. In the case of a job the keyword is used to identify a job uniquely and
+reference it when declaring dependencies for example. Those keywords may be
+chosen freely with a few exceptions.
 
-    _cider-ci_include:
-      - .cider-ci/jobs/attachments.yml
-      - .cider-ci/jobs/introduction.yml
-      - .cider-ci/jobs/timeout.yml
-  {: .language-yaml}
-
-</div> </div>
+{: .text-warning}
+The keyword `include` and any keyword
+starting with `_cider-ci` is reserved and may not be used.
 
 
-  [Advanced Topics]: /project-configuration/advanced.html
-  [Bash Demo Project for Cider-CI]: https://github.com/cider-ci/cider-ci_demo-project-bash
-  [`introduction.yml`]: /demo-project/cider-ci/jobs/introduction.yml
+## Where to go from here
 
+The more formal [Cider-CI Project Specification] lists all available keys and
+configuration options of Cider-CI. The [data flow] page describes the
+transformations applied to the configuration file.
+
+  [data flow]: /project-configuration/advanced/data-flow.html
+  [fail-fast]: https://en.wikipedia.org/wiki/Fail-fast
+  [Cider-CI Project Specification]: /project-configuration/specification/index.html
 
