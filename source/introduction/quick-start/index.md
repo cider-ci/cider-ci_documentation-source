@@ -19,7 +19,7 @@ Log in as root to your Jessie system
 and invoke the following two commands:
 
     apt-get update && apt-get install curl -y
-    curl https://raw.githubusercontent.com/cider-ci/cider-ci_deploy/master/bin/quick-install.sh | bash
+    curl https://raw.githubusercontent.com/cider-ci/cider-ci_deploy/v4/bin/quick-install.sh | bash
 
 Wait until everything is finished. The duration depends on the power of our
 machine and the speed of the Internet connection, 30 Minutes or more are not
