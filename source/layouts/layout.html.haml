@@ -46,17 +46,17 @@
         @current_node = {}
 
         @current_path_with_root= "/" + current_path
-        puts(current_path_with_root: @current_path_with_root)
+        #puts(current_path_with_root: @current_path_with_root)
 
         def find_sitemap_path(parent_nodes, current_node)
           nodes = parent_nodes + [current_node.select{|k,v| %w(path title).include? k}]
           path_children = nodes.map{|pi| pi['path']}
           possible_path_respresentations = [path_children.join(''), (path_children  + ["index.html"]).join('')]
-          puts "############# find_sitemap_path #######"
-          puts({parent_nodes: parent_nodes, nodes: nodes, path_children: path_children, possible_path_respresentations: possible_path_respresentations, current_node: current_node })
-          puts "#######################################\n\n"
+          #puts "############# find_sitemap_path #######"
+          #puts({parent_nodes: parent_nodes, nodes: nodes, path_children: path_children, possible_path_respresentations: possible_path_respresentations, current_node: current_node })
+          #puts "#######################################\n\n"
           if possible_path_respresentations.include? @current_path_with_root
-            puts "FOUND!"
+            #puts "FOUND!"
             @nodes = nodes
             @current_node  = current_node
           else
@@ -75,7 +75,7 @@
                 else
                   joined
                 end
-          puts({path: path})
+          #puts({path: path})
           path
         end
 
