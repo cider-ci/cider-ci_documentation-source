@@ -21,6 +21,10 @@ all available keys and configuration options of Cider-CI.
 
 Cider-CI will look for the following files to read the configuration:
 
+0. `cider-ci_v4.yml`,
+0. `.cider-ci_v4.yml`,
+0. `cider-ci_v4.json`,
+0. `.cider-ci_v4.json`,
 0. `cider-ci.yml`,
 0. `.cider-ci.yml`,
 0. `cider-ci.json`, and
