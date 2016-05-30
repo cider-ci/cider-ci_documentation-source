@@ -1,9 +1,10 @@
 jobs:
   test-documentation:
     name: Test Documentation
-    run_on:
-    - type: branch
-      include_match: ^.*$
+    run_when:
+      'any branch is updated':
+        type: branch
+        include_match: ^.*$
     context:
       script_defaults:
         # TODO remove this once default is set properly
@@ -29,8 +30,8 @@ jobs:
               body: Xvfb ${DISPLAY}
               terminate_when:
                 test-has-finished:
-                  script: test
-                  state: [passed, failed, skipped, aborted, defective]
+                  script_key: test
+                  states: [passed, failed, skipped, aborted, defective]
 
             run-middleman:
               body: |
@@ -39,8 +40,8 @@ jobs:
                 jruby --dev -S bundle exec middleman -p ${MIDDLEMNAN_PORT}
               terminate_when:
                 test-has-finished:
-                  script: test
-                  state: [passed, failed, skipped, aborted, defective]
+                  script_key: test
+                  states: [passed, failed, skipped, aborted, defective]
               ignore_state: true
 
             test:
@@ -51,8 +52,8 @@ jobs:
                 jruby --dev -S bundle exec rspec
               start_when:
                 middleman-is-running:
-                  script: run-middleman
+                  script_key: run-middleman
                   states: [executing]
                 xvfb-is-running:
-                  script: run-xvfb
+                  script_key: run-xvfb
                   states: [executing]
