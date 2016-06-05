@@ -12,7 +12,6 @@ title: The Job Specification
 | `context`             | Map of properties, see the [context] and [inheritance] page.                             |
 | `depends_on`          | Map of maps, see the [dependencies and triggers] page.                                   |
 | `description`         | String, used in the user interface.                                                      |
-| `empty_tasks_warning` | Boolean, defaults to `true`. Enables or suppresses warnings when the tasks list is empty. |
 | `key`                 | String, used to reference this job. Defaults to the value of the key in the jobs map.    |
 | `name`                | String, used in the user interface. Defaults to the key of the job.                      |
 | `priority`            | Integer, defaults to `0`. See the [execution priority] page.                             |
