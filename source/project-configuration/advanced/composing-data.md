@@ -39,7 +39,7 @@ scripts:
         states: [ "passed" ]
 ~~~
 
-Here the contents of `scipts` and `start_when` could have been arrays. In the
+Here the contents of `scripts` and `start_when` could have been arrays. In the
 case of scripts the keys are important to be used as reference.
 
 </div> </div>
