@@ -6,20 +6,23 @@ title: Quick Start
 # Cider-CI Quick Start Guide
 
 This is a quick start guide to Cider-CI. It takes two commands to install
-a whole Cider-CI Environment. The only requirements are a _Debian 8 - Jessie_
-system with at least 2GB of RAM system and a Internet connection.
+a whole Cider-CI Environment. The only requirements are an _Ubuntu 16.04_ or
+_Debian 8 - Jessie_ system. We recommend 3GB RAM and two cores for the demo
+setup.
 
-We recommend that the system is not accessible from the Internet as it sets
-a default login with a default password. Skip a few steps down to see how
-to change the password after introduction.
+<div class="alert alert-warning">
+  The deploy and set-up procedure is by its nature invasive. We recommend to
+  use a virtual machine for the demo installation.
+</div>
+
+
 
 ## Install
 
-Log in as root to your Jessie system
-and invoke the following two commands:
+Log in as root to your system and invoke the following two commands:
 
     apt-get update && apt-get install curl -y
-    curl https://raw.githubusercontent.com/cider-ci/cider-ci_deploy/master/bin/quick-install.sh | bash
+    curl https://raw.githubusercontent.com/cider-ci/cider-ci_deploy/release/bin/quick-install.sh | bash
 
 Wait until everything is finished. The duration depends on the power of our
 machine and the speed of the Internet connection, 30 Minutes or more are not
@@ -31,10 +34,28 @@ uncommon.
 </div>
 
 
-## Try It Out
+## First Steps
 
-0. Open the `http://IP-OF-YOUR-MACHINE` and sing in with the login `admin` and
-  password `secret`.
+0. Open the `http://IP-OF-YOUR-MACHINE`. You will be redirected to the welcome page.
+
+    [![Quick Start - Welcome Page](/introduction/quick-start/welcome.png){: .quick-start}](/introduction/quick-start/welcome.png)
+
+
+0. Click the _Sign in with password_ button, and then provide the credentials. Use `admin`
+  as the login. You can find the password in the terminal output of the install script:
+
+        ok: [demo] => {
+            "ci_master_secret": "7BFdI0BOD1Qz4uqA2HEzF9cOyJ5Aa4cfzh8mGLFV"
+
+    If that is not available you can find it through the following command:
+
+        root@xenial-16:~# cat /tmp/cider-ci/deploy/inventories/demo/master_secret.txt
+        7BFdI0BOD1Qz4uqA2HEzF9cOyJ5Aa4cfzh8mGLFV
+
+    <div class="alert alert-warning">
+      If you rerun the demo setup with the command from above a new `ci_master_secret`
+      and a new password for `admin` will be set.
+    </div>
 
     [![Quick Start - Sign-in](/introduction/quick-start/sign-in.png){: .quick-start}](/introduction/quick-start/sign-in.png)
 
@@ -43,17 +64,16 @@ uncommon.
 
     [![Quick Start - Workspace](/introduction/quick-start/workspace.png){: .quick-start}](/introduction/quick-start/workspace.png)
 
-0. Run and watch some of the provided jobs.
+0. Run and watch some of the provided jobs. Maybe start with the "Retry Demo":
 
     [![Quick Start - Job](/introduction/quick-start/job.png){: .quick-start}](/introduction/quick-start/job.png)
 
-## Change The Password
+    {: .alert.alert-warning}
+    It is possible to run almost all of the provided jobs. Some
+    will not succeed because their final state is not deterministic - like
+    the "Retry Demo". Some will fail because they are designed to fail,
+    and some are designed not start but cause an error.
 
-Go to _Administration_ → _Users_ → _[admin]_ and change the password. Your
-session will **immediately become invalid** - this is a security feature - and
-you will need to sign in again with the new password.
-
-[![Quick Start - Change Password](/introduction/quick-start/change-password.png){: .quick-start}](/introduction/quick-start/change-password.png)
 
 
 
