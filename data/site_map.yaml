@@ -45,21 +45,11 @@ children:
         title: Duration
 
 
-
-
-
 - path: installation/
   title: Installation
   children:
-  - path: setup-and-deploy/
-    title: Setup and Deploy
-    children:
-      - path: windows-preparation/
-        title: Windows Preparation
-  - path: upgrading/
-    title: Upgrading and Updating
-  - path: adding-traits/
-    title: Adding Traits
+  - path: setup-and-deployment/
+    title: Setup and Deployment
 
 - title: Development
   path: development/
