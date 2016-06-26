@@ -71,15 +71,3 @@ children:
     - path: storage_resources.html
       title: Storage Specific Resources
 
-- path: howtos/
-  title: Howtos
-  children:
-  - path: executors/pull-mode/
-    title: Configuring Pull Mode for Executors
-  - path: github/status-push/
-    title: GitHub Status Messages
-  - path: executors/disk-space/
-    title: Managing Disk Space on Executors
-  - path: security/repository-authentication/
-    title: Repository Authentication
-

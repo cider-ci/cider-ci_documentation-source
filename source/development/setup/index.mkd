@@ -16,14 +16,12 @@ Prerequisites
 
 <div class="row"> <div class="col-md-6">
 -   PostgreSQL version ≥ 9.4 (≤ 9.3 will not suffice!)
--   RabbitMQ version ≥ 3.0 (≥ 3.3 recommended)
--   JDK 7 or later
+-   JDK 8 or later
 -   [Leiningen][] version ≥ 2.0 (≥ 2.5 recommended)
 -   [Ruby][] ≥ 2.2  with [Bundler][]
--   [Nodejs][] with npm
 
 The environment will by default require the following ports (in
-addition to the ones used by PostgreSQL and RabbitMQ):
+addition to the one used by PostgreSQL):
 
 * 8880 ‥ 8889
 * 7880 ‥ 7889
@@ -46,25 +44,6 @@ The source code for each service is a git submodule of the main
     git clone --recursive https://github.com/cider-ci/cider-ci.git
 </div> </div>
 
-
-Message-Queues - RabbitMQ
-------------------------------------
-
-<div class="row"> <div class="col-md-6">
-We set up a vhost, a user and permit the user.
-
-The RabbitMQ [Management Plugin](https://www.rabbitmq.com/management.html)
-allows us to verify the connection status via the Cider-CI User-Interface.
-
-</div> <div class="col-md-6">
-    rabbitmqctl add_user cider-ci secret
-    rabbitmqctl add_vhost cider-ci
-    rabbitmqctl set_permissions -p cider-ci cider-ci ".*"  ".*" ".*"
-    rabbitmqctl -p cider-ci list_permissions
-
-    rabbitmq-plugins enable rabbitmq_management
-    rabbitmqctl set_user_tags cider-ci administrator
-</div> </div>
 
 Database - PostgreSQL
 ---------------------
