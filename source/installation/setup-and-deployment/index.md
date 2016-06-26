@@ -40,9 +40,9 @@ teams. Running one or even more executors on the same machine as the server can
 
 The executors in Cider-CI act fairly autonomous. They pull work from the sever,
 and then process it without further interaction from the server. One of the
-benefits is that the only required connection is HTTP or preferably HTTPs from
+benefits is that the only required connection is HTTP or preferably HTTPS from
 the executors to the servers. This feature eliminates a lot of trouble within
-firewall regulated environments since HTTP/HTTPs is likely posible.
+firewall regulated environments since HTTP/HTTPS is likely possible.
 
 
   [Java Virtual Machine]: https://en.wikipedia.org/wiki/Java_virtual_machine
@@ -64,7 +64,7 @@ box. The automated deploy requires [Ansible] of version 2.1 or later on the
 
 We assume that we are operating on _stock installations_ of _Debian Jessie_ or
 _Ubuntu Xenial_ for the reminder of this documentation. The procedure is **well
-tested** for **unmodified systems** installed from **official raleases**.
+tested** for **unmodified systems** installed from **official releases**.
 {: .text-warning}
 
   [Ansible]: http://docs.ansible.com/ansible/index.html
@@ -267,12 +267,12 @@ ansible-playbook -i ../../hosts deploy_play.yml
 </div> </div>
 
 The deploy will take some time which largely depends on the connection speed to
-the internet.
+the Internet.
 
 ## Signing in and Testing the Installation
 
 <div class="row"> <div class="col-md-6">
-We can now open the user interface in the webrowser via
+We can now open the user interface in the browser via
 `http://http://192.168.0.16` where the IP should be replaced by your IP or
 hostname respectively. We will be redirected to the welcome page.
 
@@ -321,9 +321,7 @@ ansible-playbook -i ../../hosts deploy_play.yml
 
 Upgrading a Cider-CI Environment is possible if the minor version (see
 [Semantic Versioning][]) of Cider-CI has changed. Upgrading across major
-versions is not guaranteed to be possible. This isn't much of a problem as it
-sounds. You will likely need run the previous major version parallel to
-the new one while migrating the projects over.
+versions is not guaranteed to be possible.
 {: .text-warning}
 
   [Semantic Versioning]: http://semver.org/

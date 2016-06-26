@@ -1,5 +1,7 @@
 1GB
+250MB
 2GB
+3GB
 4GB
 API
 API
@@ -13,6 +15,8 @@ Demoe
 ENV
 GitHub
 Github
+HTTP
+HTTPS
 Howto
 Howtos
 IOPS
@@ -44,7 +48,10 @@ TODO
 Templating
 URLs
 Ubuntu
+Versioning
+Xenial
 YAML
+ZHdK
 adam
 admin
 branchdescendants
@@ -63,6 +70,7 @@ esr
 executedCider
 executor1
 firefox
+hostname
 http
 https
 hyperlink
@@ -71,6 +79,7 @@ image01
 init
 ip
 ipv4
+jessie
 json
 k1
 k2
@@ -115,5 +124,5 @@ validator
 vhost
 wip
 workflow
+xenial
 yml
-zhkd
