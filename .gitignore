@@ -1,6 +1,7 @@
 *.log
 _site/
 build/
+build
 node_modules/
 source/assets/javascripts/vendor/
 tmp/
