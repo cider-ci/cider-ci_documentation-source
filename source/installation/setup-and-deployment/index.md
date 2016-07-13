@@ -58,7 +58,7 @@ Deploy Project] to set up the server.
 
 The [Cider-CI Deploy Project] enables fully **automatized installation,
 configuration** and **upgrading** of your environment. It supports the _Linux_
-based Ubuntu 16.04 "Trusty" or Debian 8 "Jessie" operating systems out of the
+based Ubuntu 16.04 "Xenial" or Debian 8 "Jessie" operating systems out of the
 box. The automated deploy requires [Ansible] of version 2.1 or later on the
 [control machine]. We will discuss the set-up in the next section.
 
