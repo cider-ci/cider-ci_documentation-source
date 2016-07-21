@@ -16,6 +16,7 @@ title: The Task Specification
 | `exclusive_global_resources`    | Map of booleans. The keys indicate the resource, the values decide if the resource lock is active.                 |
 | `git_options`                   | This option decides if and which submodules are cloned.  See [`git_options` in the demo project].                  |
 | `key`                           | String.                                                                                                            |
+| `load`                          | A strictly positive number. See [The `load`](#load) below.
 | `max_trials`                    | Integer, defaults to `3`. The Maximum number of trials which will be created until the task passes.                |
 | `name`                          | String.                                                                                                            |
 | `ports`                         | Map of values, see the [ports] page.                                                                               |
@@ -27,6 +28,16 @@ title: The Task Specification
 | `trial_attachments`             | Map of maps, determines files to be attached to the `trial_id`.  See [`attachments` in the demo project].          |
 |---------------------------------+--------------------------------------------------------------------------------------------------------------------|
 {: .table .table-striped }
+
+
+## The `load`
+{: #load}
+
+Each executor can execute serveral trials in parallel. The limit ist set by the
+executors `max_load` value. The accumulated load of the trials is the sum of
+the `load` parameters specified with the `load` parameter in the task
+specification.
+
 
   [Interacting with the Environment]: http://cider-ci.info/articles/interacting-with-the-environment/index.html
   [Preventing Dispatch Storms]: http://cider-ci.info/articles/preventing-dispatch-storms/index.html
