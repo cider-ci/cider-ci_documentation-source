@@ -4,15 +4,16 @@
   %span.divider<>='.'
   %span.minor<>
     =semver['version_minor'].to_s
-  - if semver['version_patch'].present?
-    %span.divider<>='.'
-    %span.patch<>
-      =semver['version_patch'].to_s
-  - if semver['version_pre'].present?
-    %span.divider<>='-'
-    %span.pre<>
-      =semver['version_pre'].to_s
-  - if semver['version_build'].present?
-    %span.divider<>='+'
-    %span.build<>
-      =semver['version_build'].to_s
+  %span.patch-pre-build
+    - if semver['version_patch'].present?
+      %span.divider<>='.'
+      %span.patch<>
+        =semver['version_patch'].to_s
+    - if semver['version_pre'].present?
+      %span.divider<>='-'
+      %span.pre<>
+        =semver['version_pre'].to_s
+    - if semver['version_build'].present?
+      %span.divider<>='+'
+      %span.build<>
+        =semver['version_build'].to_s
