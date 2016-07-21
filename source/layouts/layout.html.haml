@@ -24,12 +24,11 @@
               Cider-CI
               = partial 'semantic_version', locals: { semver: cider_ci_release }
               Documentation
-          %form.navbar-form.navbar-left{:role => "search", :action => "https://www.google.com/search", :method => "get"}
+          %form#search.navbar-form.navbar-left{role: "search", action: '/search.html', method: 'get'}
             .form-group
-              %input{:name => "as_sitesearch", :type => "hidden", :value => "docs.cider-ci.info"}
-              %input{:name => "hl", :type => "hidden", :value => "en"}
-              %input.form-control{:name => "as_q", :placeholder => "Search", :type => "text"}
+              %input#search-term.form-control{:name => "term", :placeholder => "Search", :type => "text"}
               %button.btn.btn-default{style: 'display: none', type: 'submit'} Submit
+
           %ul.nav.navbar-nav
             %li
               = link_to '/introduction/index.html' do

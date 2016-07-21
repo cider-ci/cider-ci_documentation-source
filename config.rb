@@ -38,6 +38,24 @@ helpers do
   end
 end
 
+activate :search do |search|
+
+  search.resources = [
+    'api',
+    'development',
+    'index.html',
+    'installation',
+    'introduction',
+    'project-configuration',
+  ]
+
+  search.fields = {
+    title:   {boost: 100, store: true, required: true},
+    content: {boost: 50},
+    url:     {index: false, store: true},
+  }
+end
+
 ###
 # Compass
 ###

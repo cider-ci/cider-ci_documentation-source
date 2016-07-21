@@ -1,0 +1,69 @@
+:coffee
+  $ ->
+
+    logger= Logger.create namespace: 'Search', level: 'info'
+
+    logger.info "Initializing Search"
+
+    lunrIndex = null
+    lunrData = null
+
+    $.ajax
+      url: '/search.json'
+      cache: true
+      method: 'GET'
+      success: (data) ->
+        lunrData = data
+        lunrIndex = lunr.Index.load(lunrData.index)
+        term = URI(location).query(true)["term"]
+        evalSearch term
+        $("input#search-term").val(term)
+        $("#wait-message").remove()
+
+    renderResultDocs = (docs) ->
+      $("#search-results").empty()
+      if docs.length is 0
+        $("#search-results").append("""
+          No match!
+        """)
+      else
+        docs.map (doc)->
+          $("#search-results").append """
+            <li>
+              <a href='\#{doc.url}'>
+                <h3> \#{doc.title} </h3>
+                \#{doc.url}
+              </a>
+            </li>
+            """
+
+    evalSearch= (term)->
+      if term?
+        $("#title-term").empty()
+        results = lunrIndex.search(term)
+        docs = results.map( (result)->
+          lunrData.docs[result.ref])
+        renderResultDocs docs
+        $("#title-term").append(term)
+
+
+    $('form#search').on('submit', (e)->
+      e.preventDefault()
+      term = $("input#search-term").val()
+      history.pushState(null, null, URI(location).search({term: term}).toString())
+      evalSearch(term))
+
+    window.onpopstate = (event)->
+      term = URI(location).query(true)["term"]
+      $("input#search-term").val(term)
+      evalSearch term
+
+
+%h1
+  Search Results for "
+  %span#title-term<>
+  "
+
+
+%p#wait-message.text-warning This page requires JavaScript. The search index is being prepared. Please wait.
+%ol#search-results

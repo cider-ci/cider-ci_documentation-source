@@ -59,6 +59,10 @@ children:
   - title: Setup
     path: setup/
 
+- path: search.html
+  title: Search
+  omit_child_link: true
+
 - path: 'sitemap.html'
   title: Sitemap
   omit_child_link: true
