@@ -3,8 +3,7 @@ windows:
     name: server@8889
     command: |
       export MIDDLEMNAN_PORT=8889
-      export PATH=$(pwd)/vendor/jruby/bin:$PATH
-      jruby --dev -S bundle exec middleman -p $MIDDLEMNAN_PORT
+      bundle exec middleman -p $MIDDLEMNAN_PORT
 
   "7":
     name: test
@@ -13,4 +12,4 @@ windows:
       export DOCS_CONTEXT='/'
       export MIDDLEMNAN_PORT=8889
       sleep 5
-      jruby --dev -S bundle exec rspec
+      bundle exec rspec

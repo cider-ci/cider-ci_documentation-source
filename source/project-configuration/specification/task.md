@@ -33,7 +33,7 @@ title: The Task Specification
 ## The `load`
 {: #load}
 
-Each executor can execute serveral trials in parallel. The limit ist set by the
+Each executor can execute several trials in parallel. The limit is set by the
 executors `max_load` value. The accumulated load of the trials is the sum of
 the `load` parameters specified with the `load` parameter in the task
 specification.
