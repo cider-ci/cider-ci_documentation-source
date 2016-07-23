@@ -21,9 +21,7 @@
         .container-fluid
           .navbar-header
             = link_to "/index.html", class: "navbar-brand" do
-              Cider-CI
-              = partial 'semantic_version', locals: { semver: cider_ci_release }
-              Documentation
+              Cider-CI Documentation
           %form#search.navbar-form.navbar-left{role: "search", action: '/search.html', method: 'get'}
             .form-group
               %input#search-term.form-control{:name => "term", :placeholder => "Search", :type => "text"}
@@ -104,4 +102,15 @@
 
 
         = yield
+
+      .row
+        .col-md-12
+          %footer
+            .pull-right
+              Cider-CI
+              = partial 'semantic_version', locals: { semver: cider_ci_release }
+              Documentation
+              = DateTime.now().strftime("%Y-%m-%d")
+
+              © Thomas Schank and contributors
 
