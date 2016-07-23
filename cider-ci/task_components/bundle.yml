@@ -1,0 +1,47 @@
+environment_variables:
+  RUBY_ENGINE: ruby
+  RUBY_VERSION: 2.2.4
+  RUBY: '{{RUBY_ENGINE}}-{{RUBY_VERSION}}'
+
+traits:
+  curl: true
+  ruby-install: true
+
+scripts:
+
+  bundle:
+    exclusive_executor_resource: ruby-install_{{$RUBY}}
+    timeout: 20 Minutes
+    body: |
+      #!/usr/bin/env bash
+      set -eux
+      export PATH=~/.rubies/$RUBY/bin:$PATH
+
+      rm -f .bundle/config
+
+      if [ ! -d ~/.rubies/$RUBY ]; then
+        ruby-install --no-install-deps $RUBY_ENGINE $RUBY_VERSION
+      fi
+
+      if [ ! -f ~/.rubies/$RUBY/bin/bundle ]; then
+        gem install bundler
+      fi
+
+      DIGEST=$(git ls-tree HEAD --\
+        cider-ci.yml cider-ci Gemfile.lock \
+        | openssl dgst -sha1 | cut -d ' ' -f 2)
+
+      DIGEST=$(echo "$DIGEST $PATH" \
+       | openssl dgst -sha1 | cut -d ' ' -f 2)
+
+      CACHE_SIGNATURE_FILE="/tmp/bundle_cache_signature_${DIGEST}"
+
+      if [ ! -f  $CACHE_SIGNATURE_FILE ] ; then
+        bundle install
+        touch $CACHE_SIGNATURE_FILE
+      fi
+
+  test:
+    start_when:
+      bundle has passed:
+        script_key: bundle

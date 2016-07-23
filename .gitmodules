@@ -1,6 +1,3 @@
 [submodule "source/demo-project"]
 	path = source/demo-project
 	url = https://github.com/cider-ci/cider-ci_demo-project-bash.git
-[submodule "vendor"]
-	path = vendor
-	url = https://github.com/cider-ci/cider-ci_documentation-source_vendor.git

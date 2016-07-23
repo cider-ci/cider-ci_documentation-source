@@ -11,6 +11,7 @@ jobs:
         template_environment_variables: true
       tasks:
         test:
+          include: cider-ci/task_components/bundle.yml
           git_options:
             submodules:
               include_match: ^.*$
@@ -36,20 +37,24 @@ jobs:
             run-middleman:
               body: |
                 set -eux
-                export PATH=$(pwd)/vendor/jruby/bin:$PATH
-                jruby --dev -S bundle exec middleman -p ${MIDDLEMNAN_PORT}
+                export PATH=~/.rubies/$RUBY/bin:$PATH
+                bundle exec middleman -p ${MIDDLEMNAN_PORT}
               terminate_when:
                 test-has-finished:
                   script_key: test
                   states: [passed, failed, skipped, aborted, defective]
+              start_when:
+                bundle has passed:
+                  script_key: bundle
+                  states: [passed]
               ignore_state: true
 
             test:
               body: |
                 set -eux
                 sleep 5
-                export PATH=$(pwd)/vendor/jruby/bin:$PATH
-                jruby --dev -S bundle exec rspec
+                export PATH=~/.rubies/$RUBY/bin:$PATH
+                bundle exec rspec
               start_when:
                 middleman-is-running:
                   script_key: run-middleman
