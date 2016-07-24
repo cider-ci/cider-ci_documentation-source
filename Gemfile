@@ -26,5 +26,9 @@ gem 'capybara'
 gem 'rspec'
 gem 'selenium-webdriver'
 
-gem 'rspec_website_helpers', "= 0.2.0"
-# gem 'rspec_website_helpers', path: '/Users/thomas/Programming/ROR/rspec_website_helpers'
+#gem 'rspec_website_helpers', "= 0.2.0"
+gem 'rspec_website_helpers', :git => 'https://github.com/DrTom/rspec_website_helpers.git'
+#gem 'rspec_website_helpers', path: '/Users/thomas/Programming/ROR/rspec_website_helpers'
+
+
+

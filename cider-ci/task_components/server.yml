@@ -1,0 +1,46 @@
+scripts:
+
+  run-middleman-server:
+    timeout: 5 Minutes
+    body: |
+      set -eux
+      export PATH=~/.rubies/$RUBY/bin:$PATH
+      bundle exec middleman -p ${MIDDLEMNAN_PORT}
+    start_when:
+      bundle has passed:
+        script_key: bundle
+        states: [passed]
+    ignore_state: true
+
+
+  middleman-is-serving:
+    timeout: 1 Minutes
+    start_when:
+      the service is running:
+        script_key: run-middleman-server
+        states: [executing]
+    body: |
+      #!/usr/bin/env bash
+      set -ux
+      until curl --silent --fail -I "http://localhost:${MIDDLEMNAN_PORT}" ; do
+        sleep 1;
+      done
+
+  test:
+    start_when:
+      middleman-is-serving:
+        script_key: middleman-is-serving
+        states: [passed]
+
+  shutdown-middleman-server:
+    timeout: 3 Seconds
+    body: |
+      set -eux
+      kill -TERM $(lsof -t -wni tcp:${MIDDLEMNAN_PORT})
+      sleep 1
+    start_when:
+      the_test_is_in_terminal_state:
+        script_key: test
+        states: [aborted, defective, passed, failed, skipped]
+      we are serving:
+        script_key: middleman-is-serving

@@ -6,62 +6,33 @@ jobs:
         type: branch
         include_match: ^.*$
     context:
-      script_defaults:
-        # TODO remove this once default is set properly
-        template_environment_variables: true
+      task_defaults:
+        max_trials: 1
+        traits:
+          Pandoc: yes
+          ruby-install: yes
+        include:
+          - cider-ci/task_components/bundle.yml
+          - cider-ci/task_components/server.yml
+        environment_variables:
+          DOCS_CONTEXT: '/'
+          DISPLAY: ':{{DISPLAY_PORT}}'
+        ports:
+          MIDDLEMNAN_PORT:
+            min: 8000
+            max: 8999
+          DISPLAY_PORT:
+            min: 9000
+            max: 9999
+
       tasks:
         test:
-          traits:
-            Pandoc: yes
-            ruby-install: yes
-          include: cider-ci/task_components/bundle.yml
-          git_options:
-            submodules:
-              include_match: ^.*$
-          ports:
-            MIDDLEMNAN_PORT:
-              min: 8000
-              max: 8999
-            DISPLAY_PORT:
-              min: 9000
-              max: 9999
-          environment_variables:
-            DOCS_CONTEXT: '/'
-            DISPLAY: ':{{DISPLAY_PORT}}'
           scripts:
-
-            run-xvfb:
-              body: Xvfb ${DISPLAY}
-              terminate_when:
-                test-has-finished:
-                  script_key: test
-                  states: [passed, failed, skipped, aborted, defective]
-
-            run-middleman:
-              body: |
-                set -eux
-                export PATH=~/.rubies/$RUBY/bin:$PATH
-                bundle exec middleman -p ${MIDDLEMNAN_PORT}
-              terminate_when:
-                test-has-finished:
-                  script_key: test
-                  states: [passed, failed, skipped, aborted, defective]
-              start_when:
-                bundle has passed:
-                  script_key: bundle
-                  states: [passed]
-              ignore_state: true
-
             test:
               body: |
                 set -eux
-                sleep 5
                 export PATH=~/.rubies/$RUBY/bin:$PATH
-                bundle exec rspec
-              start_when:
-                middleman-is-running:
-                  script_key: run-middleman
-                  states: [executing]
-                xvfb-is-running:
-                  script_key: run-xvfb
-                  states: [executing]
+                mkdir -p log
+                sleep 30
+                xvfb-run -a -e log/xvfb.log bundle exec rspec
+

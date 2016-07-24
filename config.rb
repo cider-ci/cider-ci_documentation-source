@@ -36,7 +36,6 @@ helpers do
     cider_ci_main_dir = Pathname(File.dirname(File.absolute_path(__FILE__))).parent
     YAML.load_file(cider_ci_main_dir.join('config','releases.yml')) \
       .with_indifferent_access[:releases][0]
-    raise "blah"
     rescue Exception => e
       { version_major: 0,
         version_minor: 0,
