@@ -11,6 +11,9 @@ jobs:
         template_environment_variables: true
       tasks:
         test:
+          traits:
+            Pandoc: yes
+            ruby-install: yes
           include: cider-ci/task_components/bundle.yml
           git_options:
             submodules:
