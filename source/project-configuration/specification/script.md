@@ -115,7 +115,7 @@ scripts:
     terminate_when:
       'test is in terminal state':
         script_key: test
-        states: ['aborted', 'deffective', 'failed', 'passed', 'skipped']
+        states: ['aborted', 'defective', 'failed', 'passed', 'skipped']
     ignote_state: true
   test:
     body: test
@@ -131,7 +131,7 @@ scripts:
     start_when:
       'start when test is in terminal state':
         script_key: test
-        states: ['aborted', 'deffective', 'failed', 'passed', 'skipped']
+        states: ['aborted', 'defective', 'failed', 'passed', 'skipped']
 
 ~~~
 </div> </div>
